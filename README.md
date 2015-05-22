@@ -29,12 +29,21 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 `rg-bubble` will display a tooltip on hover.
 
 #### Sidebar
-`rg-sidebar` "off-canvas" slide-in menu.
+`rg-sidebar` is a "off-canvas" slide-in menu.
 
-### Suggestions
+#### Pagination
+`rg-pagination` has left and right arrows and clickable page numbers.
+
+#### Toast
+`rg-toast` is a small page level alert that appears over content, then disappears.
+
+#### Tagger
+`rg-tagger` automatically creates tags as you type in a text box.
+
+## Suggestions
 
 If you'd like to suggest new components or enhancements to existing ones please <a href="https://github.com/RiotGear/RiotGear/issues">raise an issue</a> in *this* repo.
 
-### Contributing
+## Contributing
 
 Please feel free to create Pull Requests on any of the component repos. The PR must pass all tests and our code review process.
