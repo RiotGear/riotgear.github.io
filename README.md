@@ -22,6 +22,10 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 #### <a href="https://github.com/RiotGear/rg-toggle">Toggle</a>
 `rg-toggle` a rather simple component that makes checkboxes pretty.
 
+#### <a href="https://github.com/RiotGear/rg-breadcrumb">Breadcrumb</a>
+`rg-breadcrumb` produces a configurable list of inline links.
+
+
 ### Suggestions
 
 If you'd like to suggest new components or enhancements to existing ones please <a href="https://github.com/RiotGear/RiotGear/issues">raise an issue</a> in *this* repo.
