@@ -22,7 +22,7 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 #### <a href="https://github.com/RiotGear/rg-toggle">Toggle</a>
 `rg-toggle` a rather simple component that makes checkboxes pretty.
 
-#### Bubble
+#### <a href="https://github.com/RiotGear/rg-bubble">Bubble</a>
 `rg-bubble` will display a tooltip on hover.
 
 #### Toast
