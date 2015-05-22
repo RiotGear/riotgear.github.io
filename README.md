@@ -46,4 +46,4 @@ If you'd like to suggest new components or enhancements to existing ones please 
 
 ## Contributing
 
-Please feel free to create Pull Requests on any of the component repos. The PR must pass all tests and our code review process.
+Create Pull Requests on any of the component repos. The PR must pass all tests and our code review process.
