@@ -22,20 +22,20 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 #### <a href="https://github.com/RiotGear/rg-toggle">Toggle</a>
 `rg-toggle` a rather simple component that makes checkboxes pretty.
 
-#### Breadcrumb
-`rg-breadcrumb` produces a configurable list of inline links.
-
 #### Bubble
 `rg-bubble` will display a tooltip on hover.
+
+#### Toast
+`rg-toast` is a small page level alert that appears over content, then disappears.
+
+#### Breadcrumb
+`rg-breadcrumb` produces a configurable list of inline links.
 
 #### Sidebar
 `rg-sidebar` is a "off-canvas" slide-in menu.
 
 #### Pagination
 `rg-pagination` has left and right arrows and clickable page numbers.
-
-#### Toast
-`rg-toast` is a small page level alert that appears over content, then disappears.
 
 #### Tagger
 `rg-tagger` automatically creates tags as you type in a text box.
