@@ -22,9 +22,14 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 #### <a href="https://github.com/RiotGear/rg-toggle">Toggle</a>
 `rg-toggle` a rather simple component that makes checkboxes pretty.
 
-#### <a href="https://github.com/RiotGear/rg-breadcrumb">Breadcrumb</a>
+#### Breadcrumb
 `rg-breadcrumb` produces a configurable list of inline links.
 
+#### Bubble
+`rg-bubble` will display a tooltip on hover.
+
+#### Sidebar
+`rg-sidebar` "off-canvas" slide-in menu.
 
 ### Suggestions
 
