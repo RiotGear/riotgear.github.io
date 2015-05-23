@@ -35,10 +35,7 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 `rg-breadcrumb` produces a configurable list of inline links.
 
 #### Sidebar
-`rg-sidebar` is a "off-canvas" slide-in menu.
-
-#### Loading
-`rg-loading` overlays a parent container and shows 
+`rg-sidebar` is a "off-canvas" slide-in menu. 
 
 #### Pagination
 `rg-pagination` has left and right arrows and clickable page numbers.
