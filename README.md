@@ -28,11 +28,17 @@ A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS<
 #### Toast
 `rg-toast` is a small page level alert that appears over content, then disappears.
 
+#### Loading
+`rg-loading` blocking overlay of parent container with spinner and configurable message
+
 #### Breadcrumb
 `rg-breadcrumb` produces a configurable list of inline links.
 
 #### Sidebar
 `rg-sidebar` is a "off-canvas" slide-in menu.
+
+#### Loading
+`rg-loading` overlays a parent container and shows 
 
 #### Pagination
 `rg-pagination` has left and right arrows and clickable page numbers.
