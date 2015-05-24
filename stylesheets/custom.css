@@ -19,7 +19,16 @@ a:active {
 
 .project-name {
 	text-transform: uppercase;
-	letter-spacing: 14px;
+	letter-spacing: 10px;
+	margin-top: 20px;
+}
+
+.project-name span {
+	color: #fff;
+	background-color: #f01e52;
+	margin: 15px;
+	padding: 5px 10px 5px 15px;
+	border-radius: 3px;
 }
 
 .project-tagline {
@@ -31,6 +40,16 @@ nav {
 	float: left;
 	width: 25%;
 	font-size: 0.9rem;
+}
+
+nav li {
+	margin-left: -8px;
+	padding-left: 5px;
+	border-left: 2px solid transparent;
+}
+
+nav li.active {
+	border-color: #1fadc5;
 }
 
 @media screen and (min-width: 42em) {
@@ -55,14 +74,41 @@ main {
 	}
 }
 
-footer {
-	clear: both;
-}
-
 .main-content {
 	padding: 2rem;
 }
 
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
 	color: #333;
+}
+
+footer {
+	clear: both;
+}
+
+@media screen and (min-width: 64em) {
+	.site-footer {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+	.site-footer {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width: 42em) {
+	.site-footer {
+		font-size: 0.7rem;
+	}
+}
+
+.site-links {
+	text-align: right;
+}
+
+.site-links a {
+	margin-left: 20px;
+	color: #404040;
 }
