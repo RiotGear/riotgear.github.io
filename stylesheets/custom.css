@@ -27,13 +27,32 @@ a:active {
 }
 
 nav {
+	display: none;
 	float: left;
-	width: 30%;
+	width: 25%;
+	font-size: 0.9rem;
+}
+
+@media screen and (min-width: 42em) {
+	nav {
+		display: block;
+	}
+}
+
+ul {
+	list-style: none;
+	padding: 0;
 }
 
 main {
-	width: 70%;
+	width: 100%;
 	float: left;
+}
+
+@media screen and (min-width: 42em) {
+	main {
+		width: 75%;
+	}
 }
 
 footer {
