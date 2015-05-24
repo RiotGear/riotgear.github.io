@@ -4,50 +4,9 @@
 
 A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS</a> applications.
 
-## Use
+## Find out more on the website
 
-// todo
-
-## Component List
-
-#### <a href="https://github.com/RiotGear/rg-alert">Alert</a>
-`rg-alert` is a notification service that allows you to display a list of information bars across the top of the page
-
-#### <a href="https://github.com/RiotGear/rg-modal">Modal</a>
-`rg-modal` produces a popup with custom content and configurable buttons.
-
-#### <a href="https://github.com/RiotGear/rg-tabs">Tabs</a>
-`rg-tabs` is a flexible and minimal tabbed content solution.
-
-#### <a href="https://github.com/RiotGear/rg-toggle">Toggle</a>
-`rg-toggle` a rather simple component that makes checkboxes pretty.
-
-#### <a href="https://github.com/RiotGear/rg-bubble">Bubble</a>
-`rg-bubble` will display a tooltip on hover.
-
-#### Toast
-`rg-toast` is a small page level alert that appears over content, then disappears.
-
-#### Loading
-`rg-loading` blocking overlay of parent container with spinner and configurable message.
-
-#### Carousel
-`rg-carousel ` is useful for galleries or cycling around product highlights and junk.
-
-#### Breadcrumb
-`rg-breadcrumb` produces a configurable list of inline links.
-
-#### Slides
-`rg-slides` build a slide show presentation.
-
-#### Sidebar
-`rg-sidebar` is a "off-canvas" slide-in menu. 
-
-#### Pagination
-`rg-pagination` has left and right arrows and clickable page numbers.
-
-#### Tagger
-`rg-tagger` automatically creates tags as you type in a text box.
+https://riotgear.github.io
 
 ## Suggestions
 

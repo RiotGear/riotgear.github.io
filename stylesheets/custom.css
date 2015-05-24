@@ -1,0 +1,49 @@
+a {
+	color: #1fadc5;
+}
+
+a:hover {
+	color: #8fd6e2;
+	text-decoration: none;
+}
+
+a:active {
+	color: #1b8197;
+}
+
+.page-header {
+	background-image: none;
+	background-color: #e6e6e6;
+	color: #404040;
+}
+
+.project-name {
+	text-transform: uppercase;
+	letter-spacing: 14px;
+}
+
+.project-tagline {
+	font-weight: 300;
+}
+
+nav {
+	float: left;
+	width: 30%;
+}
+
+main {
+	width: 70%;
+	float: left;
+}
+
+footer {
+	clear: both;
+}
+
+.main-content {
+	padding: 2rem;
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+	color: #333;
+}
