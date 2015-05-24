@@ -10,7 +10,7 @@ https://riotgear.github.io
 
 ## Suggestions
 
-If you'd like to suggest new components or enhancements to existing ones please <a href="https://github.com/RiotGear/RiotGear/issues">raise an issue</a> in *this* repo.
+If you'd like to suggest new components or enhancements to existing ones please <a href="https://github.com/RiotGear/riotgear.github.io/issues">raise an issue</a> in *this* repo.
 
 ## Contributing
 
