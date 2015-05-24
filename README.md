@@ -1,6 +1,6 @@
 # RiotGear
 
-<img src="https://avatars0.githubusercontent.com/u/12480998?v=3&s=200" width="150pxpx">
+<img src="https://avatars0.githubusercontent.com/u/12480998?v=3&s=200" width="150px">
 
 A comprehensive component library for <a href="https://muut.com/riotjs/">RiotJS</a> applications.
 
