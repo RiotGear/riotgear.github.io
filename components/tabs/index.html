@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
-	<title>Alert</title>
+	<title>Tabs</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css'
@@ -25,7 +25,7 @@
 		</ul>
 		<h3>Component List</h3>
 		<ul>
-			<li class="active"><a href="../alert">Alert</a></li>
+			<li><a href="../alert">Alert</a></li>
 			<li><a href="../breadcrumbs">Breadcrumb</a></li>
 			<li><a href="../bubble">Bubble</a></li>
 			<li><a href="../carousel">Carousel</a></li>
@@ -34,7 +34,7 @@
 			<li><a href="../pagination">Pagination</a></li>
 			<li><a href="../sidebar">Sidebar</a></li>
 			<li><a href="../slides">Slides</a></li>
-			<li><a href="../tabs">Tabs</a></li>
+			<li class="active"><a href="../tabs">Tabs</a></li>
 			<li><a href="../toast">Toast</a></li>
 			<li><a href="../toggle">Toggle</a></li>
 			<li><a href="../toast">Toast</a></li>
@@ -43,28 +43,78 @@
 
 	<main>
 		<h2>
-			Alert
+			Tabs
 		</h2>
 
 		<div class="demo-container">
-			<rg-alert></rg-alert>
-		</div>
-		<div class="demo-container">
+			<rg-tabs>
+				<rg-tab heading="Tab 1">
+					Tab one
+				</rg-tab>
+
+				<rg-tab heading="Tab 2" active="true">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+					<rg-bubble text="Custom elements work inside tabs too"><strong>HOVER OVER ME!</strong></rg-bubble>
+					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+					pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
+					vulputate eget, arcu. In enim justo, rhoncus ut
+				</rg-tab>
+
+				<rg-tab heading="Tab 3">
+					Tab three
+				</rg-tab>
+
+				<rg-tab heading="Tab 4" disabled="true">
+					Tab four
+				</rg-tab>
+
+				<rg-tab heading="Tab 5">
+					Tab five
+				</rg-tab>
+			</rg-tabs>
+
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-alert alerts="{ alerts }"&gt;&lt;/rg-alert&gt;</code></pre>
+			<pre><code>&lt;rg-tabs onopen="{ tabOpened }"&gt;
+  &lt;rg-tab heading="Tab 1"&gt;
+    Tab one
+  &lt;/rg-tab&gt;
 
-			<p>and add this to your JavaScript</p>
+  &lt;rg-tab heading="Tab 2" active="true"&gt;
+    Tab two
+  &lt;/rg-tab&gt;
 
-			<pre><code>this.alerts = [{
-  type: 'danger',
-  msg: 'Danger! Something bad happened.',
-  onclose: function (e) {}
-}];</code></pre>
+  &lt;rg-tab heading="Tab 3"&gt;
+    Tab three
+  &lt;/rg-tab&gt;
 
-			<p>To add alerts simply push alerts on to the array.</p>
+  &lt;rg-tab heading="Tab 4" disabled="true"&gt;
+    Tab four
+  &lt;/rg-tab&gt;
+
+  &lt;rg-tab heading="Tab 5"&gt;
+    Tab five
+  &lt;/rg-tab&gt;
+&lt;/rg-tabs&gt;</code></pre>
+
+			<p>
+				There is no additional JavaScript required to have working
+				tabs however if you want to handle open tab events add the following:
+			</p>
+
+			<pre><code>this.tabOpened = function (tab) {
+  console.log(tab.index); // the index of the active tab
+};</code></pre>
+
+			<p>
+				If you add <code>active="true"</code> to more than 1 tab only the first tab will honor the request.
+			</p>
+
+			<p>
+				<code>disabled</code> tabs can't be clicked on.
+			</p>
 		</div>
 	</main>
 
@@ -81,39 +131,10 @@
 </section>
 
 <script src="https://cdn.jsdelivr.net/riot/2.1/riot.min.js"></script>
-<script src="rg-alert.min.js"></script>
+<script src="rg-tabs.min.js"></script>
+<script src="rg-bubble.min.js"></script>
 <script>
-	riot.mount('rg-alert', {
-		alerts: [{
-			type: 'danger',
-			msg: 'Danger! Something bad happened.',
-			onclose: function (e) {
-				console.log('Danger closed');
-				console.log(e);
-			}
-		}, {
-			type: 'success',
-			msg: 'Success! You read this important alert message.',
-			onclose: function (e) {
-				console.log('Success closed');
-				console.log(e);
-			}
-		}, {
-			type: 'warning',
-			msg: 'Warning! Something might go wrong.',
-			onclose: function (e) {
-				console.log('Warning closed');
-				console.log(e);
-			}
-		}, {
-			type: 'information',
-			msg: 'Information! This is just an FYI.',
-			onclose: function (e) {
-				console.log('Information closed');
-				console.log(e);
-			}
-		}]
-	});
+	riot.mount('rg-tabs, rg-bubble');
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

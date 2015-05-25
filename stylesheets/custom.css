@@ -63,7 +63,7 @@ nav li.active a {
 	border-radius: 3px;
 }
 
-@media screen and (min-width: 42em) {
+@media (min-width: 42em) {
 	nav {
 		display: block;
 	}
@@ -79,7 +79,7 @@ main {
 	float: left;
 }
 
-@media screen and (min-width: 42em) {
+@media (min-width: 42em) {
 	main {
 		width: 75%;
 	}
@@ -101,19 +101,19 @@ footer {
 	clear: both;
 }
 
-@media screen and (min-width: 64em) {
+@media (min-width: 64em) {
 	.site-footer {
 		font-size: 0.8rem;
 	}
 }
 
-@media screen and (min-width: 42em) and (max-width: 64em) {
+@media (min-width: 42em) and (max-width: 64em) {
 	.site-footer {
 		font-size: 0.8rem;
 	}
 }
 
-@media screen and (max-width: 42em) {
+@media (max-width: 42em) {
 	.site-footer {
 		font-size: 0.7rem;
 	}
@@ -126,16 +126,4 @@ footer {
 .site-links a {
 	margin-left: 20px;
 	color: #404040;
-}
-
-/*
- Components
-*/
-.main-content rg-alert {
-	position: relative;
-}
-
-.main-content rg-modal h3 {
-	padding: 20px 20px 0 20px;
-	margin: 0;
 }
