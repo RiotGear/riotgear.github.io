@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
-	<title>Modal</title>
+	<title>Toggle</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
@@ -29,20 +29,20 @@
 			<li><a href="../bubble">Bubble</a></li>
 			<li><a href="../carousel">Carousel</a></li>
 			<li><a href="../loading">Loading</a></li>
-			<li class="active"><a href="../modal">Modal</a></li>
+			<li><a href="../modal">Modal</a></li>
 			<li><a href="../pagination">Pagination</a></li>
 			<li><a href="../sidebar">Sidebar</a></li>
 			<li><a href="../slides">Slides</a></li>
 			<li><a href="../tabs">Tabs</a></li>
 			<li><a href="../toast">Toast</a></li>
-			<li><a href="../toggle">Toggle</a></li>
+			<li class="active"><a href="../toggle">Toggle</a></li>
 			<li><a href="../toast">Toast</a></li>
 		</ul>
 	</nav>
 
 	<main>
 		<h2>
-			Modal
+			Toggle
 		</h2>
 
 		<div class="demo-container">
@@ -53,25 +53,17 @@
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-modal modal="{ modalOptions }"&gt;
-  Modal body text
-&lt;/rg-modal&gt;</code></pre>
+			<pre><code>&lt;rg-toggle toggle="{ toggle }"&gt;&lt;/rg-toggle&gt;</code></pre>
 
 			<p>and this to your JavaScript</p>
 
-			<pre><code class="javascript">this.modalOptions = {
-  heading: 'Modal heading',
-  visible: false,
-  buttons: [
-    { action: function () {}, text: 'Save' },
-    { action: function () {}, text: 'Cancel', style: 'color: cornflowerblue;' }
-  ],
-  onclose: function (e) {}
+			<pre><code class="javascript">this.toggle = {
+  checked: false,
+  ontoggle: function (e) {
+    console.log(e);
+    _this.update(); // < this is important if you want your app to update on toggle
+  }
 };</code></pre>
-
-			<p>To make the modal appear or disappear simply toggle the modal's <code>visible</code> property.</p>
-
-			<pre><code class="javascript">this.modal.visible = true|false;</code></pre>
 		</div>
 	</main>
 
@@ -89,7 +81,7 @@
 
 <script src="https://cdn.jsdelivr.net/riot/2.1/riot.min.js"></script>
 <script src="app.js"></script>
-<script src="rg-modal.min.js"></script>
+<script src="rg-toggle.min.js"></script>
 <script>
 	riot.mount('demo-app');
 </script>
