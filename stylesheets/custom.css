@@ -11,6 +11,25 @@ a:active {
 	color: #1b8197;
 }
 
+.menu, .menu:hover, .menu:active {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #666;
+	font-size: 0.9rem;
+	border: 1px solid #d0cdcd;
+	padding: 2px 5px;
+	border-radius: 3px;
+}
+
+@media (min-width: 42em) {
+	.menu {
+		display: none;
+	}
+}
+
 .page-header {
 	background-image: none;
 	background-color: #e6e6e6;
@@ -46,9 +65,8 @@ a:active {
 }
 
 nav {
-	display: none;
 	float: left;
-	width: 25%;
+	width: 100%;
 	font-size: 0.9rem;
 }
 
@@ -66,6 +84,7 @@ nav li.active a {
 @media (min-width: 42em) {
 	nav {
 		display: block;
+		width: 25%;
 	}
 }
 
@@ -76,7 +95,7 @@ ul {
 
 main {
 	width: 100%;
-	float: left;
+	float: right;
 }
 
 @media (min-width: 42em) {
