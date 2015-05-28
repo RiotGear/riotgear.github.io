@@ -111,8 +111,19 @@ main {
 	color: #333;
 }
 
+.component-heading {
+	float: left;
+}
+
+.view-code {
+	float: right;
+	margin: 2.5rem 0 1rem 0;
+	font-size: 0.9rem;
+}
+
 .demo-container {
 	position: relative;
+	clear: both;
 }
 
 footer {
