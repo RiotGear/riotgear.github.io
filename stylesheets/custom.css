@@ -138,6 +138,7 @@ footer {
 }
 
 .site-links {
+	float: right;
 	text-align: right;
 }
 
