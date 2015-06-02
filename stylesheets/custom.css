@@ -71,6 +71,7 @@ a.hero-button:hover {
 a.hero-button:active {
 	background-color: white;
 	color: #f01e52;
+	text-decoration: none;
 }
 
 .component-header {
