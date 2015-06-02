@@ -41,8 +41,19 @@ a:active {
 	}
 }
 
-.hero-button,
-.hero-button:hover {
+.page-header a,
+.page-header a:hover,
+.page-header a:active {
+	color: white;
+}
+
+.page-header a:hover,
+.page-header a:active {
+	text-decoration: underline;
+}
+
+a.hero-button,
+a.hero-button:hover {
 	display: inline-block;
 	background-color: transparent;
 	color: white;
@@ -51,12 +62,13 @@ a:active {
 	padding: 1rem 3rem;
 	font-size: 1rem;
 	font-weight: 400;
-	margin: 4rem 0 0;
+	margin: 4rem 1rem 0;
 	text-transform: uppercase;
+	text-decoration: none;
 	letter-spacing: 4px;
 }
 
-.hero-button:active {
+a.hero-button:active {
 	background-color: white;
 	color: #f01e52;
 }
