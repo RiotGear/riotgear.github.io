@@ -17,11 +17,12 @@ a:active {
 	right: 1rem;
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #666;
+	color: #fff;
 	font-size: 0.9rem;
-	border: 1px solid #d0cdcd;
+	border: 1px solid #fff;
 	padding: 2px 5px;
 	border-radius: 3px;
+	font-weight: 300;
 }
 
 @media (min-width: 42em) {
@@ -31,12 +32,37 @@ a:active {
 }
 
 .page-header {
-	background-color: #e6e6e6;
-	color: #404040;
+	background-color: #f01e52;
+}
+
+@media (max-width: 42em) {
+	.page-header img {
+		width: 100px;
+	}
+}
+
+.hero-button,
+.hero-button:hover {
+	display: inline-block;
+	background-color: transparent;
+	color: white;
+	border: 1px solid white;
+	border-radius: 3px;
+	padding: 1rem 3rem;
+	font-size: 1rem;
+	font-weight: 400;
+	margin: 4rem 0 0;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+}
+
+.hero-button:active {
+	background-color: white;
+	color: #f01e52;
 }
 
 .component-header {
-	background-color: #e6e6e6;
+	background-color: #f01e52;
 	padding: 0.5rem 0.25rem 0.25rem;
 	text-align: center;
 }
@@ -49,11 +75,12 @@ a:active {
 	text-transform: uppercase;
 	letter-spacing: 10px;
 	margin-top: 20px;
+	font-weight: 300;
 }
 
 .project-name span {
-	color: #fff;
-	background-color: #f01e52;
+	color: #f01e52;
+	background-color: #fff;
 	margin: 15px;
 	padding: 10px 15px 10px 20px;
 	border-radius: 3px;
@@ -61,6 +88,11 @@ a:active {
 
 .project-tagline {
 	font-weight: 300;
+}
+
+.project-version {
+	font-size: 0.8rem;
+	font-weight: 100;
 }
 
 nav {
