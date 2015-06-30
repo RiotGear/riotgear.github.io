@@ -104,28 +104,19 @@
 
 </section>
 
+<rg-ga property="UA-36978977-5"></rg-ga>
+
 <script src="https://cdn.jsdelivr.net/riot/2.1/riot.min.js"></script>
 <script src="http://spec.commonmark.org/js/commonmark.js"></script>
-<script src="rg-markdown.min.js"></script>
+<script src="../../rg.min.js"></script>
 <script>
-	riot.mount('rg-markdown', {
+	riot.mount('*', {
 		content: '### Use\n\nAdd this to your Riot app markup\n\n```html\n<rg-markdown content=\"{ md }\"><\/rg-markdown>\n```\n\nand add this to your JavaScript\n\n```javascript\nthis.md = \'# RiotGear\\n\\n## rg-markdown\';\n```\n\nThis component relies on a third party markdown parsing library called **CommonMark**. You can find more information\nabout CommonMark from their website at <a href=\"http:\/\/commonmark.org\">commonmark.org<\/a>.\n'
 	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-36978977-5', 'auto');
-	ga('send', 'pageview');
-
-</script>
 
 </body>
 </html>
