@@ -3,9 +3,9 @@
 <head>
   <script>if (window.location.host == 'riotgear.github.io' && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Markdown</title>
+	<title>Autocomplete</title>
+	<meta name="description" content="Notification bars are handy when you need to grab attention">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Produce HTML from Markdown, uses CommonMark behind the scenes">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
@@ -29,7 +29,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.github.io/components/markdown" />
+	<link rel="canonical" href="https://riotgear.github.io/components/autocomplete" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -40,28 +40,53 @@
 <section class="main-content">
 	<main>
 		<h2 class="component-heading">
-			Markdown
+			Autocomplete
 		</h2>
-		<a class="view-code" href="https://github.com/RiotGear/rg-markdown">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-autocomplete">View code</a>
 
 		<div class="demo-container">
+			<rg-autocomplete type="text" placeholder="Enter a country name"></rg-autocomplete>
 
-			<p>The following text was written in Markdown and converted using the component.</p>
+			<h3>Use</h3>
 
-			<rg-markdown></rg-markdown>
+			<p>Add this to your Riot app markup</p>
+
+			<pre><code>&lt;rg-autocomplete items="{ countries }"
+                 type="text"
+                 value="United Kingdom"
+                 placeholder="Enter a country name"
+                 onselect="{ ... }"
+                 onclose="{ ... }"
+                 onfilter="{ ... }"&gt;
+&lt;/rg-autocomplete&gt;</code></pre>
+
+			<p>and add this to your JavaScript</p>
+
+			<pre><code class="javascript">this.countries = [{
+  text: 'England'
+}, {
+  text: 'Scotland'
+}, {
+  text: 'Wales'
+}, {
+  text: 'Ireland'
+}];</code></pre>
+
+			<p>Now when you click into the text box you will get a dropdown
+				you can use to complete the rest of the text for you.</p>
 
 			<h3>Install</h3>
-			<pre><code class="javascript">npm install riotgear-markdown --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-autocomplete --save</code></pre>
 
 			<h3>Download</h3>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-markdown/master/dist/rg-markdown.js" download>rg-markdown.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-markdown/master/dist/rg-markdown.min.js" download>rg-markdown.min.js</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-autocomplete/master/dist/rg-autocomplete.js" download>rg-autocomplete.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-autocomplete/master/dist/rg-autocomplete.min.js" download>rg-autocomplete.min.js</a>
 			</p>
 
 			<h3>Demo</h3>
 			<p>
-				&raquo; <a href="http://codepen.io/riotgear/pen/bdRabG">Have a play on CodePen</a>
+				&raquo; <a href="http://codepen.io/riotgear/pen/NqYGYd">Have a play on CodePen</a>
 			</p>
 		</div>
 	</main>
@@ -78,13 +103,13 @@
 		<h3>Components</h3>
 		<ul>
 			<li><a href="../alert">Alert</a></li>
-			<li><a href="../autocomplete">Autocomplete</a></li>
+			<li class="active"><a href="../autocomplete">Autocomplete</a></li>
 			<li><a href="../bubble">Bubble</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
-			<li class="active"><a href="../markdown">Markdown</a></li>
+			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
@@ -108,11 +133,18 @@
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.1/riot.min.js"></script>
-<script src="commonmark.js"></script>
-<script src="../../rg.min.js"></script>
+<script src="../../rg.js"></script>
 <script>
 	riot.mount('*', {
-		content: '### Use\n\nAdd this to your Riot app markup\n\n```html\n<rg-markdown content=\"{ md }\"><\/rg-markdown>\n```\n\nand add this to your JavaScript\n\n```javascript\nthis.md = \'# RiotGear\\n\\n## rg-markdown\';\n```\n\nThis component relies on a third party markdown parsing library called **CommonMark**. You can find more information\nabout CommonMark from their website at <a href=\"http:\/\/commonmark.org\">commonmark.org<\/a>.\n'
+		items: [{
+			text: 'England'
+		}, {
+			text: 'Scotland'
+		}, {
+			text: 'Wales'
+		}, {
+			text: 'Ireland'
+		}]
 	});
 </script>
 
