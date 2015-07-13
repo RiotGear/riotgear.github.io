@@ -6,6 +6,8 @@ riot.tag('demo-app', '<rg-sidemenu sidemenu="{ sidemenu }"></rg-sidemenu> <a hre
 			items.push({ text: 'Item ' + i, action: itemClicked });
 		}
 
+		items[10].active = true;
+
 		_this.sidemenu = {
 			header: 'Side Menu',
 			expanded: false,

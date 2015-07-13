@@ -52,7 +52,7 @@
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-loading show="{ loading }"&gt;
+			<pre><code>&lt;rg-loading show="{ loading }" spinner="true"&gt;
   Please wait...
 &lt;/rg-loading&gt;</code></pre>
 
@@ -64,7 +64,7 @@
 
 			<pre><code class="javascript">this.loading = true|false;</code></pre>
 
-			<p>The spinner is an integrated SVG animated icon.</p>
+			<p>The spinner is an integrated SVG animated icon, which you can turn on and off using <code>spinner</code>.</p>
 
 			<p>You can use either the <code>show</code> or <code>if</code> Riot conditional attributes or even
 				the dynamic <code>class</code> attribute to display the loading panel.</p>
@@ -129,7 +129,7 @@
 
 <rg-ga property="UA-36978977-5"></rg-ga>
 
-<script src="https://cdn.jsdelivr.net/riot/2.1/riot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/riot/2.2.2-beta/riot.min.js"></script>
 <script src="app.js"></script>
 <script src="../../rg.min.js"></script>
 <script>

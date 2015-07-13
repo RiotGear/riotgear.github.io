@@ -48,7 +48,7 @@
 
 			<p>The following text was written in Markdown and converted using the component.</p>
 
-			<rg-markdown></rg-markdown>
+			<rg-markdown src="helptext.md"></rg-markdown>
 
 			<h3>Install</h3>
 			<pre><code class="javascript">npm install riotgear-markdown --save</code></pre>
@@ -107,13 +107,11 @@
 
 <rg-ga property="UA-36978977-5"></rg-ga>
 
-<script src="https://cdn.jsdelivr.net/riot/2.1/riot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/riot/2.2.2-beta/riot.min.js"></script>
 <script src="commonmark.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*', {
-		content: '### Use\n\nAdd this to your Riot app markup\n\n```html\n<rg-markdown content=\"{ md }\"><\/rg-markdown>\n```\n\nand add this to your JavaScript\n\n```javascript\nthis.md = \'# RiotGear\\n\\n## rg-markdown\';\n```\n\nThis component relies on a third party markdown parsing library called **CommonMark**. You can find more information\nabout CommonMark from their website at <a href=\"http:\/\/commonmark.org\">commonmark.org<\/a>.\n'
-	});
+	riot.mount('*');
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

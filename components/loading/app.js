@@ -1,4 +1,4 @@
-riot.tag('demo-app', '<rg-loading show="{ loading }"> Please wait... </rg-loading> <a href="#" onclick="{ showLoading }">Show loading</a>', function(opts) {
+riot.tag('demo-app', '<rg-loading show="{ loading }" spinner="true"> Please wait... </rg-loading> <a href="#" onclick="{ showLoading }">Show loading</a>', function(opts) {
 		var _this = this;
 		_this.loading = false;
 
