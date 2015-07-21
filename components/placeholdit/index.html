@@ -3,11 +3,12 @@
 <head>
   <script>if (window.location.host == 'riotgear.github.io' && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Modal</title>
+	<title>Placeholdit</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Every designers nightmare, the modal popup">
+	<meta name="description" content="Easy placeholder images">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
-	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
+	<link rel='stylesheet' type='text/css'
+				href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/custom.css">
@@ -29,7 +30,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.github.io/components/modal" />
+	<link rel="canonical" href="https://riotgear.github.io/components/placeholdit" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -40,59 +41,46 @@
 <section class="main-content">
 	<main>
 		<h2 class="component-heading">
-			Modal
+			Placeholdit
 		</h2>
-		<a class="view-code" href="https://github.com/RiotGear/rg-modal">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-placeholdit">View code</a>
 
 		<div class="demo-container">
 
-			<demo-app></demo-app>
+			<rg-placeholdit background-color="1fadc5"></rg-placeholdit>
 
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-modal modal="{ modalOptions }"&gt;
-  Modal body text
-&lt;/rg-modal&gt;</code></pre>
-
-			<p>and this to your JavaScript</p>
-
-			<pre><code class="javascript">this.modalOptions = {
-  heading: 'Modal heading',
-  visible: false,
-  ghost: true,
-  close: false,
-  buttons: [
-    { action: function () {}, text: 'Save' },
-    { action: function () {}, text: 'Cancel', style: 'color: cornflowerblue;' }
-  ],
-  onclose: function (e) {}
-};</code></pre>
-
-			<p>To make the modal appear or disappear simply toggle the modal's <code>visible</code> property,
-			and when you're ready call <a href="https://muut.com/riotjs/api/#tag-update" target="_blank">Riot's 
-			update() function</a> to see the effect.</p>
-
-			<pre><code class="javascript">this.modal.visible = true|false;</code></pre>
+			<pre><code>&lt;rg-placeholdit width="200"
+                height="100"
+                background-color="1fadc5"
+                color="4df"
+                font-size="50"
+                text="JPEG"
+                format="jpg"&gt;
+&lt;/rg-placeholdit&gt;</code></pre>
 
 			<ul>
-				<li><code>ghost</code> to display the modal without a body</li>
-				<li><code>close</code> set to false to hide the small &times; close button</li>
+				<li><code>width</code> and <code>height</code> take the number of pixels you want the image to be</li>
+				<li><code>background-color</code> is the HEX value of the background you want</li>
+				<li><code>color</code> is the HEX value of the text color</li>
+				<li><code>font-size</code> is the size of the text</li>
+				<li><code>text</code> is the text to display, if none specified it will default to the dimensions</li>
+				<li><code>format</code> can be gif, png, jpeg or jpg. It defaults to png</li>
 			</ul>
 
+			<p>This component uses <a href="http://placehold.it/">placehold.it</a> to render the images.</p>
+
 			<h3>Install</h3>
-			<pre><code class="javascript">npm install riotgear-modal --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-placeholdit --save</code></pre>
 
 			<h3>Download</h3>
-			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-modal/master/dist/rg-modal.js" download>rg-modal.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-modal/master/dist/rg-modal.min.js" download>rg-modal.min.js</a>
-			</p>
 
-			<h3>Demo</h3>
 			<p>
-				&raquo; <a href="http://codepen.io/riotgear/pen/LVyvZX">Have a play on CodePen</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-placeholdit/master/dist/rg-placeholdit.js" download>rg-placeholdit.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-placeholdit/master/dist/rg-placeholdit.min.js" download>rg-placeholdit.min.js</a>
 			</p>
 		</div>
 	</main>
@@ -118,8 +106,8 @@
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
-			<li class="active"><a href="../modal">Modal</a></li>
-			<li><a href="../placeholdit">Placeholdit</a></li>
+			<li><a href="../modal">Modal</a></li>
+			<li class="active"><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
@@ -142,7 +130,6 @@
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.2/riot.min.js"></script>
-<script src="app.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
 	riot.mount('*');

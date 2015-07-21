@@ -3,9 +3,9 @@
 <head>
   <script>if (window.location.host == 'riotgear.github.io' && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Modal</title>
+	<title>Datepicker</title>
+	<meta name="description" content="A datepicker with popup calendar">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Every designers nightmare, the modal popup">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
@@ -29,7 +29,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.github.io/components/modal" />
+	<link rel="canonical" href="https://riotgear.github.io/components/datepicker" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -40,59 +40,58 @@
 <section class="main-content">
 	<main>
 		<h2 class="component-heading">
-			Modal
+			Datepicker
 		</h2>
-		<a class="view-code" href="https://github.com/RiotGear/rg-modal">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-datepicker">View code</a>
 
 		<div class="demo-container">
-
-			<demo-app></demo-app>
+			<div>
+				<rg-datepicker></rg-datepicker>
+			</div>
 
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-modal modal="{ modalOptions }"&gt;
-  Modal body text
-&lt;/rg-modal&gt;</code></pre>
+			<pre><code>&lt;rg-datepicker date="2015-07-18"
+               format="LL"
+               months="false"
+               years="false"
+               onopen="{ opened }"
+               onclose="{ closed }"
+               onselect="{ selected }"&gt;
+&lt;/rg-datepicker&gt;</code></pre>
 
-			<p>and this to your JavaScript</p>
+			<p>
+				and add this to your Javascript to handle the events that the component raises
+			</p>
 
-			<pre><code class="javascript">this.modalOptions = {
-  heading: 'Modal heading',
-  visible: false,
-  ghost: true,
-  close: false,
-  buttons: [
-    { action: function () {}, text: 'Save' },
-    { action: function () {}, text: 'Cancel', style: 'color: cornflowerblue;' }
-  ],
-  onclose: function (e) {}
-};</code></pre>
-
-			<p>To make the modal appear or disappear simply toggle the modal's <code>visible</code> property,
-			and when you're ready call <a href="https://muut.com/riotjs/api/#tag-update" target="_blank">Riot's 
-			update() function</a> to see the effect.</p>
-
-			<pre><code class="javascript">this.modal.visible = true|false;</code></pre>
+			<pre><code class="javascript">this.opened = function () { ... }
+this.closed = function (date) { ... }
+this.selected = function (date) { ... }</code></pre>
 
 			<ul>
-				<li><code>ghost</code> to display the modal without a body</li>
-				<li><code>close</code> set to false to hide the small &times; close button</li>
+				<li><code>date</code> defaults to today if you don't specify one.</li>
+				<li><code>format</code>format of the date in the text box. Defaults to 'LL' = "July 21, 2015"</li>
 			</ul>
 
+			<p>
+				This component relies on a third party date management library called Moment. You can find more information
+				about Moment from their website at <a href="http://momentjs.com/">momentjs.com</a>.
+			</p>
+
 			<h3>Install</h3>
-			<pre><code class="javascript">npm install riotgear-modal --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-datepicker --save</code></pre>
 
 			<h3>Download</h3>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-modal/master/dist/rg-modal.js" download>rg-modal.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-modal/master/dist/rg-modal.min.js" download>rg-modal.min.js</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-datepicker/master/dist/rg-datepicker.js" download>rg-datepicker.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-datepicker/master/dist/rg-datepicker.min.js" download>rg-datepicker.min.js</a>
 			</p>
 
 			<h3>Demo</h3>
 			<p>
-				&raquo; <a href="http://codepen.io/riotgear/pen/LVyvZX">Have a play on CodePen</a>
+				<!--&raquo; <a href="http://codepen.io/riotgear/pen/oXwory">Have a play on CodePen</a>-->
 			</p>
 		</div>
 	</main>
@@ -112,13 +111,13 @@
 			<li><a href="../alert">Alert</a></li>
 			<li><a href="../autocomplete">Autocomplete</a></li>
 			<li><a href="../bubble">Bubble</a></li>
-			<li><a href="../datepicker">Datepicker</a></li>
+			<li class="active"><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
-			<li class="active"><a href="../modal">Modal</a></li>
+			<li><a href="../modal">Modal</a></li>
 			<li><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
@@ -141,8 +140,8 @@
 
 <rg-ga property="UA-36978977-5"></rg-ga>
 
+<script src="moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/riot/2.2.2/riot.min.js"></script>
-<script src="app.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
 	riot.mount('*');

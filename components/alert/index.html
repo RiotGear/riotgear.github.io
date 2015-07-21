@@ -45,9 +45,8 @@
 		<a class="view-code" href="https://github.com/RiotGear/rg-alert">View code</a>
 
 		<div class="demo-container">
-			<rg-alert></rg-alert>
-		</div>
-		<div class="demo-container">
+			<demo-app></demo-app>
+
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
@@ -59,10 +58,22 @@
 			<pre><code class="javascript">this.alerts = [{
   type: 'danger',
   msg: 'Danger! Something bad happened.',
+  timeout: 6000,
+  dismissable: true,
+  onclick: function (e) {},
   onclose: function (e) {}
 }];</code></pre>
 
 			<p>To add alerts simply push alerts on to the array.</p>
+
+			<ul>
+				<li><code>type</code> is the styling it applies to the alert itself</li>
+				<li><code>msg</code> is the text you'd like to appear in the alert</li>
+				<li><code>timeout</code> amount in ms the alert should be visible</li>
+				<li><code>onclick</code> fires when the alert is clicked on</li>
+				<li><code>onclose</code> fires when the alert disappears from the screen</li>
+				<li><code>dismissable</code> toggles the close button</li>
+			</ul>
 
 			<h3>Install</h3>
 			<pre><code class="javascript">npm install riotgear-alert --save</code></pre>
@@ -95,12 +106,14 @@
 			<li class="active"><a href="../alert">Alert</a></li>
 			<li><a href="../autocomplete">Autocomplete</a></li>
 			<li><a href="../bubble">Bubble</a></li>
+			<li><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
+			<li><a href="../datepicker">Placeholder</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
@@ -124,38 +137,9 @@
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.2/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
+<script src="app.js"></script>
 <script>
-	riot.mount('*', {
-		alerts: [{
-			type: 'danger',
-			msg: 'Danger! Something bad happened.',
-			onclose: function (e) {
-				console.log('Danger closed');
-				console.log(e);
-			}
-		}, {
-			type: 'success',
-			msg: 'Success! You read this important alert message.',
-			onclose: function (e) {
-				console.log('Success closed');
-				console.log(e);
-			}
-		}, {
-			type: 'warning',
-			msg: 'Warning! Something might go wrong.',
-			onclose: function (e) {
-				console.log('Warning closed');
-				console.log(e);
-			}
-		}, {
-			type: 'information',
-			msg: 'Information! This is just an FYI.',
-			onclose: function (e) {
-				console.log('Information closed');
-				console.log(e);
-			}
-		}]
-	});
+	riot.mount('*');
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

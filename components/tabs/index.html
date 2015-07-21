@@ -47,13 +47,14 @@
 		<div class="demo-container">
 			<rg-tabs>
 				<rg-tab heading="Tab 1">
-					Tab one
+					<rg-tab-heading>Tab <em>One</em></rg-tab-heading>
+					The first tab content
 				</rg-tab>
 
 				<rg-tab heading="Tab 2" active="true">
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
 					<rg-bubble text="Custom elements work inside tabs too"><strong>HOVER OVER ME!</strong></rg-bubble>
-					Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+					sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
 					pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
 					vulputate eget, arcu. In enim justo, rhoncus ut
 				</rg-tab>
@@ -76,8 +77,9 @@
 			<p>Add this to your Riot app markup</p>
 
 			<pre><code>&lt;rg-tabs onopen="{ tabOpened }"&gt;
-  &lt;rg-tab heading="Tab 1"&gt;
-    Tab one
+  &lt;rg-tab&gt;
+    &lt;rg-tab-heading&gt;Tab &lt;em&gt;One&lt;/em&gt;&lt;/rg-tab-heading&gt;
+    The first tab content
   &lt;/rg-tab&gt;
 
   &lt;rg-tab heading="Tab 2" active="true"&gt;
@@ -96,6 +98,11 @@
     Tab five
   &lt;/rg-tab&gt;
 &lt;/rg-tabs&gt;</code></pre>
+
+			<p>
+				Use <code class="html">&lt;rg-tab-heading&gt;&lt;/rg-tab-heading&gt;</code> within your tabs if you want custom content
+				instead of just text.
+			</p>
 
 			<p>
 				There is no additional JavaScript required to have working
@@ -145,12 +152,14 @@
 			<li><a href="../alert">Alert</a></li>
 			<li><a href="../autocomplete">Autocomplete</a></li>
 			<li><a href="../bubble">Bubble</a></li>
+			<li><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
+			<li><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li class="active"><a href="../tabs">Tabs</a></li>

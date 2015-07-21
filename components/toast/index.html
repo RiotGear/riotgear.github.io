@@ -60,14 +60,21 @@
 
 			<pre><code class="javascript">this.toasts = [{
   text: 'You have received an update to something interesting',
-  onclick: function (e) {
-    console.log(e);
-  }
+  sticky: true,
+  timeout: 6000,
+  onclick: function (e) {...},
+  onclose: function () {...}
 }];</code></pre>
 
 			<p>The toast notification can be clicked on after which it will disappear.</p>
 
-			<p>If not clicked on it will automatically disappear after 6 seconds.</p>
+			<ul>
+				<li><code>text</code> what you want to say in the popup box</li>
+				<li><code>sticky</code> if true will turn off the timeout and the toast will remain on the page until clicked on</li>
+				<li><code>timeout</code> use to override the delay (in ms) before it disappears, default is 6 seconds</li>
+				<li><code>onclick</code> is called when the toast is clicked on</li>
+				<li><code>onclose</code> fires when the toast disappears, either by clicking on it or via timer</li>
+			</ul>
 
 			<h3>Install</h3>
 			<pre><code class="javascript">npm install riotgear-toast --save</code></pre>
@@ -100,12 +107,14 @@
 			<li><a href="../alert">Alert</a></li>
 			<li><a href="../autocomplete">Autocomplete</a></li>
 			<li><a href="../bubble">Bubble</a></li>
+			<li><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
+			<li><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
