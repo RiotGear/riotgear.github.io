@@ -3,9 +3,9 @@
 <head>
   <script>if (window.location.host == 'riotgear.github.io' && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Select</title>
+	<title>Context Menu</title>
+	<meta name="description" content="Right click menu">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dropdown with search box">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
@@ -29,9 +29,9 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.github.io/components/select" />
+	<link rel="canonical" href="https://riotgear.github.io/components/context-menu" />
 </head>
-<body>
+<body rg-context-menu="demo">
 <a class="menu" href="#menu">Menu</a>
 <section class="component-header">
 	<a href="../../"><img src="../../images/logo.png"></a>
@@ -40,72 +40,63 @@
 <section class="main-content">
 	<main>
 		<h2 class="component-heading">
-			Select
+			Context Menu
 		</h2>
-		<a class="view-code" href="https://github.com/RiotGear/rg-select">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-context-menu">View code</a>
 
 		<div class="demo-container">
-
-			<demo-app></demo-app>
-
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-select placeholder="Please select a card"
-           filter-placeholder="Filter cards"
-           filter-on="text"
-           onopen="{ opened }"
-           onclose="{ closed }"
-           onfilter="{ filtered }"
-           onselect="{ selected }"
-           options="{ cards }"&gt;
-&lt;/rg-select&gt;</code></pre>
+			<pre><code>&lt;rg-context-menu id="myMenu" menu="{ menu }"&gt;&lt;/rg-context-menu&gt;</code></pre>
 
-			<p>and this to your JavaScript</p>
+			<p>Then assign the context menu to the elements you would like to by using <code>rg-context-menu</code></p>
 
-			<pre><code class="javascript">this.cards = [{
-    id: 0,
-    text: 'Visa'
-  },{
-    id: 1,
-    text: 'MasterCard'
-  },{
-    id: 2,
-    text: 'American Express'
-  },{
-    id: 3,
-    text: 'Discover'
-  }];</code></pre>
+			<pre><code>&lt;div rg-context-menu="myMenu"&gt;lorem ipsum etc.&lt;/div&gt;</code></pre>
+
+			<p>To populate the menu pass these options</p>
+
+			<pre><code class="javascript">this.menu = {
+  onopen: function (e) {
+    console.log('Menu opened');
+    console.log(e);
+  },
+  onclose: function (e) {
+    console.log('Menu closed');
+    console.log(e);
+  },
+  items: [{
+    content: '&lt;strong&gt;View source&lt;/strong&gt',
+    onselect: itemSelected
+  }, {
+    text: 'Save as...',
+    disabled: true,
+    onselect: itemSelected
+  }, {
+    text: 'Reload',
+    onselect: itemSelected
+  }]
+}</code></pre>
 
 			<ul>
-				<li><code>placeholder</code> is the default text to display when an item hasn't been selected</li>
-				<li><code>filter-placeholder</code> is the placeholder text in the search box</li>
-				<li><code>filter-on</code> accepts a list item property name, and will default to <code>text</code> if unspecified</li>
-				<li><code>onopen</code> fires when the select list expands</li>
-				<li><code>onclose</code> fires when the select list closes</li>
-				<li><code>onfilter</code> you could use this event to hook up to a server a re-populate the list</li>
-				<li><code>onselect</code> when an item is selected it is passed to the onselect function</li>
-				<li><code>options</code> is the list of items in the dropdown</li>
+				<li><code>onopen</code> will fire when the menu appears</li>
+				<li><code>onclose</code> is the array of items to display in the popup list</li>
+				<li><code>items</code> is the HTML content of the item</li>
+				<li><code>items.content</code> is the HTML content of the item</li>
+				<li><code>items.text</code> is the plain text content of the item, if specified the
+					tag will ignore <code>content</code> and use <code>text</code></li>
+				<li><code>items.disabled</code> set a disabled class and prevents events</li>
+				<li><code>items.onselect</code> fires when an item is clicked on. The menu will also automatically close on select</li>
 			</ul>
 
-			<p>
-				Keyboard support built in. Press tab to gain focus, enter to open the dropdown, up and down arrows
-				to highlight items and enter to select.
-			</p>
-
 			<h3>Install</h3>
-			<pre><code class="javascript">npm install riotgear-select --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-context-menu --save</code></pre>
 
 			<h3>Download</h3>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-select/master/dist/rg-select.js" download>rg-select.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-select/master/dist/rg-select.min.js" download>rg-select.min.js</a>
-			</p>
-
-			<h3>Demo</h3>
-			<p>
-				&raquo; <a href="http://codepen.io/riotgear/pen/yNpJPq">Have a play on CodePen</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-context-menu/master/dist/rg-context-menu.js" download>rg-context-menu.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-context-menu/master/dist/rg-context-menu.min.js" download>rg-context-menu.min.js</a>
 			</p>
 		</div>
 	</main>
@@ -125,7 +116,7 @@
 			<li><a href="../alert">Alert</a></li>
 			<li><a href="../autocomplete">Autocomplete</a></li>
 			<li><a href="../bubble">Bubble</a></li>
-			<li><a href="../context-menu">Context Menu</a></li>
+			<li class="active"><a href="../context-menu">Context Menu</a></li>
 			<li><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
@@ -134,7 +125,7 @@
 			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
 			<li><a href="../placeholdit">Placeholdit</a></li>
-			<li class="active"><a href="../select">Select</a></li>
+			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
 			<li><a href="../toast">Toast</a></li>
@@ -153,13 +144,39 @@
 
 </section>
 
-<rg-ga> property="UA-36978977-5"></rg-ga>
+<rg-context-menu id="demo"></rg-context-menu>
+
+<rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.2/riot.min.js"></script>
-<script src="app.js"></script>
-<script src="../../rg.min.js"></script>
+<script src="../../rg.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		menu: {
+			onopen: function (e) {
+				console.log('Menu opened');
+				console.log(e);
+			},
+			onclose: function (e) {
+				console.log('Menu closed');
+				console.log(e);
+			},
+			items: [{
+				content: '<strong>View source</strong>',
+				onselect: function () {
+					window.open('view-source:' + window.location);
+				}
+			}, {
+				text: 'Save as...',
+				disabled: true
+			}, {
+				content: '&#8635; Reload without cache	',
+				onselect: function () {
+					document.location.reload(true);
+				}
+			}]
+		}
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
