@@ -81,15 +81,26 @@
   }]
 }</code></pre>
 
+			<p>You can also use the <code>rg-context-menu-item</code> child tag</p>
+
+			<pre><code>&lt;rg-context-menu id="myMenu" menu="{ menu }">
+  &lt;rg-context-menu-item onselect="{ parent.itemSelected }" inactive="false"&gt;
+    &lt;strong&gt;View source&lt;/strong&gt;
+  &lt;/rg-context-menu-item&gt;
+&lt;/rg-context-menu&gt;</code></pre>
+
+			<p><em>Note <code>parent.itemSelected</code> in the onselect attribute. This is required if you want to
+				reference a method on the parent tag.</em></p>
+
 			<ul>
 				<li><code>onopen</code> will fire when the menu appears</li>
 				<li><code>onclose</code> is the array of items to display in the popup list</li>
 				<li><code>items</code> is the HTML content of the item</li>
 				<li><code>items.content</code> is the HTML content of the item</li>
-				<li><code>items.text</code> is the plain text content of the item, if specified the
+				<li><code>items.text</code> plain text content of the item, if specified the
 					tag will ignore <code>content</code> and use <code>text</code></li>
 				<li><code>items.disabled</code> set a disabled class and prevents events</li>
-				<li><code>items.onselect</code> fires when an item is clicked on. The menu will also automatically close on select</li>
+				<li><code>items.onselect</code> fires when an item is clicked on. The menu will also automatically close.</li>
 			</ul>
 
 			<h3>Install</h3>
