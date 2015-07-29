@@ -73,7 +73,7 @@
     onselect: itemSelected
   }, {
     text: 'Save as...',
-    disabled: true,
+    inactive: true,
     onselect: itemSelected
   }, {
     text: 'Reload',
@@ -99,7 +99,7 @@
 				<li><code>items.content</code> is the HTML content of the item</li>
 				<li><code>items.text</code> plain text content of the item, if specified the
 					tag will ignore <code>content</code> and use <code>text</code></li>
-				<li><code>items.disabled</code> set a disabled class and prevents events</li>
+				<li><code>items.inactive</code> set a inactive class and prevents events</li>
 				<li><code>items.onselect</code> fires when an item is clicked on. The menu will also automatically close.</li>
 			</ul>
 
@@ -175,17 +175,32 @@
 				console.log(e);
 			},
 			items: [{
-				content: '<strong>View source</strong>',
+				content: '&lsaquo; Back',
 				onselect: function () {
-					window.open('view-source:' + window.location);
+					history.back();
+				}
+			}, {
+				content: '&rsaquo; Forward',
+				onselect: function () {
+					history.forward();
+				}
+			}, {
+				content: '&#8635; Reload without cache',
+				onselect: function () {
+					document.location.reload(true);
 				}
 			}, {
 				text: 'Save as...',
-				disabled: true
+				inactive: true
 			}, {
-				content: '&#8635; Reload without cache	',
+				text: 'Print...',
 				onselect: function () {
-					document.location.reload(true);
+					print();
+				}
+			}, {
+				content: '<strong>View source</strong>',
+				onselect: function () {
+					window.open('view-source:' + window.location);
 				}
 			}]
 		}
