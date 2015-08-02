@@ -232,3 +232,7 @@ rg-map {
 	height: 600px;
 	width: 100%;
 }
+
+rg-tags .tag {
+	margin: 1px;
+}
