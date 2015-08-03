@@ -3,9 +3,9 @@
 <head>
   <script>if (window.location.host == 'riotgear.github.io' && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Placeholdit</title>
+	<title>Unsplash</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Easy placeholder images">
+	<meta name="description" content="Easy placeholder splash images">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css'
 				href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
@@ -30,7 +30,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.github.io/components/placeholdit" />
+	<link rel="canonical" href="https://riotgear.github.io/components/unsplash" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -41,46 +41,46 @@
 <section class="main-content">
 	<main>
 		<h2 class="component-heading">
-			Placeholdit
+			Unsplash
 		</h2>
-		<a class="view-code" href="https://github.com/RiotGear/rg-placeholdit">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-unsplash">View code</a>
 
 		<div class="demo-container">
 
-			<rg-placeholdit background-color="1fadc5"></rg-placeholdit>
+			<rg-unsplash random="true"></rg-unsplash>
 
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-placeholdit width="200"
-                height="100"
-                background-color="1fadc5"
-                color="4df"
-                font-size="50"
-                text="JPEG"
-                format="jpg"&gt;
-&lt;/rg-placeholdit&gt;</code></pre>
+			<pre><code>&lt;rg-unsplash width="200"
+             height="100"
+             greyscale="true"
+             random="true"
+             blur="true"
+             image="491"
+             gravity="north|south|east|west"&gt;
+&lt/rg-unsplash&gt;</code></pre>
 
 			<ul>
 				<li><code>width</code> and <code>height</code> take the number of pixels you want the image to be</li>
-				<li><code>background-color</code> is the HEX value of the background you want</li>
-				<li><code>color</code> is the HEX value of the text color</li>
-				<li><code>font-size</code> is the size of the text</li>
-				<li><code>text</code> is the text to display, if none specified it will default to the dimensions</li>
-				<li><code>format</code> can be gif, png, jpeg or jpg. It defaults to png</li>
+				<li><code>greyscale</code> or <code>grayscale</code> will make the image black and white</li>
+				<li><code>random</code> will randomise the image on reload</li>
+				<li><code>blur</code> will apply a blur filter to the image</li>
+				<li><code>image</code> can be used to specify a <a href="https://unsplash.it/images">particular image</a></li>
+				<li><code>gravity</code> is the cropping gravity</li>
 			</ul>
 
-			<p>This component uses <a href="http://placehold.it/">placehold.it</a> to render the images.</p>
+			<p>This component uses <a href="https://unsplash.it/">unsplash</a> to render the images.</p>
 
 			<h3>Install</h3>
-			<pre><code class="javascript">npm install riotgear-placeholdit --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-unsplash --save</code></pre>
 
 			<h3>Download</h3>
 
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-placeholdit/master/dist/rg-placeholdit.js" download>rg-placeholdit.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-placeholdit/master/dist/rg-placeholdit.min.js" download>rg-placeholdit.min.js</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-unsplash/master/dist/rg-unsplash.js" download>rg-unsplash.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-unsplash/master/dist/rg-unsplash.min.js" download>rg-unsplash.min.js</a>
 			</p>
 		</div>
 	</main>
@@ -108,14 +108,14 @@
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
-			<li class="active"><a href="../placeholdit">Placeholdit</a></li>
+			<li><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
 			<li><a href="../tags">Tags</a></li>
 			<li><a href="../toast">Toast</a></li>
 			<li><a href="../toggle">Toggle</a></li>
-			<li><a href="../unsplash">Unsplash</a></li>
+			<li class="active"><a href="../unsplash">Unsplash</a></li>
 		</ul>
 	</nav>
 
