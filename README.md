@@ -4,7 +4,7 @@ The open source component library for <a href="https://muut.com/riotjs/">RiotJS<
 
 ## Find out more on the RiotGear website
 
-<a href="https://riotgear.github.io">https://riotgear.github.io</a>
+<a href="https://riotgear.js.org">https://riotgear.js.org</a>
 
 ## Suggestions
 
