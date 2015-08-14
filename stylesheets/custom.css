@@ -72,7 +72,7 @@ a.hero-button:active {
 }
 
 .component-header {
-	background-color: #fc0e49;
+	background-color: #F01E52;
 	padding: 0.5rem 0.25rem 0.25rem;
 	text-align: center;
 }
@@ -90,7 +90,7 @@ a.hero-button:active {
 
 .project-name span {
 	color: #fff;
-	background-color: #fc0e49;
+	background-color: #F01E52;
 	margin: 15px;
 	padding: 10px 15px 10px 20px;
 	border-radius: 3px;
@@ -116,7 +116,7 @@ nav li {
 }
 
 nav li.active a {
-	background-color: #fc0e49;
+	background-color: #F01E52;
 	color: white;
 	padding: 4px;
 	border-radius: 3px;
@@ -203,7 +203,7 @@ footer {
 .badge {
 	color: white;
 	padding: 1px 6px 0 6px;
-	background-color: #F3164E;
+	background-color: #F01E52;
 	display: inline-block;
 	margin-left: 8px;
 	border-radius: 3px;
@@ -213,7 +213,7 @@ footer {
 }
 
 .badge-inverse {
-	color: #fc0e49;
+	color: #F01E52;
 	display: inline-block;
 	margin-left: 8px;
 	text-transform: uppercase;
