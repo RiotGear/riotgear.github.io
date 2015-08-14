@@ -102,7 +102,7 @@ a.hero-button:active {
 
 .project-version {
 	font-size: 1rem;
-	font-weight: 100;
+	font-weight: normal;
 }
 
 nav {
