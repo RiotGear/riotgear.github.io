@@ -54,7 +54,7 @@ a:active {
 a.hero-button,
 a.hero-button:hover {
 	display: inline-block;
-	background-color: #268bd2;
+	background-color: #32709d;
 	color: #fff;
 	border-radius: 3px;
 	padding: 1rem 3rem;
@@ -72,7 +72,7 @@ a.hero-button:active {
 }
 
 .component-header {
-	background-color: #f01e52;
+	background-color: #fc0e49;
 	padding: 0.5rem 0.25rem 0.25rem;
 	text-align: center;
 }
@@ -90,7 +90,7 @@ a.hero-button:active {
 
 .project-name span {
 	color: #fff;
-	background-color: #f01e52;
+	background-color: #fc0e49;
 	margin: 15px;
 	padding: 10px 15px 10px 20px;
 	border-radius: 3px;
@@ -116,7 +116,7 @@ nav li {
 }
 
 nav li.active a {
-	background-color: #F01E52;
+	background-color: #fc0e49;
 	color: white;
 	padding: 4px;
 	border-radius: 3px;
@@ -213,7 +213,7 @@ footer {
 }
 
 .badge-inverse {
-	color: #F01E52;
+	color: #fc0e49;
 	display: inline-block;
 	margin-left: 8px;
 	text-transform: uppercase;
