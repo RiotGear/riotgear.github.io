@@ -83,7 +83,7 @@ a.hero-button:active {
 
 .project-name {
 	text-transform: uppercase;
-	letter-spacing: 10px;
+	letter-spacing: 8px;
 	margin-top: 20px;
 	font-weight: 400;
 }
@@ -98,11 +98,11 @@ a.hero-button:active {
 }
 
 .project-tagline {
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .project-version {
-	font-size: 1rem;
+	font-size: 0.9rem;
 	font-weight: normal;
 }
 
