@@ -1,14 +1,14 @@
 a {
-	color: #1fadc5;
+	color: #268bd2;
 }
 
 a:hover {
-	color: #8fd6e2;
+	color: #5da5d8;
 	text-decoration: none;
 }
 
 a:active {
-	color: #1b8197;
+	color: #1e71ab;
 }
 
 .text-center {
@@ -36,19 +36,14 @@ a:active {
 }
 
 .page-header {
-	background-color: #f01e52;
+	border-bottom: 1px solid #ddd;
+	margin: 0 2rem;
 }
 
 @media (max-width: 42em) {
 	.page-header img {
 		width: 100px;
 	}
-}
-
-.page-header a,
-.page-header a:hover,
-.page-header a:active {
-	color: white;
 }
 
 .page-header a:hover,
@@ -59,27 +54,25 @@ a:active {
 a.hero-button,
 a.hero-button:hover {
 	display: inline-block;
-	background-color: transparent;
-	color: white;
-	border: 1px solid white;
+	background-color: #32709d;
+	color: #fff;
 	border-radius: 3px;
 	padding: 1rem 3rem;
 	font-size: 1rem;
 	font-weight: 400;
-	margin: 4rem 1rem 0;
+	margin: 2rem 1rem 0;
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 4px;
 }
 
 a.hero-button:active {
-	background-color: white;
-	color: #f01e52;
+	background-color: #5da5d8;
 	text-decoration: none;
 }
 
 .component-header {
-	background-color: #f01e52;
+	background-color: #F01E52;
 	padding: 0.5rem 0.25rem 0.25rem;
 	text-align: center;
 }
@@ -90,26 +83,27 @@ a.hero-button:active {
 
 .project-name {
 	text-transform: uppercase;
-	letter-spacing: 10px;
+	letter-spacing: 8px;
 	margin-top: 20px;
 	font-weight: 400;
 }
 
 .project-name span {
-	color: #f01e52;
-	background-color: #fff;
+	color: #fff;
+	background-color: #F01E52;
 	margin: 15px;
 	padding: 10px 15px 10px 20px;
 	border-radius: 3px;
+	font-weight: bold;
 }
 
 .project-tagline {
-	font-weight: 300;
+	font-weight: 400;
 }
 
 .project-version {
-	font-size: 0.8rem;
-	font-weight: 100;
+	font-size: 0.9rem;
+	font-weight: normal;
 }
 
 nav {
@@ -210,7 +204,7 @@ footer {
 .badge {
 	color: white;
 	padding: 1px 6px 0 6px;
-	background-color: #F3164E;
+	background-color: #F01E52;
 	display: inline-block;
 	margin-left: 8px;
 	border-radius: 3px;

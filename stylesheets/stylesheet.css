@@ -8,7 +8,8 @@ body {
 	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
-	color: #606c71;
+	color: #313131;
+	text-rendering: optimizeLegibility;
 }
 
 a {
@@ -16,7 +17,6 @@ a {
 }
 
 .page-header {
-	color: #fff;
 	text-align: center;
 }
 
@@ -64,7 +64,7 @@ a {
 .project-tagline {
 	margin: 2rem 0 0;
 	font-weight: normal;
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 @media (min-width: 64em) {
@@ -93,6 +93,7 @@ a {
 	font-weight: 400;
 	margin-top: 2rem;
 	margin-bottom: 1rem;
+	letter-spacing: 1px;
 }
 
 .main-content p {
