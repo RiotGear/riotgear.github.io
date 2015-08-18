@@ -49,5 +49,5 @@ riot.tag('demo-app', '<rg-toast toasts="{ toasts }" position="bottomright"></rg-
 				}
 			});
 		};
-	
+
 });
