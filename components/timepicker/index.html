@@ -62,9 +62,9 @@
                step="15"
                min="08:00"
                max="16:30"
-               onopen={ opened }
-               onclose={ closed }
-               onselect={ selected }&gt;
+               onopen="{ opened }"
+               onclose="{ closed }"
+               onselect="{ selected }"&gt;
 &lt;/rg-timepicker&gt;</code></pre>
 
 			<pre><code class="javascript">this.opened = function () { ... }
@@ -74,7 +74,7 @@ this.selected = function (time) { ... }</code></pre>
 			<ul>
 				<li><code>time</code> defaults to now if you don't specify one, accepts a date object</li>
 				<li><code>ampm</code> toggles the 24 hours time format, the value is always hh:mm:ss though</li>
-				<li><code>step</code> is the size of the interval between options E.g. 15 produces 00:00, 00:15, 00:30, 00:45, 01:00...</li>
+				<li><code>step</code> is the interval between options e.g. 15 produces 00:00, 00:15, 00:30, 00:45, 01:00...</li>
 				<li><code>min</code> and <code>max</code> are the earliest and latest times within the available 24hrs</li>
 			</ul>
 
