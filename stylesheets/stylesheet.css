@@ -10,6 +10,7 @@ body {
 	line-height: 1.5;
 	color: #313131;
 	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
 }
 
 a {
