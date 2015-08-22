@@ -15,6 +15,31 @@ a:active {
 	text-align: center;
 }
 
+.fork {
+	background-color: #32709D;
+	position: absolute;
+	right: -40px;
+	top: 40px;
+	color: #fff;
+	font-size: 80%;
+	padding: .3em 3em;
+	text-decoration: none;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.fork:hover {
+	background-color: #5da5d8;
+	color: #fff;
+}
+
+.fork:active {
+	background-color: #1e71ab;
+	color: #fff;
+}
+
 .menu, .menu:hover, .menu:active {
 	position: absolute;
 	top: 1rem;
@@ -37,12 +62,12 @@ a:active {
 
 .page-header {
 	border-bottom: 1px solid #ddd;
-	margin: 0 2rem;
 }
 
 @media (max-width: 42em) {
 	.page-header img {
 		width: 100px;
+		margin: 0 2rem;
 	}
 }
 

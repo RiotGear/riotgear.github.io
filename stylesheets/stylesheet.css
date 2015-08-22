@@ -34,7 +34,7 @@ a {
 
 @media (max-width: 42em) {
 	.page-header {
-		padding: 2rem 1rem;
+		padding: 2rem 0rem;
 	}
 }
 
