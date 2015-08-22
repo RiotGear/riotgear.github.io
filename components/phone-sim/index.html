@@ -3,12 +3,11 @@
 <head>
 	<script>if ((window.location.host == 'riotgear.github.io' || window.location.host == 'riotgear.js.org') && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Timepicker</title>
+	<title>Phone Simulator</title>
+	<meta name="description" content="A simple phone emulator">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Dropdown with a list of times">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
-	<link rel='stylesheet' type='text/css'
-				href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/custom.css">
@@ -30,7 +29,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.js.org/components/timepicker" />
+	<link rel="canonical" href="https://riotgear.js.org/components/phone-sim" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -41,57 +40,35 @@
 <section class="main-content">
 	<main>
 		<h2 class="component-heading">
-			Timepicker
+			Phone Simulator
 		</h2>
-		<a class="view-code" href="https://github.com/RiotGear/rg-timepicker">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-phone-sim">View code</a>
 
 		<div class="demo-container">
-
-			<rg-timepicker ampm="true"
-			               step="15"
-			               min="08:30"
-			               max="09:30">
-			</rg-timepicker>
+			<rg-phone-sim src="http://riotjs.com/"></rg-phone-sim>
 
 			<h3>Use</h3>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-timepicker time="{ new Date('Aug 10 2015') }"
-               ampm="true"
-               step="15"
-               min="08:00"
-               max="16:30"
-               onopen="{ opened }"
-               onclose="{ closed }"
-               onselect="{ selected }"&gt;
-&lt;/rg-timepicker&gt;</code></pre>
+			<pre><code>&lt;rg-phone-sim src="http://riotjs.com/"&gt;&lt;/rg-phone-sim&gt;</code></pre>
 
-			<pre><code class="javascript">this.opened = function () { ... }
-this.closed = function () { ... }
-this.selected = function (time) { ... }</code></pre>
+			<p>The component will then wrap your website in an iframe and an image of a phone.</p>
 
 			<ul>
-				<li><code>time</code> defaults to now if you don't specify one, accepts a date object</li>
-				<li><code>ampm</code> toggles the 24 hours time format, the value is always hh:mm:ss though</li>
-				<li><code>step</code> is the interval between options e.g. 15 produces 00:00, 00:15, 00:30, 00:45, 01:00...</li>
-				<li><code>min</code> and <code>max</code> are the earliest and latest times within the available 24hrs</li>
+				<li><code>src</code> the path to the file you want to "emulate"</li>
 			</ul>
 
-			<p>This component relies on <strong>rg-select</strong> from RiotGear,
-				ensure you have either rg-select.min.js or rg.min.js referenced in your
-				application.</p>
-
 			<h3>Install</h3>
-			<pre><code class="javascript">npm install riotgear-timepicker --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-phone-sim --save</code></pre>
 
 			<h3>Download</h3>
-
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-timepicker/master/dist/rg-timepicker.js" download>rg-timepicker.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-timepicker/master/dist/rg-timepicker.min.js" download>rg-timepicker.min.js</a><br>
-				&raquo; <a href="https://github.com/RiotGear/rg-timepicker/tree/master/src">rg-timepicker.tag</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-phone-sim/master/dist/rg-phone-sim.js" download>rg-phone-sim.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-phone-sim/master/dist/rg-phone-sim.min.js" download>rg-phone-sim.min.js</a><br>
+				&raquo; <a href="https://github.com/RiotGear/rg-phone-sim/tree/master/src">rg-phone-sim.tag</a>
 			</p>
+
 		</div>
 	</main>
 
@@ -118,13 +95,13 @@ this.selected = function (time) { ... }</code></pre>
 			<li><a href="../map">Map</a></li>
 			<li><a href="../markdown">Markdown</a></li>
 			<li><a href="../modal">Modal</a></li>
-			<li><a href="../phone-sim">Phone Sim</a></li>
+			<li class="active"><a href="../phone-sim">Phone Sim</a></li>
 			<li><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
 			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
 			<li><a href="../tags">Tags</a></li>
-			<li class="active"><a href="../timepicker">Timepicker</a></li>
+			<li><a href="../timepicker">Timepicker</a></li>
 			<li><a href="../toast">Toast</a></li>
 			<li><a href="../toggle">Toggle</a></li>
 			<li><a href="../unsplash">Unsplash</a></li>
@@ -145,10 +122,7 @@ this.selected = function (time) { ... }</code></pre>
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.3/riot.min.js"></script>
-<script src="../../rg.min.js"></script>
-<script>
-	riot.mount('*');
-</script>
+<script src="../../rg.js"></script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
