@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<script>if ((window.location.host == 'riotgear.github.io' || window.location.host == 'riotgear.js.org') && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
+	<meta charset="UTF-8">
+	<title>Behold</title>
+	<meta name="description" content="Simple image diff tool with fade and swipe options">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
+	<link rel="stylesheet" type="text/css" href="../../stylesheets/custom.css">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="apple-mobile-web-app-title" content="RiotGear">
+	<meta name="application-name" content="RiotGear">
+	<meta name="msapplication-TileColor" content="#f01e52">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="canonical" href="https://riotgear.js.org/components/behold" />
+</head>
+<body>
+<a class="menu" href="#menu">Menu</a>
+<section class="component-header">
+	<a href="../../"><img src="../../images/logo.png"></a>
+</section>
+
+<section class="main-content">
+	<main>
+		<h2 class="component-heading">
+			Behold
+		</h2>
+		<a class="view-code" href="https://github.com/RiotGear/rg-behold">View code</a>
+
+		<div class="demo-container">
+			<p style="height: 200px">
+				<rg-behold image1="riot.png" image2="riot2.png" mode="swipe"></rg-behold>
+			</p>
+		</div>
+		<div class="demo-container">
+			<h3>Use</h3>
+
+			<p>Add this to your Riot app markup</p>
+
+			<pre><code>&gt;rg-behold image1="img/first.jpg" image2="img/second.jpg" mode="swipe"&gt;&lt;/rg-behold&gt;</code></pre>
+
+			<p>There are 2 options available:</p>
+
+			<ul>
+				<li><code>image1</code> the path to the first image to display</li>
+				<li><code>image2</code> the path to the second image to compare to the first</li>
+				<li><code>mode</code> can be either <code>swipe</code> or <code>fade</code>, default to fade</li>
+			</ul>
+
+			<h3>Install</h3>
+			<pre><code class="javascript">npm install riotgear-behold --save</code></pre>
+
+			<h3>Download</h3>
+			<p>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-behold/master/dist/rg-behold.js" download>rg-behold.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-behold/master/dist/rg-behold.min.js" download>rg-behold.min.js</a><br>
+				&raquo; <a href="https://github.com/RiotGear/rg-behold/tree/master/src">rg-behold.tag</a>
+			</p>
+
+		</div>
+	</main>
+
+	<nav id="menu" class="main-nav">
+		<h3>Getting Started</h3>
+		<ul>
+			<li><a href="../../getting-started/">Install</a></li>
+		</ul>
+		<h3>Community</h3>
+		<ul>
+			<li><a href="../../contributing">Contributing</a></li>
+			<li><a href="../../forum">Forum</a></li>
+		</ul>
+		<h3>Components</h3>
+		<ul>
+			<li><a href="../alert">Alert</a></li>
+			<li><a href="../autocomplete">Autocomplete</a></li>
+			<li class="active"><a href="../behold">Behold</a></li>
+			<li><a href="../bubble">Bubble</a></li>
+			<li><a href="../context-menu">Context Menu</a></li>
+			<li><a href="../datepicker">Datepicker</a></li>
+			<li><a href="../ga">GA</a></li>
+			<li><a href="../include">Include</a></li>
+			<li><a href="../loading">Loading</a></li>
+			<li><a href="../map">Map</a></li>
+			<li><a href="../markdown">Markdown</a></li>
+			<li><a href="../modal">Modal</a></li>
+			<li><a href="../phone-sim">Phone Sim</a></li>
+			<li><a href="../placeholdit">Placeholdit</a></li>
+			<li><a href="../select">Select</a></li>
+			<li><a href="../sidemenu">Side Menu</a></li>
+			<li><a href="../tabs">Tabs</a></li>
+			<li><a href="../tags">Tags</a></li>
+			<li><a href="../timepicker">Timepicker</a></li>
+			<li><a href="../toast">Toast</a></li>
+			<li><a href="../toggle">Toggle</a></li>
+			<li><a href="../unsplash">Unsplash</a></li>
+		</ul>
+	</nav>
+
+	<footer class="site-footer">
+		<div class="site-links">
+			<a href="http://riotjs.com">Riot</a>
+		</div>
+		<span class="site-footer-credits">
+			Built in England &copy; 2015 <a href="https://twitter.com/GrumpyWizards">Grumpy Wizards</a>.
+		</span>
+	</footer>
+
+</section>
+
+<rg-ga property="UA-36978977-5"></rg-ga>
+
+<script src="https://cdn.jsdelivr.net/riot/2.2.3/riot.min.js"></script>
+<script src="../../rg.min.js"></script>
+<script>
+	riot.mount('*');
+</script>
+
+<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
