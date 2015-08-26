@@ -3,8 +3,8 @@
 <head>
 	<script>if ((window.location.host == 'riotgear.github.io' || window.location.host == 'riotgear.js.org') && window.location.protocol != 'https:') window.location.protocol = 'https:';</script>
 	<meta charset="UTF-8">
-	<title>Forum</title>
-	<meta name="description" content="Let's talk!">
+	<title>Playground</title>
+	<meta name="description" content="Play with some RiotGear!">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
@@ -29,7 +29,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.js.org/forum" />
+	<link rel="canonical" href="https://riotgear.js.org/playground" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -40,21 +40,26 @@
 <section class="main-content">
 	<main>
 		<h2>
-			Forum
+			Playground
 		</h2>
-		<a class="muut" href="https://muut.com/i/riotgear">riotgear forum</a>
-		<script src="//cdn.muut.com/1/moot.min.js"></script>
+		<div class="demo-container">
+			<div class="playground-preview"></div>
+			<div class="playground-editor">
+				<rg-code></rg-code>
+			</div>
+		</div>
 	</main>
 
 	<nav id="menu" class="main-nav">
 		<h3>Getting Started</h3>
 		<ul>
 			<li><a href="../getting-started">Install</a></li>
+			<li class="active"><a href="../playground">Playground</a></li>
 		</ul>
 		<h3>Community</h3>
 		<ul>
 			<li><a href="../contributing">Contributing</a></li>
-			<li class="active"><a href="../forum">Forum</a></li>
+			<li><a href="../forum">Forum</a></li>
 		</ul>
 		<h3>Components</h3>
 		<ul>
@@ -97,10 +102,21 @@
 
 <rg-ga property="UA-36978977-5"></rg-ga>
 
-<script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"></script>
+<script src="https://cdn.jsdelivr.net/g/riot@2.2.4(riot.min.js+compiler.min.js)"></script>
 <script src="../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('rg-code', {
+		 src: 'demo-app.tag',
+		 theme: 'monokai',
+		 mode: 'html',
+		 onchange: function (code) {
+			 try {
+				riot.compile(code)
+				riot.mount(document.querySelector('.playground-preview'), 'demo-app')
+			} catch(e) {}
+		 }
+	});
 </script>
 
 </body>
