@@ -1,7 +1,7 @@
 <demo-app>
+
   <p>
-    Welcome to the Playground! Change the code for this page in the editor
-    below and see the output instantly on the page.
+    Change the code in the editor below and see the output update instantly.
   </p>
 
   <a href="#" onclick={ open }>Side menu demo</a>
@@ -21,4 +21,5 @@
       this.sidemenu.expanded = true;
     }
   </script>
+
 </demo-app>
