@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
+
 	<meta charset="UTF-8">
 	<title>Alert</title>
 	<meta name="description" content="Notification bars are handy when you need to grab attention">
@@ -29,10 +30,6 @@
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 	<link rel="canonical" href="https://riotgear.js.org/components/alert" />
-	<script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
-	<script src="../../rg.min.js"></script>
-	<script src="app.js"></script>
-	<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -143,10 +140,15 @@
 
 <rg-ga property="UA-36978977-5"></rg-ga>
 
+<script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
+<script src="../../rg.min.js"></script>
+<script src="app.js"></script>
 <script>
 	riot.mount('*');
-	hljs.initHighlightingOnLoad();
 </script>
+
+<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>
