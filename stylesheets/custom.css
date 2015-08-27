@@ -213,9 +213,9 @@ rg-tags .tag {
   margin: 1px;
 }
 .playground-preview {
-  height: auto;
-  max-height: 500px;
-  padding-bottom: 30px;
+  height: 400px;
+  width: 100%;
+  border: 0;
   overflow: scroll;
 }
 .playground-editor {
