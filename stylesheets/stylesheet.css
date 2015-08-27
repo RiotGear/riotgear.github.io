@@ -133,7 +133,7 @@ footer {
   border: 1px solid #32709D;
   padding: 2px 5px;
   border-radius: 3px;
-  font-weight: 300;
+  font-size: 0.9rem;
 }
 @media (min-width: 42em) {
   .menu {
@@ -203,6 +203,7 @@ footer {
   margin: 2rem 0 0;
   font-weight: 400;
   opacity: 0.8;
+  font-size: 1rem;
 }
 @media (min-width: 42em) {
   .project-tagline {
