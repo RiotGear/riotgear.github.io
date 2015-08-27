@@ -94,6 +94,7 @@ footer {
  * Fork banner
  */
 .fork {
+  display: none;
   background-color: #32709D;
   position: absolute;
   right: -50px;
@@ -114,6 +115,11 @@ footer {
 .fork:active {
   background-color: #1e71ab;
   color: #fff;
+}
+@media (min-width: 42em) {
+  .fork {
+    display: inline;
+  }
 }
 /*
  * Menu button for smaller screens
