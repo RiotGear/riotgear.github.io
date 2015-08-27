@@ -125,7 +125,7 @@ footer {
  */
 .menu, .menu:hover, .menu:active {
   position: absolute;
-  top: 1rem;
+  top: 1.3rem;
   right: 1rem;
   text-decoration: none;
   text-transform: uppercase;
