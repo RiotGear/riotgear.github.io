@@ -71,10 +71,10 @@
 			<h2>API</h2>
 
 			<p>
-				After adding the router your tag will have access to the `router` via `this.router`.
+				After adding the router your tag will have access to it via <code>this.router</code>.
 			</p>
 
-			<h3>.add()</h3>
+			<h2>.add()</h2>
 
 			<p>
 				You can add states at any point in time, on mount, on update, on click, on resolve of a promise...whenever.
@@ -90,10 +90,10 @@
 })</code></pre>
 
 			<ul>
-				<li><code>name</code> is required, is the name of the state and the identifier to use when calling [go()](#go)</li>
+				<li><code>name</code> is required, is the name of the state and the identifier to use when calling <code>go()</code></li>
 				<li><code>url</code> is optional. It will update the browser URL on state change</li>
-				<li><code>history</code> is optional. Set it to `false` to prevent the state from being added to your browser history</li>
-				<li><code>resolve</code> is optional. The router will wait for `.then()` on the resolve function before going to the next state</li>
+				<li><code>history</code> is optional. Set it to <code>false</code> to prevent the state from being added to your browser history</li>
+				<li><code>resolve</code> is optional. The router will wait for <code>.then()</code> on the resolve function before going to the next state</li>
 			</ul>
 
 			<p>
@@ -103,7 +103,7 @@
 				States names need to be unique. You can add a state with the same name but it will overwrite the state stored by the router.
 			</p>
 
-			<h2>inherit.state.date</h2>
+			<h2>inherit.state.data</h2>
 
 			<p>
 				You can add whatever you want to a state and get access to it via <code>this.router.current</code> from within your tag, for example:
@@ -136,7 +136,7 @@
 				promise to resolve then the child will wait too. You can overwrite this by setting resolve to null on the child.
 			</p>
 
-			<h3>.remove()</h3>
+			<h2>.remove()</h2>
 
 			<pre><code class="javascript">this.router.remove('about')</code></pre>
 
@@ -144,7 +144,7 @@
 				Just as with adding, you can remove states whenever you want in the lifecycle of your application.
 			</p>
 
-			<h3>.go()</h3>
+			<h2>.go()</h2>
 
 			<pre><code class="javascript">this.router.go('about')</code></pre>
 
@@ -164,7 +164,7 @@
 				<strong>Calling <code>go()</code> will trigger an update on any tag the router is on via the mixin</strong>
 			</p>
 
-			<h3>.stop()</h3>
+			<h2>.stop()</h2>
 
 			<pre><code class="javascript">this.router.stop()</code></pre>
 
@@ -172,7 +172,7 @@
 				If you want to stop the router and switch to use a different one this function will remove the event listeners and set <code>active</code> to false.
 			</p>
 
-			<h3>.start()</h3>
+			<h2>.start()</h2>
 
 			<pre><code class="javascript">this.router.start()</code></pre>
 
@@ -182,7 +182,7 @@
 				Refreshing the browser will only return you to a state that has a URL. URL-less states can't be refreshed.
 			</p>
 
-			<h3>.active</h3>
+			<h2>.active</h2>
 
 			<pre><code class="javascript">this.router.active</code></pre>
 
@@ -190,7 +190,7 @@
 				Check to see if the router is running or whether it has been stopped.
 			</p>
 
-			<h3>.current</h3>
+			<h2>.current</h2>
 
 			<pre><code class="javascript">this.router.current</code></pre>
 
@@ -198,7 +198,7 @@
 				Current state the router is in. This will contain everything specified on the state as part of the <code>add()</code> function.
 			</p>
 
-			<h3>.on('add remove go start stop')</h3>
+			<h2>.on('add remove go start stop')</h2>
 
 			<pre><code class="javascript">this.router.on('add', state = > console.log(state))
 this.router.on('remove', state = > console.log(state))
