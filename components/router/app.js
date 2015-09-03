@@ -17,7 +17,7 @@ riot.tag('demo-app', '<p><a onclick="{ open }">Open the modal and watch the URL 
   };
 
   this.modal = {
-    heading: 'Router example',
+    heading: 'Router demo',
     ghost: true,
     close: true,
     onclose: function() {
