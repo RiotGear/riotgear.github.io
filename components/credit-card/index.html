@@ -3,9 +3,9 @@
 <head>
 
 	<meta charset="UTF-8">
-	<title>Side Menu</title>
+	<title>Credit Card</title>
+	<meta name="description" content="Validates Credit Card Numbers">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Classic off-canvas slide in side menu, useful for navigation">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
@@ -29,7 +29,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.js.org/components/sidemenu" />
+	<link rel="canonical" href="https://riotgear.js.org/components/credit-card" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -40,43 +40,83 @@
 <section class="main-content">
 	<main>
 		<h1 class="component-heading">
-			Side Menu
+			Credit Card
 		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg-sidemenu">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg-credit-card">View code</a>
 
 		<div class="demo-container">
-
-			<demo-app></demo-app>
-
+			<p>
+				<rg-credit-card cardno="4000 0000 0000 0002"></rg-credit-card>
+			</p>
+			<p>
+				Try these:
+				<ul>
+					<li><code>378734493671000</code></li>
+					<li><code>6011000990139424</code></li>
+					<li><code>3566002020360505</code></li>
+					<li><code>5105105105105100</code></li>
+				</ul>
+			</p>
+		</div>
+		<div class="demo-container">
 			<h2>Use</h2>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-sidemenu sidemenu="{ sidemenu }"&gt;&lt;/rg-sidemenu&gt;</code></pre>
+			<pre><code>&lt;rg-credit-card cardno="4000 0000 0000 0002"&gt;&lt;/rg-credit-card&gt;</code></pre>
 
-			<p>and this to your JavaScript</p>
+			<p>
+				The control will produce a textbox that validates the card number
+				(spaces are removed automatically) and if valid will turn the border
+				green and apply a card CSS class name.
+			</p>
 
-			<pre><code class="javascript">this.sidemenu = {
-  header: 'Side Menu',
-  expanded: false,
-  items: [
-    { text: 'Item 1', action: function () {} },
-    { text: 'Item 2', action: function () {} }
-  ]
-};</code></pre>
+			<p>
+				The following card types (CSS classes) are supported:
+			</p>
 
-			<p>To make the menu slide in and out toggle the expanded property</p>
+			<ul>
+				<li><code>amex</code></li>
+				<li><code>diners_club_carte_blanche</code></li>
+				<li><code>diners_club_international</code></li>
+				<li><code>mastercard</code></li>
+				<li><code>discover</code></li>
+				<li><code>jcb</code></li>
+				<li><code>laser</code></li>
+				<li><code>maestro</code></li>
+				<li><code>visa</code></li>
+				<li><code>visa_electron</code></li>
+			</ul>
 
-			<pre><code class="javascript">this.sidemenu.expanded = true|false;</code></pre>
+			<p>
+				To display a card icon add a class with a background image for each of
+				the supported card types. Check out of the <a href="https://github.com/RiotGear/rg-credit-card/blob/master/src/rg-credit-card.tag#L49">repo code</a>
+				for more info.
+			</p>
+
+			<h2>API</h2>
+
+			<p>
+				To use the validator either call it directly:
+			</p>
+
+			<pre><code class="javascript">rg.creditcard.validate('4000 0000 0000 0002')</code></pre>
+
+			<p>
+				Or use the mixin:
+			</p>
+
+			<pre><code class="javascript">this.mixin('rg.creditcard')
+this.creditcard.validate('4000 0000 0000 0002')</code></pre>
 
 			<h2>Install</h2>
-			<pre><code class="javascript">npm install riotgear-sidemenu --save</code></pre>
+			<pre><code class="javascript">npm install riotgear-credit-card --save</code></pre>
 
 			<h2>Download</h2>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-sidemenu/master/dist/rg-sidemenu.js" download>rg-sidemenu.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-sidemenu/master/dist/rg-sidemenu.min.js" download>rg-sidemenu.min.js</a><br>
-				&raquo; <a href="https://github.com/RiotGear/rg-sidemenu/tree/master/src">rg-sidemenu.tag</a>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-credit-card/master/dist/rg-credit-card.js" download>rg-credit-card.js</a><br>
+				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-credit-card/master/dist/rg-credit-card.min.js" download>rg-credit-card.min.js</a><br>
+				&raquo; <a href="https://github.com/RiotGear/rg-credit-card/tree/master/src">rg-credit-card.tag</a>
 			</p>
 
 		</div>
@@ -104,7 +144,7 @@
 			<li><a href="../bubble">Bubble</a></li>
 			<li><a href="../code">Code</a></li>
 			<li><a href="../context-menu">Context Menu</a></li>
-			<li><a href="../credit-card">Credit Card</a></li>
+			<li class="active"><a href="../credit-card">Credit Card</a></li>
 			<li><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
@@ -115,7 +155,7 @@
 			<li><a href="../phone-sim">Phone Sim</a></li>
 			<li><a href="../placeholdit">Placeholdit</a></li>
 			<li><a href="../select">Select</a></li>
-			<li class="active"><a href="../sidemenu">Side Menu</a></li>
+			<li><a href="../sidemenu">Side Menu</a></li>
 			<li><a href="../tabs">Tabs</a></li>
 			<li><a href="../tags">Tags</a></li>
 			<li><a href="../timepicker">Timepicker</a></li>
@@ -140,8 +180,7 @@
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
-<script src="app.js"></script>
-<script src="../../rg.js"></script>
+<script src="../../rg.min.js"></script>
 <script>
 	riot.mount('*');
 </script>
