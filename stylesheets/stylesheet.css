@@ -387,7 +387,7 @@ main {
 
 .badge {
   color: white;
-  padding: 1px 6px 0 6px;
+  padding: 0 6px;
   background-color: #F01E52;
   display: inline-block;
   border-radius: 3px;
@@ -400,6 +400,9 @@ main {
   display: inline-block;
   text-transform: uppercase;
   font-size: 0.8em;
+}
+h3 .badge {
+  padding: 0 6px 1px 6px;
 }
 li .badge, li .badge-inverse {
   margin-left: 8px;
