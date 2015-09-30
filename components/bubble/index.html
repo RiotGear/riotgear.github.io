@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-
 	<meta charset="UTF-8">
 	<title>Bubble</title>
 	<meta name="description" content="Bubble sounds better than tooltip!">
@@ -10,8 +9,6 @@
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
-
-
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -42,11 +39,11 @@
 		<h1 class="component-heading">
 			Bubble
 		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg-bubble">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
 			<p>
-				<rg-bubble text="Bubble sounds better than tooltip!!">Hover over this sentence to see a tooltip bubble appear</rg-bubble>
+				<rg-bubble content="<strong>Bubble</strong> sounds better than <em>tooltip!!</em>">Hover over this sentence to see a tooltip bubble appear</rg-bubble>
 			</p>
 		</div>
 		<div class="demo-container">
@@ -54,18 +51,12 @@
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-bubble text="I go pop!"&gt;hover over me&lt;/rg-bubble&gt;</code></pre>
+			<pre><code>&lt;rg-bubble content="I go pop!"&gt;hover over me&lt;/rg-bubble&gt;</code></pre>
 
 			<p>The tooltip pops up on hover. Once the mouse leaves, it disappears after 1 second.</p>
 
-			<h2>Install</h2>
-			<pre><code class="javascript">npm install riotgear-bubble --save</code></pre>
-
-			<h2>Download</h2>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-bubble/master/dist/rg-bubble.js" download>rg-bubble.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-bubble/master/dist/rg-bubble.min.js" download>rg-bubble.min.js</a><br>
-				&raquo; <a href="https://github.com/RiotGear/rg-bubble/tree/master/src">rg-bubble.tag</a>
+				<span class="badge">v2</span> <code>text</code> has been replaced with <code>content</code> and now supports HTML.
 			</p>
 
 		</div>
@@ -75,7 +66,7 @@
 		<h2>Getting Started</h2>
 		<ul>
 			<li><a href="../../getting-started/">Install</a></li>
-<li><a href="../../playground/">Playground</a></li>
+			<li><a href="../../playground/">Playground</a></li>
 		</ul>
 		<h2>Community</h2>
 		<ul>

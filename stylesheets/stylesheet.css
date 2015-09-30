@@ -1,6 +1,7 @@
 /*
  * Basics
  */
+
 * {
   box-sizing: border-box;
 }
@@ -29,7 +30,7 @@ a:active {
 ul {
   list-style: none;
   padding: 0;
-	margin-top: 0;
+  margin-top: 0;
 }
 ol {
   margin-top: 0;
@@ -40,8 +41,8 @@ img {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
-	color: #000;
-	font-weight: 400;
+  color: #000;
+  font-weight: 400;
 }
 p {
   margin-bottom: 1em;
@@ -56,29 +57,29 @@ code {
 pre {
   padding: 0.8rem;
   margin-top: 0;
-	margin-bottom: 2rem;
+  margin-bottom: 2rem;
   color: #567482;
   word-wrap: normal;
   background-color: #f3f6fa;
   border: solid 1px #dce6f0;
-	overflow: auto;
-	line-height: 1.45;
-	word-break: normal;
+  overflow: auto;
+  line-height: 1.45;
+  word-break: normal;
 }
 pre code {
-	display: inline;
+  display: inline;
   padding: 0;
-	max-width: none;
+  max-width: none;
   color: #567482;
   word-break: normal;
   white-space: pre;
-	word-wrap: normal;
+  word-wrap: normal;
   background: transparent;
   border: 0;
   overflow: auto;
   line-height: inherit;
 }
-pre code:before, pre code:after{
+pre code:before, pre code:after {
   content: normal;
 }
 pre code.hljs {
@@ -90,9 +91,14 @@ footer {
 .text-center {
   text-align: center;
 }
+.no-overflow {
+  overflow: hidden;
+}
+
 /*
  * Fork banner
  */
+
 .fork {
   display: none;
   background-color: #32709D;
@@ -105,7 +111,7 @@ footer {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .fork:hover {
@@ -121,10 +127,12 @@ footer {
     display: inline;
   }
 }
+
 /*
  * Menu button for smaller screens
  */
-.menu, .menu:hover, .menu:active {
+
+a.menu, a.menu:hover, a.menu:active {
   position: absolute;
   top: 1.3rem;
   right: 1rem;
@@ -140,24 +148,26 @@ footer {
     display: none;
   }
 }
+
 /*
  * Page Header
  */
+
 .page-header {
   text-align: center;
   border-bottom: 1px solid #ddd;
-	padding: 2rem 0;
+  padding: 2rem 0;
 }
 .page-header img {
-	width: 100px;
+  width: 100px;
 }
 .page-header a:hover, .page-header a:active {
   text-decoration: underline;
 }
 @media (min-width: 42em) {
-	.page-header {
-		padding: 3rem 4rem;
-	}
+  .page-header {
+    padding: 3rem 4rem;
+  }
   .page-header img {
     width: auto;
   }
@@ -167,16 +177,18 @@ footer {
     padding: 3rem 6rem;
   }
 }
+
 /*
  * Project Name
  */
+
 .project-name {
   text-transform: uppercase;
   margin-top: 20px;
-	margin-bottom: 0.1rem;
-	font-size: 2.1rem;
+  margin-bottom: 0.1rem;
+  font-size: 2.1rem;
   font-weight: 400;
-	letter-spacing: 8px;
+  letter-spacing: 8px;
 }
 .project-name span {
   color: #fff;
@@ -196,9 +208,11 @@ footer {
     font-size: 3.25rem;
   }
 }
+
 /*
  * Project Tagline
  */
+
 .project-tagline {
   margin: 2rem 0 0;
   font-weight: 400;
@@ -215,6 +229,7 @@ footer {
     font-size: 1.25rem;
   }
 }
+
 /*
  * Project Version
  */
@@ -223,9 +238,11 @@ footer {
   font-size: 0.9rem;
   font-weight: normal;
 }
+
 /*
  * Hero Button
  */
+
 a.hero-button, a.hero-button:hover {
   display: inline-block;
   background-color: #32709d;
@@ -242,13 +259,15 @@ a.hero-button:active {
   background-color: #5da5d8;
   text-decoration: none;
 }
+
 /*
  * Land Hand Links
  */
+
 nav {
   float: left;
   width: 100%;
-	font-size: 1rem;
+  font-size: 1rem;
 }
 nav li {
   margin-bottom: 5px;
@@ -265,9 +284,11 @@ nav li {
     width: 25%;
   }
 }
+
 /*
  * Main
  */
+
 main {
   width: 100%;
   float: right;
@@ -278,8 +299,8 @@ main {
   }
 }
 .main-content {
-	padding: 2rem 1rem;
-	font-size: 1rem;
+  padding: 2rem 1rem;
+  font-size: 1rem;
 }
 @media (min-width: 42em) {
   .main-content {
@@ -294,9 +315,11 @@ main {
     margin: 0 auto;
   }
 }
+
 /*
  * Component Header
  */
+
 .component-header {
   padding: 0.5rem 0.25rem 0.25rem;
   text-align: center;
@@ -305,34 +328,42 @@ main {
 .component-header img {
   width: 50px;
 }
+
 /*
  * Component Heading
  */
+
 .component-heading {
   float: left;
 }
+
 /*
  * View Code Link
  */
+
 .view-code {
   float: right;
   margin: 1.5rem 0 1rem 0;
 }
+
 /*
  * Demo Page Sections
  */
+
 .demo-container {
   position: relative;
   clear: both;
 }
+
 /*
  * Footer
  */
+
 .site-footer {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: solid 1px #eff0f1;
-	font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 .site-footer-owner {
   display: block;
@@ -349,15 +380,16 @@ main {
   margin-left: 20px;
   color: #404040;
 }
+
 /*
  * Nav link badge
  */
+
 .badge {
   color: white;
   padding: 1px 6px 0 6px;
   background-color: #F01E52;
   display: inline-block;
-  margin-left: 8px;
   border-radius: 3px;
   line-height: 20px;
   text-transform: uppercase;
@@ -366,13 +398,17 @@ main {
 .badge-inverse {
   color: #F01E52;
   display: inline-block;
-  margin-left: 8px;
   text-transform: uppercase;
   font-size: 0.8em;
 }
+li .badge, li .badge-inverse {
+  margin-left: 8px;
+}
+
 /*
  * Playground
  */
+
 .playground-preview {
   height: 400px;
   width: 100%;
@@ -388,9 +424,11 @@ main {
 .playground-editor rg-code .editor {
   font-size: 14px;
 }
+
 /*
  * Overrides
  */
+
 rg-map {
   display: block;
   height: 600px;

@@ -4,27 +4,16 @@
 
 	<p>Add this to your Riot app markup</p>
 
-	<pre><code>&lt;rg-include src="include_this.html" async="false" unsafe="true"&gt;&lt;/rg-include&gt;</code></pre>
+	<pre><code class="html">&lt;rg-include src="include_this.html" async="false" unsafe="true"&gt;&lt;/rg-include&gt;</code></pre>
 
 	<p>The component will then request the file at the specified <code>src</code> path and insert the contents into the page.</p>
 
 	<p><em>Psst. The contents of this page is being inserted via rg-include. Take a look at the source ;-)</em></p>
 
-	<p>There are 3 options available.</p>
+	<p>There are 2 options available.</p>
 
 	<ul>
 		<li><code>src</code> the path to the file you want to include. This is required.</li>
-		<li><code>async</code> by default rg-include will fetch files asynchronously, but you can override this by specifying false.</li>
 		<li><code>unsafe</code> to render HTML as HTML rather than the escaped set this to true. By default it is turned off.</li>
 	</ul>
-
-	<h2>Install</h2>
-	<pre><code class="javascript">npm install riotgear-include --save</code></pre>
-
-	<h2>Download</h2>
-	<p>
-		&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-include/master/dist/rg-include.js" download>rg-include.js</a><br>
-		&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-include/master/dist/rg-include.min.js" download>rg-include.min.js</a><br>
-		&raquo; <a href="https://github.com/RiotGear/rg-include/tree/master/src">rg-include.tag</a>
-	</p>
 </div>

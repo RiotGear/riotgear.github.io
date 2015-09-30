@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-
 	<meta charset="UTF-8">
 	<title>Autocomplete</title>
 	<meta name="description" content="Notification bars are handy when you need to grab attention">
@@ -10,8 +9,6 @@
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
-
-
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -42,23 +39,33 @@
 		<h1 class="component-heading">
 			Autocomplete
 		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg-autocomplete">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
-			<rg-autocomplete type="text" placeholder="Enter a country name"></rg-autocomplete>
+			<rg-select></rg-select>
 
 			<h2>Use</h2>
 
+			<p>
+				<span class="badge">v2</span> rg-autocomplete doesn't exist anymore, it
+				has been replaced with rg-select.
+			</p>
+			<p>
+				To turn an rg-select into an autocomplete simply set the
+				<code>autocomplete</code> attribute to true.
+			</p>
+
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-autocomplete items="{ countries }"
-                 type="text"
-                 value="United Kingdom"
-                 placeholder="Enter a country name"
-                 onselect="{ ... }"
-                 onclose="{ ... }"
-                 onfilter="{ ... }"&gt;
-&lt;/rg-autocomplete&gt;</code></pre>
+			<pre><code class="html">&lt;rg-select autocomplete="true"
+           options="{ countries }"
+           type="text"
+           value="United Kingdom"
+           placeholder="Enter a country name"
+           onselect="{ ... }"
+           onclose="{ ... }"
+           onfilter="{ ... }"&gt;
+&lt;/rg-select&gt;</code></pre>
 
 			<p>and add this to your JavaScript</p>
 
@@ -81,16 +88,6 @@
 				<li><code>onfilter</code> fires everytime something is entered into the text box or when the box gains focus</li>
 			</ul>
 
-			<h2>Install</h2>
-			<pre><code class="javascript">npm install riotgear-autocomplete --save</code></pre>
-
-			<h2>Download</h2>
-			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-autocomplete/master/dist/rg-autocomplete.js" download>rg-autocomplete.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-autocomplete/master/dist/rg-autocomplete.min.js" download>rg-autocomplete.min.js</a><br>
-				&raquo; <a href="https://github.com/RiotGear/rg-autocomplete/tree/master/src">rg-autocomplete.tag</a>
-			</p>
-
 		</div>
 	</main>
 
@@ -98,7 +95,7 @@
 		<h2>Getting Started</h2>
 		<ul>
 			<li><a href="../../getting-started/">Install</a></li>
-<li><a href="../../playground/">Playground</a></li>
+			<li><a href="../../playground/">Playground</a></li>
 		</ul>
 		<h2>Community</h2>
 		<ul>
@@ -152,16 +149,22 @@
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
-<script src="../../rg.js"></script>
+<script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*', {
-		items: [{
+	riot.mount('rg-select', {
+		autocomplete: true,
+		placeholder: 'Enter a country name',
+		options: [{
+			id: 0,
 			text: 'England'
 		}, {
+			id: 1,
 			text: 'Scotland'
 		}, {
+			id: 2,
 			text: 'Wales'
 		}, {
+			id: 3,
 			text: 'Ireland'
 		}]
 	});

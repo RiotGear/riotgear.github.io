@@ -6,26 +6,29 @@
 
   <a href="#" onclick={ open }>&laquo; Open side menu &raquo;</a>
 
-  <rg-sidemenu sidemenu="{ sidemenu }"></rg-sidemenu>
+  <rg-sidemenu header="Playground" items="{ items }" visible="{ visible }"></rg-sidemenu>
 
   <script>
-    this.sidemenu = {
-      header: 'Playground',
-      items: [
-        { text: 'Item 1', action: function () {} },
-        { text: 'Item 2', action: function () {} }
-      ]
-    }
+    this.items = [{
+      text: 'Item 1',
+      action: function() {}
+    }, {
+      text: 'Item 2',
+      action: function() {}
+    }]
 
     open() {
-      this.sidemenu.expanded = true
+      this.visible = true
+      this.update()
     }
+
   </script>
 
   <style scoped>
     a {
       font-weight: bold;
     }
+
   </style>
 
 </demo-app>

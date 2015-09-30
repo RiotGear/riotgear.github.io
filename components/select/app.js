@@ -1,4 +1,4 @@
-riot.tag('demo-app', '<rg-select placeholder="Please select a card" filter-placeholder="Filter cards" filter-on="text" onopen="{ opened }" onclose="{ closed }" onfilter="{ filtered }" onselect="{ selected }" options="{ cards }"> </rg-select>', function(opts) {
+riot.tag('demo-app', '<rg-select filter="true" placeholder="Please select a card" filter-placeholder="Filter cards" filter-on="text" onopen="{ opened }" onclose="{ closed }" onfilter="{ filtered }" onselect="{ selected }" options="{ cards }"> </rg-select>', function(opts) {
 
 		var _this = this;
 
@@ -32,5 +32,5 @@ riot.tag('demo-app', '<rg-select placeholder="Please select a card" filter-place
 			console.log(item);
 		};
 
-	
+
 });

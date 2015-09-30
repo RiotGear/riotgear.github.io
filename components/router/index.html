@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-
 	<meta charset="UTF-8">
 	<title>Router</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +9,6 @@
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
-
-
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -42,7 +39,7 @@
 		<h1 class="component-heading">
 			Router
 		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg-router">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 		<div class="demo-container">
 			<p>
 				RiotGear Router provides Riot apps with state based routes and URL management via the HTML History API.
@@ -88,6 +85,12 @@
 
 			<pre><code class="javascript">rg.router.add().start().go()</code></pre>
 
+			<h2>To #! or to not #!</h2>
+
+			<p>
+				By default the router uses <code>#!</code>, however you can change this easily by setting <code>rg.router.hash</code> to some other value.
+			</p>
+
 			<h2>.add()</h2>
 
 			<p>
@@ -115,6 +118,51 @@
 			</p>
 			<p>
 				States names need to be unique. You can add a state with the same name but it will overwrite the state stored by the router.
+			</p>
+
+			<h2>/:state/:parameters</h2>
+
+			<p>
+				You can use template patterns like this:
+			</p>
+
+			<pre><code class="javascript">rg.router.add({
+  name: 'rest',
+  url: '/:collection/:id/:action'
+})</code></pre>
+
+			<p>
+				When the router starts it matches the URL with a state.
+			</p>
+
+			<p>
+				<code>/users/470129/edit</code> will match against <code>'/:collection/:id/:action'</code>
+			</p>
+
+			<p>
+				If successful the router will create a params object on the state and copy the values across which you can gain access to via the go event.
+			</p>
+
+			<p>
+				e.g.
+			</p>
+
+			<pre><code class="javascript">this.router.on('go', state = > {
+  state.params.collection // users
+  state.params.id         // 470129
+  state.params.edit       // edit
+})</code></pre>
+
+			<p>
+				The template can be anything you'd like, for instance <code>/about/:page</code> or <code>/alerts/:type/viewable</code>.
+			</p>
+
+			<p>
+				A parameter is prefixed with <code>:</code>
+			</p>
+
+			<p>
+				When you call <code>go()</code> you can pass the state a params object that the router uses to construct the URL.
 			</p>
 
 			<h2>inherit.state.data</h2>
@@ -160,7 +208,7 @@
 
 			<h2>.go()</h2>
 
-			<pre><code class="javascript">this.router.go('about')</code></pre>
+			<pre><code class="javascript">this.router.go('users', params)</code></pre>
 
 			<p>
 				Call <code>go()</code> if you want to change state. Calling go will update the current state, and if a URL is specified will update the URL on the browser.
@@ -176,6 +224,10 @@
 
 			<p>
 				<strong>Calling <code>go()</code> will trigger an update on any tag the router is on via the mixin</strong>
+			</p>
+
+			<p>
+				The router will update the URL based on the template URL on the state and the structure of the params object.
 			</p>
 
 			<h2>.stop()</h2>
@@ -293,6 +345,7 @@ this.router.on('stop')</code></pre>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
+<script src="../../rg-router.min.js"></script>
 <script src="app.js"></script>
 <script>
 	riot.mount('*');

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-
 	<meta charset="UTF-8">
 	<title>Context Menu</title>
 	<meta name="description" content="Right click menu">
@@ -10,8 +9,6 @@
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
-
-
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -42,7 +39,7 @@
 		<h1 class="component-heading">
 			Context Menu
 		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg-context-menu">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
 			<p>Right click anywhere on this page to see the menu appear.</p>
@@ -51,41 +48,45 @@
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-context-menu id="myMenu" menu="{ menu }"&gt;&lt;/rg-context-menu&gt;</code></pre>
+			<pre><code class="html">&lt;rg-context-menu id="myMenu"
+                 onopen="{ onopen }"
+                 onclose="{ onclose }"
+                 items="{ items }"&gt;
+&lt;/rg-context-menu&gt;</code></pre>
 
 			<p>Then assign the context menu to the elements you would like to by using <code>rg-context-menu</code></p>
 
-			<pre><code>&lt;div rg-context-menu="myMenu"&gt;
+			<pre><code class="html">&lt;div rg-context-menu="myMenu"&gt;
   ... your page content ...
 &lt;/div&gt;</code></pre>
 
 			<p>To populate the menu pass these options</p>
 
-			<pre><code class="javascript">this.menu = {
-  onopen: function (e) {
-    console.log('Menu opened');
-    console.log(e);
-  },
-  onclose: function (e) {
-    console.log('Menu closed');
-    console.log(e);
-  },
-  items: [{
-    content: '&lt;strong&gt;View source&lt;/strong&gt',
-    onselect: itemSelected
-  }, {
-    text: 'Save as...',
-    inactive: true,
-    onselect: itemSelected
-  }, {
-    text: 'Reload',
-    onselect: itemSelected
-  }]
-}</code></pre>
+			<pre><code class="javascript">this.onopen = function (e) {
+  console.log('Menu opened');
+  console.log(e);
+}
+
+this.onclose = function (e) {
+  console.log('Menu closed');
+  console.log(e);
+}
+
+this.items = [{
+  content: '&lt;strong&gt;View source&lt;/strong&gt',
+  onselect: itemSelected
+}, {
+  content: 'Save as...',
+  inactive: true,
+  onselect: itemSelected
+}, {
+  content: 'Reload',
+  onselect: itemSelected
+}]</code></pre>
 
 			<p>You can also use the <code>rg-context-menu-item</code> child tag</p>
 
-			<pre><code>&lt;rg-context-menu id="myMenu" menu="{ menu }">
+			<pre><code>&lt;rg-context-menu id="myMenu">
   &lt;rg-context-menu-item onselect="{ parent.itemSelected }" inactive="false"&gt;
     &lt;strong&gt;View source&lt;/strong&gt;
   &lt;/rg-context-menu-item&gt;
@@ -99,20 +100,12 @@
 				<li><code>onclose</code> is the array of items to display in the popup list</li>
 				<li><code>items</code> is the HTML content of the item</li>
 				<li><code>items.content</code> is the HTML content of the item</li>
-				<li><code>items.text</code> plain text content of the item, if specified the
-					tag will ignore <code>content</code> and use <code>text</code></li>
 				<li><code>items.inactive</code> set a inactive class and prevents events</li>
 				<li><code>items.onselect</code> fires when an item is clicked on. The menu will also automatically close.</li>
 			</ul>
 
-			<h2>Install</h2>
-			<pre><code class="javascript">npm install riotgear-context-menu --save</code></pre>
-
-			<h2>Download</h2>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-context-menu/master/dist/rg-context-menu.js" download>rg-context-menu.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-context-menu/master/dist/rg-context-menu.min.js" download>rg-context-menu.min.js</a><br>
-				&raquo; <a href="https://github.com/RiotGear/rg-context-menu/tree/master/src">rg-context-menu.tag</a>
+				<span class="badge">v2</span> <code>item.text</code> has been removed in favour of <code>item.content</code>
 			</p>
 		</div>
 	</main>
@@ -121,7 +114,7 @@
 		<h2>Getting Started</h2>
 		<ul>
 			<li><a href="../../getting-started/">Install</a></li>
-<li><a href="../../playground/">Playground</a></li>
+			<li><a href="../../playground/">Playground</a></li>
 		</ul>
 		<h2>Community</h2>
 		<ul>
@@ -176,48 +169,46 @@
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
-<script src="../../rg.js"></script>
+<script src="../../rg.min.js"></script>
 <script>
 	riot.mount('*', {
-		menu: {
-			onopen: function (e) {
-				console.log('Menu opened');
-				console.log(e);
-			},
-			onclose: function (e) {
-				console.log('Menu closed');
-				console.log(e);
-			},
-			items: [{
-				content: '&lsaquo; Back',
-				onselect: function () {
-					history.back();
-				}
-			}, {
-				content: '&rsaquo; Forward',
-				onselect: function () {
-					history.forward();
-				}
-			}, {
-				content: '&#8635; Reload without cache',
-				onselect: function () {
-					document.location.reload(true);
-				}
-			}, {
-				text: 'Save as...',
-				inactive: true
-			}, {
-				text: 'Print...',
-				onselect: function () {
-					print();
-				}
-			}, {
-				content: '<strong>View source</strong>',
-				onselect: function () {
-					window.open('view-source:' + window.location);
-				}
-			}]
-		}
+		onopen: function (e) {
+			console.log('Menu opened');
+			console.log(e);
+		},
+		onclose: function (e) {
+			console.log('Menu closed');
+			console.log(e);
+		},
+		items: [{
+			content: '&lsaquo; Back',
+			onselect: function () {
+				history.back();
+			}
+		}, {
+			content: '&rsaquo; Forward',
+			onselect: function () {
+				history.forward();
+			}
+		}, {
+			content: '&#8635; Reload without cache',
+			onselect: function () {
+				document.location.reload(true);
+			}
+		}, {
+			content: 'Save as...',
+			inactive: true
+		}, {
+			content: 'Print...',
+			onselect: function () {
+				print();
+			}
+		}, {
+			content: '<strong>View source</strong>',
+			onselect: function () {
+				window.open('view-source:' + window.location);
+			}
+		}]
 	});
 </script>
 

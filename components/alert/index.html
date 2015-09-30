@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-
 	<meta charset="UTF-8">
 	<title>Alert</title>
 	<meta name="description" content="Notification bars are handy when you need to grab attention">
@@ -10,8 +9,6 @@
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
 	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
-
-
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
@@ -42,22 +39,22 @@
 		<h1 class="component-heading">
 			Alert
 		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg-alert">View code</a>
+		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
-			<demo-app></demo-app>
+			<rg-alert></rg-alert>
 
 			<h2>Use</h2>
 
 			<p>Add this to your Riot app markup</p>
 
-			<pre><code>&lt;rg-alert alerts="{ alerts }"&gt;&lt;/rg-alert&gt;</code></pre>
+			<pre><code class="html">&lt;rg-alert alerts="{ alerts }"&gt;&lt;/rg-alert&gt;</code></pre>
 
 			<p>and add this to your JavaScript</p>
 
 			<pre><code class="javascript">this.alerts = [{
   type: 'danger',
-  msg: 'Danger! Something bad happened.',
+  content: 'Danger! Something bad happened.',
   timeout: 6000,
   dismissable: true,
   onclick: function (e) {},
@@ -68,21 +65,15 @@
 
 			<ul>
 				<li><code>type</code> is the styling it applies to the alert itself</li>
-				<li><code>msg</code> is the text you'd like to appear in the alert</li>
+				<li><code>content</code> is the HTML content you'd like to appear in the alert</li>
 				<li><code>timeout</code> amount in ms the alert should be visible</li>
 				<li><code>onclick</code> fires when the alert is clicked on</li>
 				<li><code>onclose</code> fires when the alert disappears from the screen</li>
 				<li><code>dismissable</code> toggles the close button</li>
 			</ul>
 
-			<h2>Install</h2>
-			<pre><code class="javascript">npm install riotgear-alert --save</code></pre>
-
-			<h2>Download</h2>
 			<p>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-alert/master/dist/rg-alert.js" download>rg-alert.js</a><br>
-				&raquo; <a href="https://raw.githubusercontent.com/RiotGear/rg-alert/master/dist/rg-alert.min.js" download>rg-alert.min.js</a><br>
-				&raquo; <a href="https://github.com/RiotGear/rg-alert/tree/master/src">rg-alert.tag</a>
+				<span class="badge">v2</span> <code>text</code> has been replaced with <code>content</code> and now supports HTML.
 			</p>
 
 		</div>
@@ -149,7 +140,62 @@
 <script src="../../rg.min.js"></script>
 <script src="app.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		alerts: [{
+			type: 'danger',
+			content: 'Danger! Something bad happened.',
+			onclick: function () {
+				console.log('Danger clicked');
+			},
+			onclose: function () {
+				console.log('Danger closed');
+			}
+		}, {
+			type: 'success',
+			content: '<strong>Success!</strong> You read this important alert message.',
+			onclick: function () {
+				console.log('Success clicked');
+			},
+			onclose: function () {
+				console.log('Success closed');
+			}
+		}, {
+			type: 'warning',
+			content: 'Warning! Something might go <em>wrong</em>.',
+			onclick: function () {
+				console.log('Warning clicked');
+			},
+			onclose: function () {
+				console.log('Warning closed');
+			}
+		}, {
+			type: 'information',
+			content: 'Information. Just so you know....',
+			onclick: function () {
+				console.log('Information clicked');
+			},
+			onclose: function () {
+				console.log('Information closed');
+			}
+		}, {
+			type: 'warning',
+			dismissable: false,
+			content: 'You can not dismiss this alert',
+			onclick: function () {
+				console.log('Dismissable clicked');
+			}
+		}, {
+			type: 'success',
+			timeout: 8000,
+			content: 'Well done! This will disappear automatically...',
+			onclick: function () {
+				console.log('Well done clicked');
+			},
+			onclose: function () {
+				console.log('Well done closed');
+			}
+		}]
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
