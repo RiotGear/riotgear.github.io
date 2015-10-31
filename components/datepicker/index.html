@@ -48,44 +48,66 @@
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code class="html">&lt;rg-date date="2015-07-18"
-         format="LL"
-         year-format="YYYY"
-         month-format="MMMM"
-         week-format="ddd"
-         day-format="DD"
-         months="false"
-         years="false"
-         today="false"
-         onopen="{ opened }"
-         onclose="{ closed }"
-         onselect="{ selected }"&gt;
-&lt;/rg-date&gt;</code></pre>
+			<pre><code class="html">&lt;rg-date date="{ date }">&lt;/rg-date&gt;</code></pre>
 
-			<p>
-				<span class="badge">v2</span> <code>rg-datepicker</code> has been replaced with <code>rg-date</code> and now has more options.
-			</p>
+			<h3>
+				JavaScript
+			</h3>
 
-			<p>
-				Add this to your Javascript to handle the events that the component raises
-			</p>
+			<pre><code class="javascript">this.date = new RgDate({
+  date: '2015-07-18',
+  format: 'LL',
+	showyears: false,
+	showmonths: false,
+	showtoday: false,
+  yearformat: 'YYYY',
+  monthformat: 'MMMM',
+  weekformat: 'ddd',
+  dayformat: 'DD',
+	years: false,
+  months: false,
+  today: false,
+  onopen: function () {},
+  onclose: function () {},
+  onselect: function (date) {}
+})</code></pre>
 
-			<pre><code class="javascript">this.opened = function () { ... }
-this.closed = function (date) { ... }
-this.selected = function (date) { ... }</code></pre>
-
+			<h3>
+				Options
+			</h3>
 			<ul>
 				<li><code>date</code> defaults to today if you don't specify one.</li>
 				<li><code>format</code>format of the date in the text box. Defaults to 'LL' = "July 21, 2015"</li>
-				<li><code>year-format</code>format of the year in the dropdown. Defaults to 'YYYY' = "2015"</li>
-				<li><code>month-format</code>format of the month in the dropdown. Defaults to 'MMMM' = "November"</li>
-				<li><code>week-format</code>format of the day of the week in the dropdown. Defaults to 'ddd' = "Mon"</li>
-				<li><code>day-format</code>format of the day in the dropdown. Defaults to 'DD' = "01"</li>
+				<li><code>showyears</code> toggle visibility of years controls</li>
+				<li><code>showmonths</code> toggle visibility of months controls</li>
+				<li><code>showtoday</code> toggle visibility of today controls</li>
+				<li><code>yearformat</code>format of the year in the dropdown. Defaults to 'YYYY' = "2015"</li>
+				<li><code>monthformat</code>format of the month in the dropdown. Defaults to 'MMMM' = "November"</li>
+				<li><code>weekformat</code>format of the day of the week in the dropdown. Defaults to 'ddd' = "Mon"</li>
+				<li><code>dayformat</code>format of the day in the dropdown. Defaults to 'DD' = "01"</li>
 				<li><code>years</code>hide the years controls</li>
 				<li><code>months</code>hide the months controls</li>
 				<li><code>today</code>hide the today shortcut</li>
+				<li><code>onopen</code> function callback when dropdown opens</li>
+				<li><code>onclose</code> callback when dropdown is hidden</li>
+				<li><code>onselect</code> callback when date is selected</li>
+			</ul>
+
+			<h3>
+				Methods
+			</h3>
+			<ul>
+				<li><code>open</code> open the dropdown</li>
+				<li><code>close</code> close the dropdown</li>
+				<li><code>setToday</code> set the date to today</li>
+				<li><code>prevYear</code> decrement the year by one</li>
+				<li><code>prevMonth</code> decrement the month by one</li>
+				<li><code>nextMonth</code> increment the month by one</li>
+				<li><code>nextYear</code> increment the year by one</li>
 			</ul>
 
 			<p>
@@ -157,7 +179,9 @@ this.selected = function (date) { ... }</code></pre>
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		date: new RgDate()
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

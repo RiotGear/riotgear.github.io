@@ -42,85 +42,59 @@
 		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
-			<rg-tabs>
-				<rg-tab heading="Tab 1">
-					<rg-tab-heading>Tab <em>One</em></rg-tab-heading>
-					The first tab content
-				</rg-tab>
-
-				<rg-tab heading="Tab 2" active="true">
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-					sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-					pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
-					<rg-bubble content="Custom elements work inside tabs too"><strong>HOVER OVER ME!</strong></rg-bubble>
-					vulputate eget, arcu. In enim justo, rhoncus ut
-				</rg-tab>
-
-				<rg-tab heading="Tab 3">
-					Tab three
-				</rg-tab>
-
-				<rg-tab heading="Tab 4" disabled="true">
-					Tab four
-				</rg-tab>
-
-				<rg-tab heading="Tab 5">
-					Tab five
-				</rg-tab>
-			</rg-tabs>
+			<rg-tabs></rg-tabs>
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-tabs onopen="{ tabOpened }"&gt;
-  &lt;rg-tab&gt;
-    &lt;rg-tab-heading&gt;Tab &lt;em&gt;One&lt;/em&gt;&lt;/rg-tab-heading&gt;
-    The first tab content
-  &lt;/rg-tab&gt;
+			<pre><code class="html">&lt;rg-tabs tabs="{ tabs }">&lt;/rg-tabs></code></pre>
 
-  &lt;rg-tab heading="Tab 2" active="true"&gt;
-    Tab two
-  &lt;/rg-tab&gt;
+			<h3>
+				JavaScript
+			</h3>
 
-  &lt;rg-tab heading="Tab 3"&gt;
-    Tab three
-  &lt;/rg-tab&gt;
+			<pre><code class="javascript">this.tabs = new RgTabs({
+  tabs: [{
+    heading: 'Tab &lt;em>one&lt;/em>',
+    content: 'This is tab one'
+  }, {
+    heading: 'Tab two',
+    content: 'This is tab two',
+    active: true
+  }, {
+    heading: 'Disabled tab',
+    content: 'This is disabled tab',
+    disabled: true
+  }, {
+    heading: 'Tab three',
+    content: 'This is tab three content',
+    include: new RgInclude({
+      url: 'tab.html',
+      unsafe: true
+    })
+  }]
+})</code></pre>
 
-  &lt;rg-tab heading="Tab 4" disabled="true"&gt;
-    Tab four
-  &lt;/rg-tab&gt;
+		<h3>Options</h3>
 
-  &lt;rg-tab heading="Tab 5"&gt;
-    Tab five
-  &lt;/rg-tab&gt;
-&lt;/rg-tabs&gt;</code></pre>
+		<ul>
+			<li><code>tabs</code> an array of tab objects</li>
+			<li><code>tab.heading</code> HTML content of the tab top</li>
+			<li><code>tab.content</code> HTML content of the tab body</li>
+			<li><code>tab.active</code> whether the tab is selected and visible</li>
+			<li><code>tab.disabled</code> whether or not the tab can be active</li>
+			<li><code>tab.include</code> an RgInclude object that will inject the contents of a separate file into the tab body</li>
+			<li><code>onopen</code> callback when a tab is selected</li>
+		</ul>
 
-			<p>
-				Use <code class="html">&lt;rg-tab-heading&gt;&lt;/rg-tab-heading&gt;</code> within your tabs if you want custom content
-				instead of just text.
-			</p>
+		<h3>Methods</h3>
 
-			<p>
-				There is no additional JavaScript required to have working
-				tabs however if you want to handle open tab events add the following:
-			</p>
-
-			<pre><code class="javascript">this.tabOpened = function (tab) {
-  console.log(tab.index); // the index of the active tab
-};</code></pre>
-
-			<p>
-				If you add <code>active="true"</code> to more than 1 tab only the first tab will honor the request.
-			</p>
-
-			<p>
-				<code>disabled</code> tabs can't be clicked on.
-			</p>
-
-			<p>
-				<span class="badge">v2</span> heading values now support HTML.
-			</p>
+		<ul>
+			<li><code>select(tab)</code> switch tabs</li>
+		</ul>
 
 		</div>
 	</main>
@@ -186,7 +160,22 @@
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		tabs: new RgTabs({
+			tabs: [{
+				heading: 'Tab <em>one</em>',
+				content: 'This is tab one'
+			}, {
+				heading: 'Tab two',
+				content: 'This is tab two',
+				active: true
+			}, {
+				heading: 'Disabled tab',
+				content: 'This is disabled tab',
+				disabled: true
+			}]
+		})
+	})
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

@@ -43,49 +43,53 @@
 		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
-			<demo-app></demo-app>
+			<rg-tags></rg-tags>
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-tags options="{ countries }"
-         tags="{ tags }"
-         type="text"
-         value="Canada"
-         placeholder="Enter a country name"
-         onselect="{ ... }"
-         onclose="{ ... }"
-         onfilter="{ ... }"&gt;
-&lt;/rg-tags&gt;</code></pre>
+			<pre><code class="html">&lt;rg-tags tags="{ tags }">&lt;/rg-tags></code></pre>
 
-			<p>If you want to populate the autocomplete list assign an array to the <code>items</code> attribute</p>
-
-			<pre><code class="javascript">this.countries = [{
-  text: 'England'
-}, {
-  text: 'Scotland'
-}, {
-  text: 'Wales'
-}, {
-  text: 'Ireland'
-}];</code></pre>
-
-			<p>If you want to pass a list of already selected tags assign an array to the <code>tags</code> attribute</p>
-
-			<pre><code class="javascript">this.tags = [{
-  text: 'America'
-}];</code></pre>
-
-			<ul>
-				<li><code>onselect</code> fires when an item is selected from the list and passes the item to the callback</li>
-				<li><code>onclose</code> is called when the dropdown is closed</li>
-				<li><code>onfilter</code> fires everytime something is entered into the text box or when the box gains focus</li>
-			</ul>
+			<h3>
+				JavaScript
+			</h3>
 
 			<p>
-				<span class="badge">v2</span> <code>items</code> has been renamed <code>options</code> to bring it inline with rg-select property names.
+				<strong>This component extends the functionality of <a href="../select">rg-select</a>.</strong>
 			</p>
+
+			<pre><code class="javascript">this.tags = new RgTags({
+  value: 'Japan',
+  tags: [{
+    text: 'Canada'
+  }],
+  options: [{
+    text: 'England'
+  }, {
+    text: 'Scotland'
+  }, {
+    text: 'Wales'
+  }, {
+    text: 'Ireland'
+  }]
+})</code></pre>
+
+			<h3>Options</h3>
+			<ul>
+				<li><code>value</code> the text in the textbox</li>
+				<li><code>tags</code> the list created tags</li>
+				<li><code>options</code> list of items in the autocomplete dropdown</li>
+			</ul>
+
+
+			<h3>Methods</h3>
+			<ul>
+				<li><code>addTag(tag)</code> create a tag and add it to the tags list</li>
+				<li><code>removeTag(tag)</code> remove a tag from the list</li>
+			</ul>
 
 		</div>
 	</main>
@@ -152,7 +156,20 @@
 <script src="../../rg.min.js"></script>
 <script src="app.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		tags: new RgTags({
+			placeholder: 'Enter a coutry name',
+			options: [{
+				text: 'England'
+			}, {
+				text: 'Scotland'
+			}, {
+				text: 'Wales'
+			}, {
+				text: 'Ireland'
+			}]
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

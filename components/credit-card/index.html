@@ -37,13 +37,13 @@
 <section class="main-content">
 	<main>
 		<h1 class="component-heading">
-			Credit Card
+			Credit Card Number
 		</h1>
 		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
 			<p>
-				<rg-credit-card cardno="4000 0000 0000 0002"></rg-credit-card>
+				<rg-credit-card-number></rg-credit-card-number>
 			</p>
 			<p>
 				Try these:
@@ -58,9 +58,20 @@
 		<div class="demo-container">
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code class="html">&lt;rg-credit-card cardno="4000 0000 0000 0002" placeholder="Card no."&gt;&lt;/rg-credit-card&gt;</code></pre>
+			<pre><code class="html">&lt;rg-credit-card-number card="{ card }">&lt;/rg-credit-card-number&gt;</code></pre>
+
+			<h3>
+				JavaScript
+			</h3>
+
+			<pre><code class="javascript">this.card = new RgCreditCard({
+  placeholder: 'Long number on front',
+  cardnumber: '4000 0000 0000 0002'
+})</code></pre>
 
 			<p>
 				The control will produce a textbox that validates the card number
@@ -87,12 +98,21 @@
 
 			<p>
 				To display a card icon add a class with a background image for each of
-				the supported card types. Check out of the <a href="https://github.com/RiotGear/rg-credit-card/blob/master/src/rg-credit-card.tag#L49">repo code</a>
-				for more info.
+				the supported card types.
 			</p>
 
-			<h2>API</h2>
+			<h3>
+				Options
+			</h3>
+			<ul>
+				<li><code>cardnumber</code> the card number itself</li>
+				<li><code>valid</code> whether the card number is valid or not</li>
+				<li><code>placeholder</code> the placeholder text for the input</li>
+			</ul>
 
+			<h3>
+				API
+			</h3>
 			<p>
 				To use the validator either call it directly:
 			</p>
@@ -170,7 +190,12 @@ this.creditcard.validate('4000 0000 0000 0002')</code></pre>
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		card: new RgCreditCard({
+				placeholder: 'Long number on front',
+				cardnumber: '4000 0000 0000 0002'
+			})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

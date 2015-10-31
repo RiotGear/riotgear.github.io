@@ -29,135 +29,157 @@
 	<link rel="canonical" href="https://riotgear.js.org/components/modal" />
 </head>
 <body>
-<a class="menu" href="#menu">Menu</a>
-<section class="component-header">
-	<a href="../../"><img src="../../images/logobig.png"></a>
-</section>
+	<a class="menu" href="#menu">Menu</a>
+	<section class="component-header">
+		<a href="../../"><img src="../../images/logobig.png"></a>
+	</section>
 
-<section class="main-content">
-	<main>
-		<h1 class="component-heading">
-			Modal
-		</h1>
-		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
+	<section class="main-content">
+		<main>
+			<h1 class="component-heading">
+				Modal
+			</h1>
+			<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
-		<div class="demo-container">
+			<div class="demo-container">
 
-			<demo-app></demo-app>
+				<button class="link" onclick="showModal()">Show modal</button>
+				<rg-modal>
+					Hey look at me!
+				</rg-modal>
 
-			<h2>Use</h2>
+				<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+				<h3>
+					HTML
+				</h3>
 
-			<pre><code>&lt;rg-modal heading="Modal heading"
-         visible="{ visible }"
-         ghost="true"
-         dismissable="false"
-         buttons="{ buttons }"&gt;
+				<pre><code class="html">&lt;rg-modal modal="{ modal }">
   Modal body text
-&lt;/rg-modal&gt;</code></pre>
+&lt;/rg-modal></code></pre>
 
-			<p>and this to your JavaScript</p>
+				<h3>
+					JavaScript
+				</h3>
 
-			<pre><code class="javascript">this.visible = false
-this.buttons: [
-  { action: function () {}, text: 'Save' },
-  { action: function () {}, text: 'Cancel', style: 'color: cornflowerblue;' }
-]
-this.onclose: function () { this.visible = false }</code></pre>
+				<pre><code class="javascript">this.modal = new RgModal({
+  heading: 'Modal heading',
+  ghost: true,
+  dismissable: false,
+  isvisible: true,
+  buttons: [{
+    action: function () {},
+    style: 'background-color: black',
+    content: 'Save'
+  }]
+})</code></pre>
 
-			<p>To make the modal appear or disappear simply toggle the modal's <code>visible</code> property,
-			and when you're ready call <a href="https://muut.com/riotjs/api/#tag-update">Riot's
-			update() function</a> to see the effect.</p>
+				<p>
+					To make the modal appear or disappear simply toggle the modal's <code>isvisible</code> property
+				</p>
 
-			<pre><code class="javascript">this.visible = true|false;</code></pre>
+				<h3>
+					Options
+				</h3>
+				<ul>
+					<li><code>heading</code> HTML content for the heading</li>
+					<li><code>ghost</code> to display the modal without a body</li>
+					<li><code>dismissable</code> set to false to hide the small &times; close button and allow the overlay to trigger the onclose function</li>
+					<li><code>isvisible</code> hide or show the modal</li>
+					<li><code>onopen</code> callback for when the modal is shown</li>
+					<li><code>onclose</code> callback for when the modal is hidden</li>
+					<li><code>buttons</code> an array of buttons to display in the popup</li>
+					<li><code>button.action</code> the function to call when the button is clicked</li>
+					<li><code>button.style</code> the inline style to apply to the button</li>
+					<li><code>button.content</code> the HTML content of the button</li>
+				</ul>
 
-			<p>
-				<span class="badge">v2</span> the modal will not close automatically anymore. You the developer now have
-				more control over when to close the modal by hooking into the <code>onclose</code> callback and toggling the <code>visible</code> property.
-			</p>
+			</div>
+		</main>
 
-			<p>
-				<span class="badge">v2</span> the top level modal object has been removed
-				so that you can specify options via HTML attributes on the tag.
-			</p>
-
+		<nav id="menu" class="main-nav">
+			<h2>Getting Started</h2>
 			<ul>
-				<li><code>heading</code> HTML content for the heading</li>
-				<li><code>ghost</code> to display the modal without a body</li>
-				<li><code>dismissable</code> set to false to hide the small &times; close button and allow the overlay to trigger the onclose function</li>
+				<li><a href="../../getting-started/">Install</a></li>
+				<li><a href="../../playground/">Playground</a></li>
 			</ul>
+			<h2>Community</h2>
+			<ul>
+				<li><a href="../../contributing">Contributing</a></li>
+				<li><a href="../../forum">Forum</a></li>
+			</ul>
+			<h2>Components</h2>
+			<ul>
+				<li><a href="../rg"><strong>rg</strong></a></li>
+				<li><a href="../router"><strong>Router</strong></a></li>
+			</ul>
+			<ul>
+				<li><a href="../alert">Alert</a></li>
+				<li><a href="../autocomplete">Autocomplete</a></li>
+				<li><a href="../behold">Behold</a></li>
+				<li><a href="../bubble">Bubble</a></li>
+				<li><a href="../code">Code</a></li>
+				<li><a href="../context-menu">Context Menu</a></li>
+				<li><a href="../credit-card">Credit Card</a></li>
+				<li><a href="../datepicker">Datepicker</a></li>
+				<li><a href="../ga">GA</a></li>
+				<li><a href="../include">Include</a></li>
+				<li><a href="../loading">Loading</a></li>
+				<li><a href="../map">Map</a></li>
+				<li><a href="../markdown">Markdown</a></li>
+				<li class="active"><a href="../modal">Modal</a></li>
+				<li><a href="../phone-sim">Phone Sim</a></li>
+				<li><a href="../placeholdit">Placeholdit</a></li>
+				<li><a href="../select">Select</a></li>
+				<li><a href="../sidemenu">Side Menu</a></li>
+				<li><a href="../tabs">Tabs</a></li>
+				<li><a href="../tags">Tags</a></li>
+				<li><a href="../timepicker">Timepicker</a></li>
+				<li><a href="../toast">Toast</a></li>
+				<li><a href="../toggle">Toggle</a></li>
+				<li><a href="../unsplash">Unsplash</a></li>
+			</ul>
+		</nav>
 
-		</div>
-	</main>
+		<footer class="site-footer">
+			<div class="site-links">
+				<a href="https://twitter.com/riotcomponents">Twitter</a>
+				<a href="http://riotjs.com">Riot</a>
+			</div>
+			<span class="site-footer-credits">
+				Built in England &copy; 2015 <a href="https://twitter.com/GrumpyWizards">Grumpy Wizards</a>.
+			</span>
+		</footer>
 
-	<nav id="menu" class="main-nav">
-		<h2>Getting Started</h2>
-		<ul>
-			<li><a href="../../getting-started/">Install</a></li>
-<li><a href="../../playground/">Playground</a></li>
-		</ul>
-		<h2>Community</h2>
-		<ul>
-			<li><a href="../../contributing">Contributing</a></li>
-			<li><a href="../../forum">Forum</a></li>
-		</ul>
-		<h2>Components</h2>
-		<ul>
-			<li><a href="../rg"><strong>rg</strong></a></li>
-			<li><a href="../router"><strong>Router</strong></a></li>
-		</ul>
-		<ul>
-			<li><a href="../alert">Alert</a></li>
-			<li><a href="../autocomplete">Autocomplete</a></li>
-			<li><a href="../behold">Behold</a></li>
-			<li><a href="../bubble">Bubble</a></li>
-			<li><a href="../code">Code</a></li>
-			<li><a href="../context-menu">Context Menu</a></li>
-			<li><a href="../credit-card">Credit Card</a></li>
-			<li><a href="../datepicker">Datepicker</a></li>
-			<li><a href="../ga">GA</a></li>
-			<li><a href="../include">Include</a></li>
-			<li><a href="../loading">Loading</a></li>
-			<li><a href="../map">Map</a></li>
-			<li><a href="../markdown">Markdown</a></li>
-			<li class="active"><a href="../modal">Modal</a></li>
-			<li><a href="../phone-sim">Phone Sim</a></li>
-			<li><a href="../placeholdit">Placeholdit</a></li>
-			<li><a href="../select">Select</a></li>
-			<li><a href="../sidemenu">Side Menu</a></li>
-			<li><a href="../tabs">Tabs</a></li>
-			<li><a href="../tags">Tags</a></li>
-			<li><a href="../timepicker">Timepicker</a></li>
-			<li><a href="../toast">Toast</a></li>
-			<li><a href="../toggle">Toggle</a></li>
-			<li><a href="../unsplash">Unsplash</a></li>
-		</ul>
-	</nav>
+	</section>
 
-	<footer class="site-footer">
-		<div class="site-links">
-			<a href="https://twitter.com/riotcomponents">Twitter</a>
-			<a href="http://riotjs.com">Riot</a>
-		</div>
-		<span class="site-footer-credits">
-			Built in England &copy; 2015 <a href="https://twitter.com/GrumpyWizards">Grumpy Wizards</a>.
-		</span>
-	</footer>
+	<rg-ga property="UA-36978977-5"></rg-ga>
 
-</section>
+	<script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
+	<script src="app.js"></script>
+	<script src="../../rg.min.js"></script>
+	<script>
+		var modal = new RgModal({
+			heading: 'Modal heading',
+			buttons: [{
+				content: 'OK',
+				action: function () { modal.isvisible = false },
+				style: 'background-color: #268bd2; color: white'
+			}]
+		})
+		riot.mount('*', { modal: modal })
+		function showModal() {
+			modal.ghost = false
+			modal.isvisible = true
+		}
+		function showGhostModal() {
+			modal.ghost = true
+			modal.isvisible = true
+		}
+	</script>
 
-<rg-ga property="UA-36978977-5"></rg-ga>
-
-<script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
-<script src="app.js"></script>
-<script src="../../rg.min.js"></script>
-<script>
-	riot.mount('*');
-</script>
-
-<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+	<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 
 </body>
 </html>

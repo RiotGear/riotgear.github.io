@@ -44,18 +44,33 @@
 
 		<div class="demo-container">
 			<p style="height: 350px">
-				<rg-behold image1="first.jpg" image2="second.jpg" mode="swipe"></rg-behold>
+				<rg-behold></rg-behold>
 			</p>
 		</div>
 		<div class="demo-container">
-			<h2>Use</h2>
+			<h2>
+				Use
+			</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code class="html">&lt;rg-behold image1="img/first.jpg" image2="img/second.jpg" mode="swipe">&lt;/rg-behold></code></pre>
+			<pre><code class="html">&lt;rg-behold behold="{ behold }">&lt;/rg-behold></code></pre>
 
-			<p>There are 3 options available:</p>
+			<h3>
+				JavaScript
+			</h3>
 
+			<pre><code class="javascript">this.behold = new RgBehold({
+  image1: 'first.jpg',
+  image2: 'second.jpg',
+  mode: 'swipe'
+})</code></pre>
+
+			<h3>
+				Options
+			</h3>
 			<ul>
 				<li><code>image1</code> the path to the first image to display</li>
 				<li><code>image2</code> the path to the second image to compare to the first</li>
@@ -126,7 +141,12 @@
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		behold: new RgBehold({
+			image1: 'first.jpg',
+			image2: 'second.jpg'
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

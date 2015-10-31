@@ -29,6 +29,7 @@
 	<link rel="canonical" href="https://riotgear.js.org/components/toast" />
 </head>
 <body>
+<rg-toasts></rg-toasts>
 <a class="menu" href="#menu">Menu</a>
 <section class="component-header">
 	<a href="../../"><img src="../../images/logobig.png"></a>
@@ -37,45 +38,49 @@
 <section class="main-content">
 	<main>
 		<h1 class="component-heading">
-			Toast
+			Toasts
 		</h1>
 		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container">
 
-			<demo-app></demo-app>
-
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-toast toasts="{ toasts }" position="bottomright"&gt;&lt;/rg-toast&gt;</code></pre>
+			<pre><code class="html">&lt;rg-toast toasts="{ toasts }">&lt;/rg-toast></code></pre>
 
-			<p>The available positions are <em>topright</em>, <em>bottomright</em>, <em>bottomleft</em> and <em>topleft</em>.</p>
+			<h3>
+				JavaScript
+			</h3>
 
-			<p>and this to your JavaScript</p>
+			<pre><code class="javascript">this.toasts = new RgToasts({
+  position: 'bottomright',
+  toasts: [{
+    content: 'You have received an update to something interesting',
+    sticky: true,
+    timeout: 6000,
+    onclick: function (e) {...},
+    onclose: function () {...}
+  }]
+})</code></pre>
 
-			<pre><code class="javascript">this.toasts = [{
-  content: 'You have received an update to something interesting',
-  sticky: true,
-  timeout: 6000,
-  onclick: function (e) {...},
-  onclose: function () {...}
-}];</code></pre>
-
-			<p>The toast notification can be clicked on after which it will disappear.</p>
+			<h3>
+				Options
+			</h3>
 
 			<ul>
-				<li><code>content</code> what you want to say in the popup box, supports HTML</li>
-				<li><code>sticky</code> if true will turn off the timeout and the toast will remain on the page until clicked on</li>
-				<li><code>timeout</code> use to override the delay (in ms) before it disappears, default is 6 seconds</li>
-				<li><code>onclick</code> is called when the toast is clicked on</li>
-				<li><code>onclose</code> fires when the toast disappears, either by clicking on it or via timer</li>
+				<li><code>position</code> available positions are <em>topright</em>, <em>bottomright</em>, <em>bottomleft</em> and <em>topleft</em></li>
+				<li><code>isvisible</code> show and hide the entire toast container</li>
+				<li><code>toast.content</code> what you want to say in the popup box, supports HTML</li>
+				<li><code>toast.sticky</code> if true will turn off the timeout and the toast will remain on the page until clicked on</li>
+				<li><code>toast.timeout</code> use to override the delay (in ms) before it disappears, default is 6 seconds</li>
+				<li><code>toast.isvisible</code> show and hide the toast itself</li>
+				<li><code>toast.onclick</code> is called when the toast is clicked on</li>
+				<li><code>toast.onclose</code> fires when the toast disappears, either by clicking on it or via timer</li>
 			</ul>
-
-			<p>
-				<span class="badge">v2</span> <code>text</code> has been replaced with <code>content</code> and now supports HTML.
-			</p>
 
 		</div>
 	</main>
@@ -142,7 +147,14 @@
 <script src="app.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		toasts: new RgToasts({
+			toasts: [{
+				content: 'Hello <strong>RiotGear</strong>',
+				sticky: true
+			}]
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

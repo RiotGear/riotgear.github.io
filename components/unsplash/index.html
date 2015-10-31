@@ -47,17 +47,29 @@
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-unsplash width="200"
-             height="100"
-             greyscale="true"
-             random="true"
-             blur="true"
-             image="491"
-             gravity="north|south|east|west"&gt;
-&lt/rg-unsplash&gt;</code></pre>
+			<pre><code class="html">&lt;rg-unsplash unsplash="{ unsplash }">&lt;/rg-unsplash></code></pre>
 
+			<h3>
+				JavaScript
+			</h3>
+
+			<pre><code class="javascript">this.unsplash = new RgUnsplash({
+  width: 200,
+  height: 150,
+  greyscale: true,
+  random: true,
+	blur: true,
+  image: 40,
+  gravity, north
+})</code></pre>
+
+			<h3>
+				Options
+			</h3>
 			<ul>
 				<li><code>width</code> and <code>height</code> take the number of pixels you want the image to be</li>
 				<li><code>greyscale</code> or <code>grayscale</code> will make the image black and white</li>
@@ -68,7 +80,7 @@
 			</ul>
 
 			<p>This component uses <a href="https://unsplash.it/">unsplash</a> to render the images.</p>
-			
+
 		</div>
 	</main>
 
@@ -133,7 +145,9 @@
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		unsplash: new RgUnsplash()
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

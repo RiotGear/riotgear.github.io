@@ -6,20 +6,26 @@
 
   <a href="#" onclick={ open }>&laquo; Open side menu &raquo;</a>
 
-  <rg-sidemenu header="Playground" items="{ items }" visible="{ visible }"></rg-sidemenu>
+  <rg-sidemenu sidemenu={ sidemenu }></rg-sidemenu>
 
   <script>
-    this.items = [{
-      text: 'Item 1',
-      action: function() {}
-    }, {
-      text: 'Item 2',
-      action: function() {}
-    }]
+    this.sidemenu = new RgSidemenu({
+      header: 'Side Menu',
+      isvisible: true,
+      onselect: () => {
+        this.sidemenu.isvisible = false
+      },
+      items: [{
+        content: 'Item 1',
+        action: function() {}
+      }, {
+        content: 'Item 2',
+        action: function() {}
+      }]
+    })
 
     open() {
-      this.visible = true
-      this.update()
+      this.sidemenu.isvisible = true
     }
 
   </script>

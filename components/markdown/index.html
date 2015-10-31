@@ -45,8 +45,8 @@
 
 			<p>The following text was written in Markdown and converted using the component.</p>
 
-			<rg-markdown src="helptext.md"></rg-markdown>
-			
+			<rg-markdown></rg-markdown>
+
 		</div>
 	</main>
 
@@ -112,7 +112,11 @@
 <script src="commonmark.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		markdown: new RgMarkdown({
+			url: 'helptext.md'
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

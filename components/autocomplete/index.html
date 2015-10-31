@@ -44,48 +44,69 @@
 		<div class="demo-container">
 			<rg-select></rg-select>
 
-			<h2>Use</h2>
+			<h2>
+				Use
+			</h2>
+
+			<h3>
+				HTML
+			</h3>
+
+			<pre><code class="html">&lt;rg-select select="{ select }">&lt;/rg-select></code></pre>
+
+			<h3>
+				JavaScript
+			</h3>
+
+			<pre><code class="javascript">this.select = new RgSelect({
+  autocomplete: true,
+  placeholder: 'Please select a card',
+  filteron: 'text',
+  onopen: function () {},
+  onclose: function () {},
+  onfilter: function () {},
+  onselect: function () {},
+  options: [{
+    text: 'England'
+  }, {
+    text: 'Scotland'
+  }, {
+    text: 'Wales'
+  }, {
+    text: 'Ireland'
+  }]
+})</code></pre>
 
 			<p>
-				<span class="badge">v2</span> rg-autocomplete doesn't exist anymore, it
-				has been replaced with rg-select.
-			</p>
-			<p>
-				To turn an rg-select into an autocomplete simply set the
-				<code>autocomplete</code> attribute to true.
+				Now when you click into the text box you will get a dropdown
+				you can use to complete the rest of the text for you.
 			</p>
 
-			<p>Add this to your Riot app markup</p>
-
-			<pre><code class="html">&lt;rg-select autocomplete="true"
-           options="{ countries }"
-           type="text"
-           value="United Kingdom"
-           placeholder="Enter a country name"
-           onselect="{ ... }"
-           onclose="{ ... }"
-           onfilter="{ ... }"&gt;
-&lt;/rg-select&gt;</code></pre>
-
-			<p>and add this to your JavaScript</p>
-
-			<pre><code class="javascript">this.countries = [{
-  text: 'England'
-}, {
-  text: 'Scotland'
-}, {
-  text: 'Wales'
-}, {
-  text: 'Ireland'
-}];</code></pre>
-
-			<p>Now when you click into the text box you will get a dropdown
-				you can use to complete the rest of the text for you.</p>
-
+			<h3>
+				Options
+			</h3>
 			<ul>
+				<li><code>options</code> an array of objects to populate the dropdown list with</li>
+				<li><code>option.text</code> the text to display in the list</li>
+				<li><code>autcomplete</code> toggles the autocomplete / select mode, making the textbox readonly/editable</li>
+				<li><code>placeholder</code> placeholder text when nothing selected</li>
+				<li><code>hasfilter</code> toggle the filter visibility</li>
+				<li><code>filterplaceholder</code> placeholder text in the filter box when nothing entered</li>
+				<li><code>filteron</code> the property on the options objects to search when filtering</li>
 				<li><code>onselect</code> fires when an item is selected from the list and passes the item to the callback</li>
 				<li><code>onclose</code> is called when the dropdown is closed</li>
 				<li><code>onfilter</code> fires everytime something is entered into the text box or when the box gains focus</li>
+			</ul>
+
+			<h3>
+				Methods
+			</h3>
+			<ul>
+				<li><code>open()</code> make the dropdown visible</li>
+				<li><code>close()</code> hide the dropdown</li>
+				<li><code>toggle()</code> toggle the dropdown visibility</li>
+				<li><code>filter(text)</code> add text to the input and filter the list</li>
+				<li><code>select(item)</code> select an item and put the item text in the input</li>
 			</ul>
 
 		</div>
@@ -153,22 +174,25 @@
 <script src="../../rg.min.js"></script>
 <script>
 	riot.mount('rg-select', {
-		autocomplete: true,
-		placeholder: 'Enter a country name',
-		options: [{
-			id: 0,
-			text: 'England'
-		}, {
-			id: 1,
-			text: 'Scotland'
-		}, {
-			id: 2,
-			text: 'Wales'
-		}, {
-			id: 3,
-			text: 'Ireland'
-		}]
-	});
+		select: new RgSelect({
+			autocomplete: true,
+			placeholder: 'Please select a card',
+			filteron: 'text',
+			onopen: function () {},
+			onclose: function () {},
+			onfilter: function () {},
+			onselect: function () {},
+			options: [{
+				text: 'England'
+			}, {
+				text: 'Scotland'
+			}, {
+				text: 'Wales'
+			}, {
+				text: 'Ireland'
+			}]
+		})
+	})
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

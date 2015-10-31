@@ -64,8 +64,16 @@
 			</ul>
 			<h2>Components</h2>
 			<ul>
-				<li><a href="../components/rg"><strong>rg</strong></a></li>
-				<li><a href="../components/router"><strong>Router</strong></a></li>
+				<li>
+					<a href="../components/rg">
+						<strong>rg</strong>
+					</a>
+				</li>
+				<li>
+					<a href="../components/router">
+						<strong>Router</strong>
+					</a>
+				</li>
 			</ul>
 			<ul>
 				<li><a href="../components/alert">Alert</a></li>
@@ -113,14 +121,17 @@
 	<script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 	<script src="../rg.min.js"></script>
 	<script>
-		riot.mount('rg-code', {
-			src: 'demo-app.tag',
+		var editor = new RgCode({
+			url: 'demo-app.tag',
 			theme: 'monokai',
 			mode: 'html',
 			onchange: function(code) {
 				var iframe = document.getElementById('playground-preview').contentWindow;
 				iframe.postMessage(code, window.location.href)
 			}
+		})
+		riot.mount('rg-code', {
+			editor: editor
 		});
 
 	</script>

@@ -88,6 +88,13 @@ pre code.hljs {
 footer {
   clear: both;
 }
+button.link {
+  background-color: #32709D;
+  color: white;
+  border: 0;
+  padding: 8px 10px;
+}
+button:focus {outline:0;}
 .text-center {
   text-align: center;
 }

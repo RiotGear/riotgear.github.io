@@ -46,13 +46,11 @@
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code class="html">&lt;rg-context-menu id="myMenu"
-                 onopen="{ onopen }"
-                 onclose="{ onclose }"
-                 items="{ items }"&gt;
-&lt;/rg-context-menu&gt;</code></pre>
+			<pre><code class="html">&lt;rg-context-menu menu="{ menu }">&lt;/rg-context-menu&gt;</code></pre>
 
 			<p>Then assign the context menu to the elements you would like to by using <code>rg-context-menu</code></p>
 
@@ -60,53 +58,47 @@
   ... your page content ...
 &lt;/div&gt;</code></pre>
 
-			<p>To populate the menu pass these options</p>
+			<h3>
+				JavaScript
+			</h3>
 
-			<pre><code class="javascript">this.onopen = function (e) {
-  console.log('Menu opened');
-  console.log(e);
-}
+			<pre><code class="javascript">this.menu = new RgContextMenu({
+  name: 'myMenu',
+  items: [{
+    content: '&lt;strong&gt;View source&lt;/strong&gt',
+    onselect: itemSelected
+  }, {
+    content: 'Save as...',
+    inactive: true,
+    onselect: itemSelected
+  }, {
+    content: 'Reload',
+    onselect: itemSelected
+  }],
+  onopen: function () {},
+  onclose: function () {}
+})</code></pre>
 
-this.onclose = function (e) {
-  console.log('Menu closed');
-  console.log(e);
-}
-
-this.items = [{
-  content: '&lt;strong&gt;View source&lt;/strong&gt',
-  onselect: itemSelected
-}, {
-  content: 'Save as...',
-  inactive: true,
-  onselect: itemSelected
-}, {
-  content: 'Reload',
-  onselect: itemSelected
-}]</code></pre>
-
-			<p>You can also use the <code>rg-context-menu-item</code> child tag</p>
-
-			<pre><code>&lt;rg-context-menu id="myMenu">
-  &lt;rg-context-menu-item onselect="{ parent.itemSelected }" inactive="false"&gt;
-    &lt;strong&gt;View source&lt;/strong&gt;
-  &lt;/rg-context-menu-item&gt;
-&lt;/rg-context-menu&gt;</code></pre>
-
-			<p><em>Note <code>parent.itemSelected</code> in the onselect attribute. This is required if you want to
-				reference a method on the parent tag.</em></p>
-
+			<h3>
+				Options
+			</h3>
 			<ul>
+				<li><code>name</code> the target menu to hook into</li>
 				<li><code>onopen</code> will fire when the menu appears</li>
 				<li><code>onclose</code> is the array of items to display in the popup list</li>
 				<li><code>items</code> is the HTML content of the item</li>
 				<li><code>items.content</code> is the HTML content of the item</li>
 				<li><code>items.inactive</code> set a inactive class and prevents events</li>
-				<li><code>items.onselect</code> fires when an item is clicked on. The menu will also automatically close.</li>
+				<li><code>items.onclick</code> fires when an item is clicked on. The menu will also automatically close.</li>
 			</ul>
 
-			<p>
-				<span class="badge">v2</span> <code>item.text</code> has been removed in favour of <code>item.content</code>
-			</p>
+			<h3>
+				Methods
+			</h3>
+			<ul>
+				<li><code>add(item)</code> adds an item to the list of options</li>
+				<li><code>select(item)</code> selects an item in the list</li>
+			</ul
 		</div>
 	</main>
 
@@ -133,6 +125,7 @@ this.items = [{
 			<li><a href="../bubble">Bubble</a></li>
 			<li><a href="../code">Code</a></li>
 			<li class="active"><a href="../context-menu">Context Menu</a></li>
+			<li><a href="../credit-card">Credit Card</a></li>
 			<li><a href="../datepicker">Datepicker</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
@@ -165,7 +158,7 @@ this.items = [{
 
 </section>
 
-<rg-context-menu id="demo"></rg-context-menu>
+<rg-context-menu></rg-context-menu>
 
 <rg-ga property="UA-36978977-5"></rg-ga>
 
@@ -173,44 +166,47 @@ this.items = [{
 <script src="../../rg.min.js"></script>
 <script>
 	riot.mount('*', {
-		onopen: function (e) {
-			console.log('Menu opened');
-			console.log(e);
-		},
-		onclose: function (e) {
-			console.log('Menu closed');
-			console.log(e);
-		},
-		items: [{
-			content: '&lsaquo; Back',
-			onselect: function () {
-				history.back();
-			}
-		}, {
-			content: '&rsaquo; Forward',
-			onselect: function () {
-				history.forward();
-			}
-		}, {
-			content: '&#8635; Reload without cache',
-			onselect: function () {
-				document.location.reload(true);
-			}
-		}, {
-			content: 'Save as...',
-			inactive: true
-		}, {
-			content: 'Print...',
-			onselect: function () {
-				print();
-			}
-		}, {
-			content: '<strong>View source</strong>',
-			onselect: function () {
-				window.open('view-source:' + window.location);
-			}
-		}]
-	});
+		menu: new RgContextMenu({
+			name: 'demo',
+			onopen: function (e) {
+				console.log('Menu opened');
+				console.log(e);
+			},
+			onclose: function (e) {
+				console.log('Menu closed');
+				console.log(e);
+			},
+			items: [{
+				content: '&lsaquo; Back',
+				onclick: function () {
+					history.back();
+				}
+			}, {
+				content: '&rsaquo; Forward',
+				onclick: function () {
+					history.forward();
+				}
+			}, {
+				content: '&#8635; Reload without cache',
+				onclick: function () {
+					document.location.reload(true);
+				}
+			}, {
+				content: 'Save as...',
+				inactive: true
+			}, {
+				content: 'Print...',
+				onclick: function () {
+					print();
+				}
+			}, {
+				content: '<strong>View source</strong>',
+				onclick: function () {
+					window.open('view-source:' + window.location);
+				}
+			}]
+		})
+	})
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

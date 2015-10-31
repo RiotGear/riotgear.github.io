@@ -43,41 +43,42 @@
 
 		<div class="demo-container">
 
-			<rg-time filter="true" ampm="true" step="15" min="08:30" max="09:30"></rg-time>
+			<rg-time></rg-time>
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-time time="{ new Date('Aug 10 2015') }"
-         ampm="true"
-         step="15"
-         min="08:00"
-         max="16:30"
-         onopen="{ opened }"
-         onclose="{ closed }"
-         onselect="{ selected }"&gt;
-&lt;/rg-time&gt;</code></pre>
+			<pre><code class="html">&lt;rg-time time="{ time }">&lt;/rg-time></code></pre>
 
-			<pre><code class="javascript">this.opened = function () { ... }
-this.closed = function () { ... }
-this.selected = function (time) { ... }</code></pre>
+			<h3>
+				JavaScript
+			</h3>
 
 			<p>
-				<code>rg-time</code> is an rg-select under the hood and has access to the same properties such as
-				<code>filter</code>, <code>filter-placeholder</code> etc.
+				<strong>This component extends the functionality of <a href="../select">rg-select</a>.</strong>
 			</p>
 
+			<pre><code class="javascript">this.time = new RgTime({
+  time: new Date,
+  ampm: true,
+  step: 15,
+  min: '08:30',
+  max: '16:00'
+})</code></pre>
+
+			<h3>
+				Options
+			</h3>
 			<ul>
 				<li><code>time</code> defaults to now if you don't specify one, accepts a date object</li>
 				<li><code>ampm</code> toggles the 24 hours time format, the value is always hh:mm:ss though</li>
 				<li><code>step</code> is the interval between options e.g. 15 produces 00:00, 00:15, 00:30, 00:45, 01:00...</li>
 				<li><code>min</code> and <code>max</code> are the earliest and latest times within the available 24hrs</li>
 			</ul>
-
-			<p>
-				<span class="badge">v2</span> <code>rg-timepicker</code> has been renamed <code>rg-time</code>
-			</p>
+			
 		</div>
 	</main>
 
@@ -142,7 +143,17 @@ this.selected = function (time) { ... }</code></pre>
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		time: new RgTime({
+			placeholder: 'Choose a time',
+			filterplaceholder: 'Filter times',
+			 hasfilter: true,
+			 ampm: true,
+			 step: 15,
+			 min: "08:30",
+			 max: "09:30"
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

@@ -43,27 +43,26 @@
 
 		<div class="demo-container">
 
-			<rg-placeholdit background-color="1fadc5"></rg-placeholdit>
+			<rg-placeholdit></rg-placeholdit>
 
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-placeholdit width="200"
-                height="100"
-                background-color="1fadc5"
-                color="4df"
-                font-size="50"
-                text="JPEG"
-                format="jpg"&gt;
-&lt;/rg-placeholdit&gt;</code></pre>
+			<pre><code class="html">&lt;rg-placeholdit placeholdit="{ placeholdit }">&lt;/rg-placeholdit></code></pre>
+
+			<h3>
+				Options
+			</h3>
 
 			<ul>
 				<li><code>width</code> and <code>height</code> take the number of pixels you want the image to be</li>
-				<li><code>background-color</code> is the HEX value of the background you want</li>
+				<li><code>background</code> is the HEX value of the background you want</li>
 				<li><code>color</code> is the HEX value of the text color</li>
-				<li><code>font-size</code> is the size of the text</li>
 				<li><code>text</code> is the text to display, if none specified it will default to the dimensions</li>
+				<li><code>textsize</code> is the size of the text</li>
 				<li><code>format</code> can be gif, png, jpeg or jpg. It defaults to png</li>
 			</ul>
 
@@ -132,7 +131,11 @@
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		placeholdit: new RgPlaceholdit({
+			background: '1fadc5'
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

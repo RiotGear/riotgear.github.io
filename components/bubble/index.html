@@ -43,21 +43,45 @@
 
 		<div class="demo-container">
 			<p>
-				<rg-bubble content="<strong>Bubble</strong> sounds better than <em>tooltip!!</em>">Hover over this sentence to see a tooltip bubble appear</rg-bubble>
+				<rg-bubble>Hover over this sentence to see a tooltip bubble appear</rg-bubble>
 			</p>
 		</div>
 		<div class="demo-container">
 			<h2>Use</h2>
 
-			<p>Add this to your Riot app markup</p>
+			<h3>
+				HTML
+			</h3>
 
-			<pre><code>&lt;rg-bubble content="I go pop!"&gt;hover over me&lt;/rg-bubble&gt;</code></pre>
+			<pre><code class="html">&lt;rg-bubble bubble="{ bubble }">hover over me&lt;/rg-bubble></code></pre>
 
-			<p>The tooltip pops up on hover. Once the mouse leaves, it disappears after 1 second.</p>
+			<h3>
+				JavaScript
+			</h3>
+
+			<pre><code class="javascript">this.bubble = new RgBubble({
+  content: 'Supports <strong>HTML</strong>'
+})</code></pre>
 
 			<p>
-				<span class="badge">v2</span> <code>text</code> has been replaced with <code>content</code> and now supports HTML.
+				The tooltip pops up on hover. Once the mouse leaves, it disappears after 1 second.
 			</p>
+
+			<h3>
+				Options
+			</h3>
+			<ul>
+				<li><code>content</code> is the HTML content of the tooltip</li>
+			</ul>
+			
+			<h3>
+				Methods
+			</h3>
+			<ul>
+				<li><code>showBubble</code> displays the tooltip</li>
+				<li><code>hideBubble</code> hides the tooltip</li>
+				<li><code>toggleBubble</code> toggle the visibility of the tooltip</li>
+			</ul>
 
 		</div>
 	</main>
@@ -123,7 +147,11 @@
 <script src="https://cdn.jsdelivr.net/riot/2.2.4/riot.min.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	riot.mount('*', {
+		bubble: new RgBubble({
+			content: '<strong>Bubble</strong> sounds better than <em>tooltip!!</em>'
+		})
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
