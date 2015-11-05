@@ -59,8 +59,8 @@
 
 			<pre><code class="javascript">this.select = new RgSelect({
   autocomplete: true,
-  placeholder: 'Please select a card',
-  filterplaceholder: 'Filter cards',
+  placeholder: 'Please select a country',
+  filterplaceholder: 'Filter countries',
   filteron: 'text',
   onopen: function () {},
   onclose: function () {},
@@ -171,9 +171,9 @@
 <script>
 	riot.mount('rg-select', {
 		select: new RgSelect({
-			placeholder: 'Please select a card',
+			placeholder: 'Please select a country',
 			hasfilter: true,
-			filterplaceholder: 'Filter cards',
+			filterplaceholder: 'Filter countries',
 			filteron: 'text',
 			onopen: function () {},
 			onclose: function () {},
@@ -193,7 +193,7 @@
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad()</script>
 
 </body>
 </html>

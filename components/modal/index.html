@@ -29,6 +29,9 @@
 	<link rel="canonical" href="https://riotgear.js.org/components/modal" />
 </head>
 <body>
+	<rg-modal>
+		Hey look at me!
+	</rg-modal>
 	<a class="menu" href="#menu">Menu</a>
 	<section class="component-header">
 		<a href="../../"><img src="../../images/logobig.png"></a>
@@ -44,9 +47,6 @@
 			<div class="demo-container">
 
 				<button class="link" onclick="showModal()">Show modal</button>
-				<rg-modal>
-					Hey look at me!
-				</rg-modal>
 
 				<h2>Use</h2>
 
@@ -171,15 +171,17 @@
 		function showModal() {
 			modal.ghost = false
 			modal.isvisible = true
+			modal.update()
 		}
 		function showGhostModal() {
 			modal.ghost = true
 			modal.isvisible = true
+			modal.update()
 		}
 	</script>
 
 	<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initHighlightingOnLoad()</script>
 
 </body>
 </html>
