@@ -2,9 +2,9 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
-	<title>GA</title>
+	<title>Drawer</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="A Google Analytics tag wrapper">
+	<meta name="description" content="Classic off-canvas slide in menu, useful for secondary options">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
@@ -26,7 +26,7 @@
 	<meta name="msapplication-TileColor" content="#f01e52">
 	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.js.org/components/ga" />
+	<link rel="canonical" href="https://riotgear.js.org/components/drawer" />
 </head>
 <body>
 <a class="menu" href="#menu">Menu</a>
@@ -37,16 +37,12 @@
 <section class="main-content">
 	<main>
 		<h1 class="component-heading">
-			GA - Google Analytics
+			Drawer
 		</h1>
 		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
-		<div class="demo-container">
-
-			<p>
-				There's nothing to visually see here but if you open developer tools and refresh the page
-				you'll see network traffic that relates to Google Analytics.
-			</p>
+		<div class="demo-container no-overflow">
+			<rg-drawer></rg-drawer>
 
 			<h2>Use</h2>
 
@@ -54,13 +50,51 @@
 				HTML
 			</h3>
 
-			<pre><code class="html">&lt;rg-ga property="UA-12345678-1"&gt;&lt;/rg-ga&gt;</code></pre>
+			<pre><code class="html">&lt;rg-drawer drawer="{ menu }">&lt;/rg-drawer></code></pre>
 
-			<p>Currently this component will only execute the basic Google Analytics pageview tag, i.e.</p>
+			<h3>
+				JavaScript
+			</h3>
 
-			<pre><code class="javascript">ga('send', 'pageview');</code></pre>
+			<pre><code class="javascript">this.menu = new RgDrawer({
+  header: 'Select an option',
+  position: 'top|right|bottom|left',
+  isvisible: true,
+  onopen: function (item) {},
+  onclose: function (item) {},
+  onselect: function (item) {},
+  items: [{
+    content: 'Open in Safari',
+    action: function () {},
+    active: true
+  }]
+})</code></pre>
 
-			<p>Future enhancements are coming that will allow events to be raised but for a lot of cases this is all you'll need.</p>
+			<h3>
+				Options
+			</h3>
+			<ul>
+				<li><code>header</code> the text at the top of the menu</li>
+				<li><code>position</code> the edge where the drawer appears from. Can be 'top', 'right', 'bottom' or 'left'</li>
+				<li><code>onopen</code> callback when the menu is opened using the <code>open</code> method</li>
+				<li><code>onclose</code> callback when the menu is closed using the <code>close</code> method</li>
+				<li><code>onselect</code> callback when an item is select using the <code>select</code> method</li>
+				<li><code>isvisible</code> toggle this to show or hide the menu</li>
+				<li><code>items</code> array of menu items</li>
+				<li><code>item.content</code> the HTML to display</li>
+				<li><code>item.action</code> the callback when the item is selected</li>
+				<li><code>item.active</code> whether the item is in an active state or not</li>
+			</ul>
+
+			<h3>
+				Methods
+			</h3>
+			<ul>
+				<li><code>open()</code> open the menu</li>
+				<li><code>close()</code> close the menu</li>
+				<li><code>toggle()</code> toggle the visibility of the menu</li>
+				<li><code>select(item)</code> select an item</li>
+			</ul>
 
 		</div>
 	</main>
@@ -91,8 +125,8 @@
 			<li><a href="../context-menu">Context Menu</a></li>
 			<li><a href="../credit-card">Credit Card</a></li>
 			<li><a href="../datepicker">Datepicker</a></li>
-			<li><a href="../drawer">Drawer</a></li>
-			<li class="active"><a href="../ga">GA</a></li>
+			<li class="active"><a href="../drawer">Drawer</a></li>
+			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
 			<li><a href="../map">Map</a></li>
@@ -123,13 +157,21 @@
 
 </section>
 
-<!-- Look! Google Analytics script vommit replaced with nice neat tag -->
 <rg-ga property="UA-36978977-5"></rg-ga>
 
 <script src="https://cdn.jsdelivr.net/riot/2.3.0/riot.min.js"></script>
+<script src="app.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
-	riot.mount('*');
+	var menu = new RgDrawer({
+		header:' Select an option',
+		position: 'top',
+		isvisible: true,
+		items: [{ content: 'Open in Safari', action: function () { menu.close() } }]
+	})
+	riot.mount('*', {
+		drawer: menu
+	});
 </script>
 
 <script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>

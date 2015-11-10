@@ -2,9 +2,9 @@
 <html lang="en-us">
 <head>
 	<meta charset="UTF-8">
-	<title>Side Menu</title>
+	<title>Sidemenu</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Classic off-canvas slide in side menu, useful for navigation">
+	<meta name="description" content="Classic off-canvas slide in menu, useful for navigation">
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/normalize.css">
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
 	<link rel="stylesheet" type="text/css" href="../../stylesheets/stylesheet.css">
@@ -37,15 +37,17 @@
 <section class="main-content">
 	<main>
 		<h1 class="component-heading">
-			Side Menu
+			Sidemenu
 		</h1>
 		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
 
 		<div class="demo-container no-overflow">
-
 			<rg-sidemenu></rg-sidemenu>
 
 			<h2>Use</h2>
+
+			<p>The sidemenu now extends the functionality of the <a href="../drawer">drawer</a></li> tag but
+			the position is fixed to the left hand side. If you want more control please use the drawer tag.</p>
 
 			<h3>
 				HTML
@@ -58,10 +60,13 @@
 			</h3>
 
 			<pre><code class="javascript">this.menu = new RgSidemenu({
-  header: 'Navigation',
+  header: 'Select an option',
   isvisible: true,
+  onopen: function (item) {},
+  onclose: function (item) {},
+  onselect: function (item) {},
   items: [{
-    content: 'About us',
+    content: 'Open in Safari',
     action: function () {},
     active: true
   }]
@@ -72,6 +77,9 @@
 			</h3>
 			<ul>
 				<li><code>header</code> the text at the top of the menu</li>
+				<li><code>onopen</code> callback when the menu is opened using the <code>open</code> method</li>
+				<li><code>onclose</code> callback when the menu is closed using the <code>close</code> method</li>
+				<li><code>onselect</code> callback when an item is select using the <code>select</code> method</li>
 				<li><code>isvisible</code> toggle this to show or hide the menu</li>
 				<li><code>items</code> array of menu items</li>
 				<li><code>item.content</code> the HTML to display</li>
@@ -118,6 +126,7 @@
 			<li><a href="../context-menu">Context Menu</a></li>
 			<li><a href="../credit-card">Credit Card</a></li>
 			<li><a href="../datepicker">Datepicker</a></li>
+			<li><a href="../drawer">Drawer</a></li>
 			<li><a href="../ga">GA</a></li>
 			<li><a href="../include">Include</a></li>
 			<li><a href="../loading">Loading</a></li>
@@ -155,12 +164,13 @@
 <script src="app.js"></script>
 <script src="../../rg.min.js"></script>
 <script>
+	var menu = new RgSidemenu({
+		header:' Select an option',
+		isvisible: true,
+		items: [{ content: 'Open in Safari', action: function () { menu.close() } }]
+	})
 	riot.mount('*', {
-		sidemenu: new RgSidemenu({
-			header:' Navigation',
-			isvisible: true,
-			items: [{ content: 'Home' }]
-		})
+		sidemenu: menu
 	});
 </script>
 
