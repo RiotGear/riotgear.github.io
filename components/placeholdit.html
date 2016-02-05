@@ -1,0 +1,47 @@
+---
+layout: page
+title: Placehold.it
+---
+
+<div class="demo-container no-overflow">
+
+	<rg-placeholdit></rg-placeholdit>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-placeholdit>&lt;/rg-placeholdit></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-placeholdit', {
+  placeholdit: {
+    width: 450,
+    height: 250,
+    background: '000',
+    color: 'fff',
+    text: 'Hello RiotGear',
+    textsize: 30,
+    format: 'png'
+  }
+})</code></pre>
+</div>
+
+<script>
+	riot.mount('rg-placeholdit', {
+		placeholdit: {
+			width: 450,
+			height: 250,
+			background: '000',
+			color: 'fff',
+			text: 'Hello RiotGear',
+			textsize: 30,
+			format: 'png'
+		}
+	})
+</script>

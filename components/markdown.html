@@ -1,0 +1,23 @@
+---
+layout: page
+title: Markdown
+---
+
+<div class="demo-container no-overflow">
+	<p>The following text was written in Markdown and converted using the component.</p>
+
+	<rg-markdown></rg-markdown>
+</div>
+
+<script src="commonmark.js"></script>
+<script>
+	var tags = riot.mount('rg-markdown', {
+		markdown: {
+			url: 'helptext.md'
+		}
+	})
+	tags[0].on('loaded', function () {
+		hljs.initHighlighting.called = false;
+		hljs.initHighlighting();
+	})
+</script>

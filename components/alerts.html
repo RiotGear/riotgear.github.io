@@ -1,0 +1,58 @@
+---
+layout: page
+title: Alerts
+---
+
+<div class="demo-container no-overflow">
+	<rg-alerts></rg-alerts>
+
+	<h2>Use</h2>
+
+	<h3>HTML</h3>
+
+	<pre><code class="html">&lt;rg-alerts>&lt;/rg-alerts></code></pre>
+
+	<h3>JavaScript</h3>
+
+<pre><code class="javascript">var tags = riot.mount('rg-alerts', {
+  alerts: [{
+    type: 'primary',
+    text: 'Look! Something you should know about.'
+  }, {
+    type: 'secondary',
+    text: 'Warning! You can\'t remove this alert.',
+    dismissable: false
+  }, {
+    type: 'success',
+    text: 'Success! Well done. This alert will disappear in 10 seconds',
+    timeout: 10000
+  }, {
+    type: 'error',
+    text: 'Error! Something bad happened. ',
+    dismissable: true
+  }]
+});
+
+tags[0].on('select', function (alert) { ... })
+         .on('dismiss', function (alert) { ... })</code></pre>
+</div>
+<script>
+  riot.mount('rg-alerts', {
+    alerts: [{
+      type: 'primary',
+      text: 'Look! Something you should know about.'
+    }, {
+      type: 'secondary',
+      text: 'Warning! You can\'t remove this alert.',
+      dismissable: false
+    }, {
+      type: 'success',
+      text: 'Success! Well done. This alert will disappear in 10 seconds',
+      timeout: 10000
+    }, {
+      type: 'error',
+      text: 'Error! Something bad happened. ',
+      dismissable: true
+    }]
+  })
+</script>

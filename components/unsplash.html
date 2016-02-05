@@ -1,0 +1,47 @@
+---
+layout: page
+title: Unsplash
+---
+
+<div class="demo-container no-overflow">
+
+	<rg-unsplash></rg-unsplash>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-unsplash>&lt;/rg-unsplash></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">riot.mount('rg-unsplash', {
+  unsplash: {
+    width: 450,
+    height: 250,
+    greyscale: false,
+    random: false,
+    blur: false,
+    image: 491,
+    gravity: 'north'
+  }
+})</code></pre>
+
+</div>
+
+<script>
+	riot.mount('rg-unsplash', {
+		unsplash: {
+			width: 650,
+			height: 350,
+			greyscale: false,
+			random: true,
+			blur: false
+		}
+	})
+
+</script>

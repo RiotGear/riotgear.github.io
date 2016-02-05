@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Bubble</title>
+	<meta name="description" content="The open source component library for RiotJS">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<link rel="stylesheet" type="text/css" href="/css/normalize.css">-->
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/blazecss/1.0.3/blaze.min.css">
+	<link rel='stylesheet' type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic">
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="apple-mobile-web-app-title" content="RiotGear">
+	<meta name="application-name" content="RiotGear">
+	<meta name="msapplication-TileColor" content="#f01e52">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="canonical" href="http://riotgear.js.org/components/bubble/">
+	<script src="https://cdn.jsdelivr.net/riot/2.3.13/riot.min.js"></script>
+	<script src="/rg.min.js"></script>
+</head>
+
+<body>
+<a class="navbtn" href="#nav">Menu</a>
+<section class="component-header">
+	<a href="../../"><img src="../../images/logobig.png"></a>
+</section>
+
+<section class="main-content">
+	<main>
+		<h1 class="component-heading">
+			Bubble
+		</h1>
+		<a class="view-code" href="https://github.com/RiotGear/rg">View code</a>
+
+		<div class="demo-container">
+	<p>
+		<rg-bubble>Hover over this sentence to see a tooltip bubble appear</rg-bubble>
+	</p>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-bubble>hover over me&lt;/rg-bubble></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+<pre><code class="javascript">var tags = riot.mount('rg-bubble', {
+  bubble: {
+    text: 'Bubbles go pop!'
+  }
+});</code></pre>
+
+	<p>
+		The tooltip pops up on hover. Once the mouse leaves, it disappears after 1 second.
+	</p>
+</div>
+<script>
+	riot.mount('rg-bubble', {
+		bubble: {
+			text: 'Bubbles go pop!'
+		}
+	})
+</script>
+
+	</main>
+	<nav id="nav" class="nav">
+		<h3>Getting Started</h3>
+<ul>
+	
+	
+	
+	<li class=""><a href="/getting-started/install/">Install</a></li>
+	
+</ul>
+<h3>Community</h3>
+<ul>
+	
+	
+	
+	<li class=""><a href="/community/contributing/">Contributing</a></li>
+	
+	
+	
+	<li class=""><a href="/community/forum/">Forum</a></li>
+	
+</ul>
+<h3>Components</h3>
+<ul>
+	
+	
+	
+	<li class=""><a href="/components/alerts/">Alerts</a></li>
+	
+	
+	
+	
+	
+	<li class="active"><a href="/components/bubble/">Bubble</a></li>
+	
+	
+	
+	<li class=""><a href="/components/code/">Code</a></li>
+	
+	
+	
+	<li class=""><a href="/components/creditcard/">Credit Card</a></li>
+	
+	
+	
+	<li class=""><a href="/components/date/">Date</a></li>
+	
+	
+	
+	<li class=""><a href="/components/drawer/">Drawer</a></li>
+	
+	
+	
+	<li class=""><a href="/components/ga/">Google Analytics</a></li>
+	
+	
+	
+	<li class=""><a href="/components/include/">Include</a></li>
+	
+	
+	
+	<li class=""><a href="/components/map/">Map</a></li>
+	
+	
+	
+	<li class=""><a href="/components/markdown/">Markdown</a></li>
+	
+	
+	
+	<li class=""><a href="/components/modal/">Modal</a></li>
+	
+	
+	
+	<li class=""><a href="/components/phonesim/">Phone Sim</a></li>
+	
+	
+	
+	<li class=""><a href="/components/placeholdit/">Placehold.it</a></li>
+	
+	
+	
+	<li class=""><a href="/components/router/">Router</a></li>
+	
+	
+	
+	<li class=""><a href="/components/select/">Select</a></li>
+	
+	
+	
+	<li class=""><a href="/components/sidemenu/">Sidemenu</a></li>
+	
+	
+	
+	<li class=""><a href="/components/tabs/">Tabs</a></li>
+	
+	
+	
+	<li class=""><a href="/components/tags/">Tags</a></li>
+	
+	
+	
+	<li class=""><a href="/components/toasts/">Toasts</a></li>
+	
+	
+	
+	<li class=""><a href="/components/toggle/">Toggle</a></li>
+	
+	
+	
+	<li class=""><a href="/components/unsplash/">Unsplash</a></li>
+	
+</ul>
+	</nav>
+
+	<footer class="site-footer">
+	<div class="site-links">
+		<a href="https://twitter.com/riotcomponents">Twitter</a>
+		<a href="http://riotjs.com">Riot</a>
+	</div>
+			<span class="site-footer-credits">
+				Built in England &copy; 2015 <a href="https://twitter.com/GrumpyWizards">Grumpy Wizards</a>.
+			</span>
+</footer>
+</section>
+
+<rg-ga property="UA-36978977-5"></rg-ga>
+
+<script src="//cdn.jsdelivr.net/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script>
+	riot.mount('rg-ga');
+</script>
+</body>
+
+</html>

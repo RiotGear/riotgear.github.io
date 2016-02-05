@@ -1,0 +1,68 @@
+---
+layout: page
+title: Select
+---
+
+<div class="demo-container">
+
+	<rg-select></rg-select>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-select>&lt;/rg-select&gt;</code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-select', {
+  select: {
+    placeholder: 'Please select a card',
+    options: [{
+      id: 0,
+      text: 'Visa'
+    }, {
+      id: 1,
+      text: 'MasterCard'
+      //selected: true
+    }, {
+      id: 2,
+      text: 'American Express'
+    }, {
+      id: 3,
+      text: 'Discover'
+    }]
+  }
+})
+
+tags[0].on('open', function () { ... })
+       .on('close', function () { ... })
+       .on('select', function (item) { ... })</code></pre>
+
+</div>
+
+<script>
+	var tags = riot.mount('rg-select', {
+		select: {
+			placeholder: 'Please select a card',
+			options: [{
+				id: 0,
+				text: 'Visa'
+			}, {
+				id: 1,
+				text: 'MasterCard'
+				//selected: true
+			}, {
+				id: 2,
+				text: 'American Express'
+			}, {
+				id: 3,
+				text: 'Discover'
+			}]
+		}
+	})
+</script>

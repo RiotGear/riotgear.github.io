@@ -1,0 +1,59 @@
+---
+layout: page
+title: Drawer
+---
+<div class="demo-container no-overflow">
+	
+	<rg-drawer></rg-drawer>
+	
+	<h2>Use</h2>
+	
+	<h3>
+		HTML
+	</h3>
+	
+	<pre><code class="html">&lt;rg-drawer>&lt;/rg-drawer></code></pre>
+	
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tag = riot.mount('rg-drawer', {
+  drawer: {
+    header: 'Drawer',
+    isvisible: true,
+    position: 'top|right|bottom|left',
+    items: [{
+      id: 1,
+      text: 'Item 1'
+    }, {
+      id: 2,
+      text: 'Item 2'
+    }]
+  }
+})
+tag[0].on('select', function (item) {
+  alert(JSON.stringify(item))
+})</code></pre>
+	
+</div>
+
+<script>
+	var tag = riot.mount('rg-drawer', {
+		drawer: {
+			header: 'Drawer',
+			isvisible: true,
+			position: 'top',
+			items: [{
+				id: 1,
+				text: 'Item 1'
+			}, {
+				id: 2,
+				text: 'Item 2'
+			}]
+		}
+	})
+	tag[0].on('select', function (item) {
+		alert(JSON.stringify(item))
+	})
+</script>

@@ -1,0 +1,88 @@
+# Site settings
+permalink: pretty
+title: RiotGear - The open source component library for RiotJS
+description: The open source component library for RiotJS.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://riotgear.js.org" # the base hostname & protocol for your site
+twitter_username: riotcomponents
+
+# Build settings
+markdown: kramdown
+
+# Navigation
+navigation-getting-started:
+- text: Install
+  url: /getting-started/install/
+  
+
+navigation-community:
+- text: Contributing
+  url: /community/contributing/
+
+- text: Forum
+  url: /community/forum/
+  
+
+navigation-components:
+- text: Alerts
+  url: /components/alerts/
+
+- text: Bubble
+  url: /components/bubble/
+
+- text: Code
+  url: /components/code/
+
+- text: Credit Card
+  url: /components/creditcard/
+
+- text: Date
+  url: /components/date/
+
+- text: Drawer
+  url: /components/drawer/
+
+- text: Google Analytics
+  url: /components/ga/
+
+- text: Include
+  url: /components/include/
+
+- text: Map
+  url: /components/map/
+
+- text: Markdown
+  url: /components/markdown/
+
+- text: Modal
+  url: /components/modal/
+
+- text: Phone Sim
+  url: /components/phonesim/
+
+- text: Placehold.it
+  url: /components/placeholdit/
+
+- text: Router
+  url: /components/router/
+
+- text: Select
+  url: /components/select/
+
+- text: Sidemenu
+  url: /components/sidemenu/
+
+- text: Tabs
+  url: /components/tabs/
+
+- text: Tags
+  url: /components/tags/
+
+- text: Toasts
+  url: /components/toasts/
+
+- text: Toggle
+  url: /components/toggle/
+
+- text: Unsplash
+  url: /components/unsplash/

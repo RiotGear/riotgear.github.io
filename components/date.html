@@ -1,0 +1,34 @@
+---
+layout: page
+title: Date
+---
+
+<div class="demo-container">
+	<rg-date></rg-date>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-date>&lt;/rg-date&gt;</code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount({
+  date: moment()
+})</code></pre>
+
+	<p>
+		This component relies on a third party date management library called Moment. You can find more information
+		about Moment from their website at <a href="http://momentjs.com/">momentjs.com</a>.
+	</p>
+</div>
+
+<script src="moment.min.js"></script>
+<script>
+	riot.mount('rg-date')
+</script>

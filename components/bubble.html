@@ -1,0 +1,38 @@
+---
+layout: page
+title: Bubble
+---
+<div class="demo-container">
+	<p>
+		<rg-bubble>Hover over this sentence to see a tooltip bubble appear</rg-bubble>
+	</p>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-bubble>hover over me&lt;/rg-bubble></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+<pre><code class="javascript">var tags = riot.mount('rg-bubble', {
+  bubble: {
+    text: 'Bubbles go pop!'
+  }
+});</code></pre>
+
+	<p>
+		The tooltip pops up on hover. Once the mouse leaves, it disappears after 1 second.
+	</p>
+</div>
+<script>
+	riot.mount('rg-bubble', {
+		bubble: {
+			text: 'Bubbles go pop!'
+		}
+	})
+</script>

@@ -1,178 +1,50 @@
-<!DOCTYPE html>
-<html lang="en-us">
+---
+layout: default
+---
 
-<head>
-	<meta charset="UTF-8">
-	<title>RiotGear - The open source component library for RiotJS</title>
-	<meta name="description" content="The open source component library for RiotJS">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css">
-	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Lato:300,400,900,300italic,400italic,900italic'>
-	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
-	<link rel="stylesheet" type="text/css" href="https://yandex.st/highlightjs/8.2/styles/github.min.css">
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/manifest.json">
-	<meta name="apple-mobile-web-app-title" content="RiotGear">
-	<meta name="application-name" content="RiotGear">
-	<meta name="msapplication-TileColor" content="#f01e52">
-	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-	<meta name="theme-color" content="#ffffff">
-	<link rel="canonical" href="https://riotgear.js.org" />
-</head>
+<h2>Ready made components</h2>
+<p>
+	RiotGear was built to help. Help you improve your app development speed. If we've built it already why reinvent the wheel? The components should have all the functionality the majority of people need.
+</p>
+<p>
+	In just a few lines of code you could have an off-canvas slide in <a href="components/drawer">side-menu</a>, a set of
+	<a href="components/tabs">tabs</a>, a bunch of nice <a href="components/toggle">toggles</a> and lots of others. Plus the list of components is increasing all the time.
+</p>
 
-<body>
-	<a class="menu" href="#menu">Menu</a>
-	<a class="fork" href="https://github.com/RiotGear">Fork me on GitHub</a>
-	<section class="page-header">
-		<img src="images/logobig.png">
+<h2>Blaze CSS</h2>
+<p>
+	Each component relies on <a href="http://blazecss.com">Blaze CSS</a> an open source modular CSS framework. Each component in RiotGear and Blaze is modular
+	so you don't need the whole of either framework to get started.
+</p>
+<p>
+	The people behind RiotGear also built Blaze so you know the two work well together, and if you want help you'll get our world class help with either framework!
+</p>
 
-		<h1 class="project-name">
-			<span>Riot</span>Gear</h1>
+<h2>Router</h2>
+<p>
+	We have a really cool state based <a href="components/router">router</a>. It is totally decoupled from tags so you can interact with it outside of Riot tag code.
+</p>
+<p>
+	RiotGear and the Router are separate so you can use the router in your existing Riot apps without installing RiotGear.
+</p>
+<p>
+	Tags can reference the router and gain access to it meaning more than one tag can be affected by more than one state and one state can affect more than one tag.
+</p>
+<p>
+	You can even add and remove states at any point in time making code organisation really flexible.
+</p>
 
-		<h2 class="project-tagline">The open source component library for RiotJS</h2>
+<h2>Contributing</h2>
+<p>
+	<strong>
+		If you have an idea for a new component or would like to make a suggestion:
+		<ul>
+			<li><a href="forum">Let us know in the forum</a></li>
+			<li><a href="https://github.com/RiotGear/rg/issues">Raise an issue in GitHub</a></li>
+			<li>or <a href="https://twitter.com/riotcomponents">send a tweet</a></li>
+		</ul>
 
-		<a href="getting-started" class="hero-button">Get Started</a>
+	</strong>
+</p>
 
-		<h3 class="project-version">
-			<span class="badge">v2.1.3</span> - <a href="https://github.com/RiotGear">View Github Project</a> - <a href="https://raw.githubusercontent.com/RiotGear/rg/master/dist/rg.min.js" download>Download</a>
-		</h3>
-	</section>
-
-	<section class="main-content">
-		<main>
-			<h2>Ready made components</h2>
-			<p>
-				RiotGear was built to help. Help you improve your app development speed. If we've built it already why reinvent the wheel? The components should have all the functionality the majority of people need.
-			</p>
-			<p>
-				In just a few lines of code you could have an off-canvas slide in <a href="components/sidemenu">side-menu</a>, a set of
-				<a href="components/tabs">tabs</a>, a bunch of nice <a href="components/toggle">toggles</a> and lots of others. Plus the list of components is increasing all the time.
-			</p>
-
-			<h2>CSS</h2>
-			<p>
-				Each component's css has been
-				<code>scoped</code> so <a href="http://riotjs.com/guide/#tag-styling">customising them</a> is an accurate but easy task.
-			</p>
-			<p>
-				The CSS we've written contains just enough style for the components to be useful, without being too opinionated.
-			</p>
-
-			<h2>Router</h2>
-			<p>
-				We have a really cool state based <a href="components/router">router</a>. It is totally decoupled from tags so you can interact with it outside of Riot tag code.
-			</p>
-			<p>
-				RiotGear and the Router are separate so you can use the router in your existing Riot apps without installing RiotGear.
-			</p>
-			<p>
-				Tags can reference the router and gain access to it meaning more than one tag can be affected by more than one state and one state can affect more than one tag.
-			</p>
-			<p>
-				You can even add and remove states at any point in time making code organisation really flexible.
-			</p>
-
-			<h2>Contributing</h2>
-			<p>
-				<strong>
-					If you have an idea for a new component or would like to make a suggestion:
-					<ul>
-						<li><a href="forum">Let us know in the forum</a></li>
-						<li><a href="https://github.com/RiotGear/rg/issues">Raise an issue in GitHub</a></li>
-						<li>or <a href="https://twitter.com/riotcomponents">send a tweet</a></li>
-					</ul>
-
-				</strong>
-			</p>
-
-			<p>Happy coding!</p>
-		</main>
-
-		<nav id="menu" class="main-nav">
-			<h3>Getting Started</h3>
-			<ul>
-				<li><a href="getting-started">Install</a></li>
-				<li><a href="playground">Playground</a></li>
-			</ul>
-			<h3>Community</h3>
-			<ul>
-				<li><a href="contributing">Contributing</a></li>
-				<li><a href="forum">Forum</a></li>
-				<li><a href="roadmap">Roadmap</a></li>
-			</ul>
-			<h3>Components</h3>
-			<ul>
-				<li>
-					<a href="components/rg">
-						<strong>rg</strong>
-					</a>
-				</li>
-				<li>
-					<a href="components/router">
-						<strong>Router</strong>
-					</a>
-				</li>
-			</ul>
-			<ul>
-				<li><a href="components/alert">Alert</a></li>
-				<li><a href="components/autocomplete">Autocomplete</a></li>
-				<li><a href="components/behold">Behold</a></li>
-				<li><a href="components/bubble">Bubble</a></li>
-				<li><a href="components/code">Code</a></li>
-				<li><a href="components/context-menu">Context Menu</a></li>
-				<li><a href="components/credit-card">Credit Card</a></li>
-				<li><a href="components/datepicker">Datepicker</a></li>
-				<li><a href="components/drawer">Drawer</a></li>
-				<li><a href="components/ga">GA</a></li>
-				<li><a href="components/include">Include</a></li>
-				<li><a href="components/loading">Loading</a></li>
-				<li><a href="components/map">Map</a></li>
-				<li><a href="components/markdown">Markdown</a></li>
-				<li><a href="components/modal">Modal</a></li>
-				<li><a href="components/phone-sim">Phone Sim</a></li>
-				<li><a href="components/placeholdit">Placeholdit</a></li>
-				<li><a href="components/select">Select</a></li>
-				<li><a href="components/sidemenu">Side Menu</a></li>
-				<li><a href="components/tabs">Tabs</a></li>
-				<li><a href="components/tags">Tags</a></li>
-				<li><a href="components/timepicker">Timepicker</a></li>
-				<li><a href="components/toast">Toast</a></li>
-				<li><a href="components/toggle">Toggle</a></li>
-				<li><a href="components/unsplash">Unsplash</a></li>
-			</ul>
-		</nav>
-
-		<footer class="site-footer">
-			<div class="site-links">
-				<a href="https://twitter.com/riotcomponents">Twitter</a>
-				<a href="http://riotjs.com">Riot</a>
-			</div>
-			<span class="site-footer-credits">
-				Built in England &copy; 2015 <a href="https://twitter.com/GrumpyWizards">Grumpy Wizards</a>.
-			</span>
-		</footer>
-
-	</section>
-
-	<rg-ga property="UA-36978977-5"></rg-ga>
-
-	<script src="https://cdn.jsdelivr.net/riot/2.3.0/riot.min.js"></script>
-	<script src="rg.min.js"></script>
-	<script>
-		riot.mount('*');
-
-	</script>
-
-</body>
-
-</html>
+<p>Happy coding!</p>

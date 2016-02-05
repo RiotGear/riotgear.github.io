@@ -1,0 +1,48 @@
+---
+layout: page
+title: Google Maps
+---
+
+<div class="demo-container no-overflow">
+	<rg-map></rg-map>
+
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-map>&lt;/rg-map></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+			<pre><code class="javascript">riot.mount('rg-map', {
+  map: {
+    center: { lat: 37.7577, lng: -122.4376 },
+    zoom: 8
+  }
+})</code></pre>
+
+	<p>Everything that is available via standard Google Maps options is available through this tag.</p>
+
+	<p>For information on what is available head over
+		<a href="https://developers.google.com/maps/documentation/javascript/reference#MapOptions">Google Maps API
+			docs</a></p>
+
+	<p>If you specify no options the map will still generate, but will default to predefined settings.</p>
+
+	<p><em>Be sure to style your map to that it appears on the page, give some height and width.</em></p>
+
+</div>
+
+<script>
+	riot.mount('rg-map', {
+		map: {
+			center: { lat: 37.7577, lng: -122.4376 },
+			zoom: 8
+		}
+	})
+</script>

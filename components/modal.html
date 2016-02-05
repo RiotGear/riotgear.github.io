@@ -1,0 +1,55 @@
+---
+layout: page
+title: Modal
+---
+
+<div class="demo-container no-overflow">
+	<rg-modal></rg-modal>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-modal>&lt;/rg-modal></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-modal', {
+  modal: {
+    isvisible: true,
+    dismissable: true,
+    heading: 'Modal heading',
+    buttons: [{
+      text: 'Ok',
+      type: 'primary',
+      action: function () { ... }
+    }, {
+      text: 'Cancel',
+      action: function () { ... }
+    }]
+  }
+})
+
+tags[0].on('close', function () { ... })</code></pre>
+
+</div>
+
+<script>
+	var tags = riot.mount('rg-modal', {
+		modal: {
+			isvisible: true,
+			dismissable: true,
+			heading: 'Modal heading',
+			buttons: [{
+				text: 'Ok',
+				type: 'primary'
+			}, {
+				text: 'Cancel'
+			}]
+		}
+	})
+</script>

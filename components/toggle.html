@@ -1,0 +1,41 @@
+---
+layout: page
+title: Toggle
+---
+
+<div class="demo-container">
+
+	<rg-toggle></rg-toggle>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-toggle>&lt;/rg-toggle></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-toggle', {
+  toggle: {
+    type: 'primary|secondary|success|error',
+    checked: true
+  }
+})
+
+tags[0].on('toggle', function (checked) { ... })</code></pre>
+
+</div>
+
+<script>
+	var tags = riot.mount('rg-toggle', {
+		toggle: {
+			type: 'primary',
+			checked: true
+		}
+	})
+	tags[0].on('toggle', function (checked) { console.log(checked) })
+</script>

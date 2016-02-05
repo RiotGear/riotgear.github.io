@@ -1,0 +1,72 @@
+---
+layout: page
+title: Toasts
+---
+
+<rg-toasts></rg-toasts>
+
+<div class="demo-container">
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-toasts>&lt;/rg-toasts></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-toasts', {
+  toasts: {
+    position: 'bottomright|bottomleft|topleft|topright',
+    toasts: [{
+      type: 'primary',
+      text: 'Made you look!',
+      sticky: true // Turn off timeout
+    }, {
+      type: 'secondary',
+      text: 'Careful now...'
+    }, {
+      type: 'success',
+      text: 'You did it!'
+    }, {
+      type: 'error',
+      text: 'Oops!',
+      timeout: 4000 // Default to 6000 if not set
+    }]
+  }
+})
+
+tags[0].on('close', function (toast) { ... })
+       .on('select', function (toast) { ... })</code></pre>
+
+</div>
+
+<script>
+	var tags = riot.mount('rg-toasts', {
+		toasts: {
+			position: 'bottomright',
+			toasts: [{
+				type: 'primary',
+				text: 'Made you look!',
+				sticky: true
+			}, {
+				type: 'secondary',
+				text: 'Careful now...'
+			}, {
+				type: 'success',
+				text: 'You did it!'
+			}, {
+				type: 'error',
+				text: 'Oops!',
+				timeout: 4000
+			}]
+		}
+	})
+
+	tags[0].on('close', function (toast) { console.log('closed', toast) })
+			   .on('select', function (toast) { console.log('selected', toast) })
+</script>

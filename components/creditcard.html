@@ -1,0 +1,74 @@
+---
+layout: page
+title: Credit Card
+---
+
+<div class="demo-container no-overflow">
+	<p>
+		<rg-credit-card-number></rg-credit-card-number>
+	</p>
+	<p>
+		Try these:
+	<ul>
+		<li><code>378734493671000</code></li>
+		<li><code>6011000990139424</code></li>
+		<li><code>3566002020360505</code></li>
+		<li><code>5105105105105100</code></li>
+	</ul>
+	</p>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-credit-card-number>&lt;/rg-credit-card-number&gt;</code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-credit-card-number', {
+  placeholder: 'Long number on front',
+  cardnumber: '4000 0000 0000 0002'
+})</code></pre>
+
+	<p>
+		The control will produce a textbox that validates the card number
+		(spaces are removed automatically) and if valid will turn the border
+		green and apply a card CSS class name.
+	</p>
+
+	<p>
+		The following card types (CSS classes) are supported:
+	</p>
+
+	<ul>
+		<li><code>amex</code></li>
+		<li><code>diners_club_carte_blanche</code></li>
+		<li><code>diners_club_international</code></li>
+		<li><code>mastercard</code></li>
+		<li><code>discover</code></li>
+		<li><code>jcb</code></li>
+		<li><code>laser</code></li>
+		<li><code>maestro</code></li>
+		<li><code>visa</code></li>
+		<li><code>visa_electron</code></li>
+	</ul>
+
+	<p>
+		To display a card icon add a class with a background image for each of
+		the supported card types.
+	</p>
+
+</div>
+
+<script>
+	riot.mount('rg-credit-card-number', {
+		card: {
+			placeholder: 'Long number on front',
+			cardnumber: '4000 0000 0000 0002'
+		}
+	})
+</script>

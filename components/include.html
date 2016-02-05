@@ -1,0 +1,21 @@
+---
+layout: page
+title: Include
+---
+
+<div class="demo-container no-overflow">
+	<rg-include></rg-include>
+</div>
+
+<script>
+	var tags = riot.mount('rg-include', {
+		include: {
+			url: 'demo_text.html',
+			unsafe: true
+		}
+	})
+	tags[0].on('loaded', function () {
+		hljs.initHighlighting.called = false;
+		hljs.initHighlighting();
+	})
+</script>

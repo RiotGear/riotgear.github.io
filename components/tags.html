@@ -1,0 +1,64 @@
+---
+layout: page
+title: Tags
+---
+
+<div class="demo-container">
+
+	<rg-tags></rg-tags>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-tags>&lt;/rg-tags></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-tags', {
+  tags: {
+    placeholder: 'Choose a country',
+    options: [{
+      text: 'England'
+    }, {
+      text: 'Scotland'
+    }, {
+      text: 'Ireland'
+    }, {
+      text: 'Wales'
+    }],
+    tags: [{
+      text: 'United States'
+    }]
+  }
+})
+
+tags[0].on('open', function () { ... })
+       .on('close', function () { ... })
+       .on('select', function (item) { ... })</code></pre>
+
+</div>
+
+<script>
+	riot.mount('rg-tags', {
+		tags: {
+			placeholder: 'Choose a country',
+			options: [{
+				text: 'England'
+			}, {
+				text: 'Scotland'
+			}, {
+				text: 'Ireland'
+			}, {
+				text: 'Wales'
+			}],
+			tags: [{
+				text: 'United States'
+			}]
+		}
+	})
+</script>

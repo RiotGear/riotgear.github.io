@@ -1,0 +1,37 @@
+---
+layout: page
+title: Phone Simulator
+---
+
+<div class="demo-container no-overflow">
+	<rg-phone-sim></rg-phone-sim>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-phone-sim>&lt;/rg-phone-sim></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-phone-sim', {
+  phonesim: {
+    url: 'http://riotjs.com/'
+  }
+})</code></pre>
+
+	<p>The component will then wrap your website in an iframe and an image of a phone.</p>
+
+</div>
+
+<script>
+	riot.mount('rg-phone-sim', {
+		phonesim: {
+			url: 'http://riotjs.com/'
+		}
+	})
+</script>

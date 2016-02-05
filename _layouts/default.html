@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body>
+<a class="navbtn" href="#nav">Menu</a>
+{% include header.html %}
+
+<section class="main-content">
+	<main>
+
+	{{ content }}
+
+	</main>
+	<nav id="nav" class="nav">
+		{% include nav.html %}
+	</nav>
+
+	{% include footer.html %}
+</section>
+
+<rg-ga property="UA-36978977-5"></rg-ga>
+
+<script src="https://cdn.jsdelivr.net/riot/2.3.13/riot.min.js"></script>
+<script src="rg.min.js"></script>
+<script>
+	riot.mount('rg-ga');
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<h3>Getting Started</h3>
+<ul>
+	{% for link in site.navigation-getting-started %}
+	{% assign active = nil %}
+	{% if page.url == link.url %}
+	{% assign active = 'active' %}
+	{% endif %}
+	<li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+	{% endfor %}
+</ul>
+<h3>Community</h3>
+<ul>
+	{% for link in site.navigation-community %}
+	{% assign active = nil %}
+	{% if page.url == link.url %}
+	{% assign active = 'active' %}
+	{% endif %}
+	<li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+	{% endfor %}
+</ul>
+<h3>Components</h3>
+<ul>
+	{% for link in site.navigation-components %}
+	{% assign active = nil %}
+	{% if page.url == link.url %}
+	{% assign active = 'active' %}
+	{% endif %}
+	<li class="{{ active }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+	{% endfor %}
+</ul>
