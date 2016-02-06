@@ -6,7 +6,6 @@ title: Google Maps
 <div class="demo-container no-overflow">
 	<rg-map></rg-map>
 
-
 	<h2>Use</h2>
 
 	<h3>
@@ -19,12 +18,14 @@ title: Google Maps
 		JavaScript
 	</h3>
 
-			<pre><code class="javascript">riot.mount('rg-map', {
+			<pre><code class="javascript">var tags = riot.mount('rg-map', {
   map: {
     center: { lat: 37.7577, lng: -122.4376 },
     zoom: 8
   }
-})</code></pre>
+})
+
+tags[0].on('loaded', function (map) { ... })</code></pre>
 
 	<p>Everything that is available via standard Google Maps options is available through this tag.</p>
 
@@ -36,13 +37,23 @@ title: Google Maps
 
 	<p><em>Be sure to style your map to that it appears on the page, give some height and width.</em></p>
 
+	<p>To gain access to the map object created on initialize use the loaded event. Useful for adding markers etc.</p>
+
 </div>
 
 <script>
-	riot.mount('rg-map', {
+	var tags = riot.mount('rg-map', {
 		map: {
 			center: { lat: 37.7577, lng: -122.4376 },
 			zoom: 8
 		}
+	})
+
+	tags[0].on('loaded', function (map) {
+		var marker = new google.maps.Marker({
+			 position: { lat: 37.7577, lng: -122.4376 },
+			 map: map,
+			 title: 'Hello RiotGear!'
+		 })
 	})
 </script>

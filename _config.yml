@@ -5,6 +5,7 @@ description: The open source component library for RiotJS.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://riotgear.js.org" # the base hostname & protocol for your site
 twitter_username: riotcomponents
+version: '3.1.0'
 
 # Build settings
 markdown: kramdown
@@ -13,7 +14,7 @@ markdown: kramdown
 navigation-getting-started:
 - text: Install
   url: /getting-started/install/
-  
+
 
 navigation-community:
 - text: Contributing
@@ -21,7 +22,7 @@ navigation-community:
 
 - text: Forum
   url: /community/forum/
-  
+
 
 navigation-components:
 - text: Alerts
