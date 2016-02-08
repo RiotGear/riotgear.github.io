@@ -501,3 +501,7 @@ rg-map {
 rg-toasts .toasts {
 	position: fixed;
 }
+
+.chart {
+	width: 49%;
+}

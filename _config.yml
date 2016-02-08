@@ -5,7 +5,7 @@ description: The open source component library for RiotJS.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://riotgear.js.org" # the base hostname & protocol for your site
 twitter_username: riotcomponents
-version: '3.1.0'
+version: '3.2.0'
 
 # Build settings
 markdown: kramdown
@@ -30,6 +30,9 @@ navigation-components:
 
 - text: Bubble
   url: /components/bubble/
+
+- text: Charts
+  url: /components/charts/
 
 - text: Code
   url: /components/code/
@@ -69,9 +72,6 @@ navigation-components:
 
 - text: Select
   url: /components/select/
-
-- text: Sidemenu
-  url: /components/sidemenu/
 
 - text: Tabs
   url: /components/tabs/

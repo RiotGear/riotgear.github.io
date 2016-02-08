@@ -1,0 +1,108 @@
+---
+layout: page
+title: Charts
+---
+
+<div class="demo-container no-overflow">
+	<rg-chart class="linechart chart"></rg-chart>
+	<rg-chart class="ringchart chart"></rg-chart>
+
+	<h2>Use</h2>
+
+	<h3>HTML</h3>
+
+	<pre><code class="html">&lt;rg-chart>&lt;/rg-chart></code></pre>
+
+	<h3>JavaScript</h3>
+
+<pre><code class="javascript">var tags = riot.mount('rg-chart', {
+  chart: {
+    type: 'doughnut', // line|bar|radar|polar|pie|doughnut
+    options: {}, // Look at Chart.js documentation on how to populate data and options
+    data: [{
+      value: 300,
+      color: "#F7464A",
+      highlight: "#FF5A5E",
+      label: "Red"
+    }, {
+      value: 50,
+      color: "#46BFBD",
+      highlight: "#5AD3D1",
+      label: "Green"
+    }, {
+      value: 100,
+      color: "#FDB45C",
+      highlight: "#FFC870",
+      label: "Yellow"
+    }]
+  }
+})
+
+tags[0].on('loaded', function (chart) { ... })</code></pre>
+</div>
+
+<p>
+	<code>rg-chart</code> relies on <a href="http://www.chartjs.org/">Chart.js</a> - a simple, responsive, modular and interactive charting library.
+</p>
+
+<p>
+	Look at Chart.js documentation on how to populate <code>data</code> and <code>options</code>.
+</p>
+
+<p>
+	Ensure you have a link to <code class="html">&lt;script src="https://cdn.jsdelivr.net/chart.js/1.0.2/Chart.min.js">&lt;/script></code>
+	in your code before using this tag.
+</p>
+
+<script src="https://cdn.jsdelivr.net/chart.js/1.0.2/Chart.min.js"></script>
+<script>
+	riot.mount('.linechart', {
+	  chart: {
+			type: 'line',
+			data: {
+				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				datasets: [{
+					label: "My First dataset",
+					fillColor: "rgba(220,220,220,0.2)",
+					strokeColor: "rgba(220,220,220,1)",
+					pointColor: "rgba(220,220,220,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(220,220,220,1)",
+					data: [65, 59, 80, 81, 56, 55, 40]
+				}, {
+					label: "My Second dataset",
+					fillColor: "rgba(151,187,205,0.2)",
+					strokeColor: "rgba(151,187,205,1)",
+					pointColor: "rgba(151,187,205,1)",
+					pointStrokeColor: "#fff",
+					pointHighlightFill: "#fff",
+					pointHighlightStroke: "rgba(151,187,205,1)",
+					data: [28, 48, 40, 19, 86, 27, 90]
+				}]
+			}
+		}
+	})
+	riot.mount('.ringchart', {
+	  chart: {
+			type: 'doughnut',
+			data: [{
+				value: 300,
+				color: "#F7464A",
+				highlight: "#FF5A5E",
+				label: "Red"
+			}, {
+				value: 50,
+				color: "#46BFBD",
+				highlight: "#5AD3D1",
+				label: "Green"
+			}, {
+				value: 100,
+				color: "#FDB45C",
+				highlight: "#FFC870",
+				label: "Yellow"
+			}]
+		}
+	})
+
+</script>
