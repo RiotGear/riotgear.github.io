@@ -1,0 +1,39 @@
+---
+layout: page
+title: Pagination
+---
+
+<div class="demo-container no-overflow">
+	<rg-pagination></rg-pagination>
+
+	<h2>Use</h2>
+
+	<h3>
+		HTML
+	</h3>
+
+	<pre><code class="html">&lt;rg-pagination>&lt;/rg-pagination></code></pre>
+
+	<h3>
+		JavaScript
+	</h3>
+
+	<pre><code class="javascript">var tags = riot.mount('rg-pagination', {
+  pagination: {
+    pages: 10,
+    page: 6
+  }
+})
+
+tags[0].on('page', function (page) { ... })</code></pre>
+
+</div>
+
+<script>
+	riot.mount('rg-pagination', {
+		pagination: {
+			pages: 10,
+			page: 6
+		}
+	})
+</script>
