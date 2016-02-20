@@ -32,7 +32,7 @@ If you'd like to suggest new components or enhancements to existing ones please 
 
 ### Contributing
 
-First of all, Pull Requests, suggestions or comments about RiotGear are all welcome and valued. To start contributing to the libraray please follow the below steps:
+First of all, Pull Requests, suggestions or comments about RiotGear are all welcome and valued. To start contributing to the library please follow the below steps:
 
 #### Step 1
 
