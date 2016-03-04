@@ -5,7 +5,7 @@ description: The open source component library for RiotJS.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://riotgear.js.org" # the base hostname & protocol for your site
 twitter_username: riotcomponents
-version: '3.3.0'
+version: '3.3.1'
 
 # Build settings
 markdown: kramdown
