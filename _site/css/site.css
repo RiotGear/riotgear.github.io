@@ -164,6 +164,18 @@ button:focus {
 }
 
 /*
+ * String across the top of the page
+ */
+.page-strip {
+  background: #F3164E;
+  background: -moz-linear-gradient(left, #F3164E 0%, #32709D 50%, #F3164E 100%);
+  background: -webkit-linear-gradient(left, #F3164E 0%, #32709D 50%, #F3164E 100%);
+  background: linear-gradient(to right, #F3164E 0%, #32709D 50%, #F3164E 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F3164E', endColorstr='#F3164E', GradientType=1);
+  height: 1em;
+}
+
+/*
  * Menu button for smaller screens
  */
 
