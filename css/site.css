@@ -181,14 +181,12 @@ button:focus {
 
 a.navbtn, a.navbtn:hover, a.navbtn:active {
 	position: absolute;
-	top: 1.3rem;
-	right: 1rem;
-	text-decoration: none;
-	text-transform: uppercase;
-	border: 1px solid #268bd2;
-	padding: 2px 5px;
-	border-radius: 3px;
-	font-size: 0.9rem;
+  top: 2rem;
+  right: 1rem;
+  text-decoration: none;
+  padding: 2px;
+  font-size: 0.9rem;
+  color: #444;
 }
 
 @media (min-width: 42em) {
