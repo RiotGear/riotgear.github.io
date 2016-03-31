@@ -76,6 +76,9 @@ navigation-components:
 - text: Select
   url: /components/select/
 
+- text: Select (filter)
+  url: /components/select-filter/
+
 - text: Tabs
   url: /components/tabs/
 
