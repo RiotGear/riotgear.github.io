@@ -68,6 +68,7 @@
 	<pre><code class="javascript">var tags = riot.mount('rg-tags', {
   tags: {
     placeholder: 'Choose a country',
+    filter: 'text', // <-- this enables filtering on the 'text' property
     options: [{
       text: 'England'
     }, {
@@ -93,17 +94,18 @@ tags[0].on('open', function () { ... })
 	riot.mount('rg-tags', {
 		tags: {
 			placeholder: 'Choose a country',
+			filter: 'text',
 			options: [{
-				text: 'England'
+				text: 'Canada'
 			}, {
-				text: 'Scotland'
+				text: 'China'
 			}, {
-				text: 'Ireland'
+				text: 'United States'
 			}, {
-				text: 'Wales'
+				text: 'United Kingdom'
 			}],
 			tags: [{
-				text: 'United States'
+				text: 'Japan'
 			}]
 		}
 	})
