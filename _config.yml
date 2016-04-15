@@ -5,7 +5,7 @@ description: The open source component library for RiotJS.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://riotgear.js.org" # the base hostname & protocol for your site
 twitter_username: riotcomponents
-version: '3.4.1'
+version: '3.5.0'
 
 # Build settings
 markdown: kramdown
@@ -48,6 +48,9 @@ navigation-components:
 
 - text: Google Analytics
   url: /components/ga/
+
+- text: Iframify
+  url: /components/iframify/
 
 - text: Include
   url: /components/include/

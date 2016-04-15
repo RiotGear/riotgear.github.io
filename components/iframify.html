@@ -1,0 +1,58 @@
+---
+layout: page
+title: iFramify
+---
+
+<div class="demo-container no-overflow">
+	<style>
+		.component {
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			padding: 20px 10px;
+		}
+		@media (max-width: 400px) {
+			.component {
+				border-color: deeppink;
+			}
+		}
+		.iframify { width: 399px }
+	</style>
+  <div class="component">
+    This is a component. Under 400px, the border of this component will go pink.
+  </div>
+	<br>
+	<rg-iframify>
+    <div class="component">
+      This is a component. Under 400px, the border of this component will go pink.
+    </div>
+  </rg-iframify>
+
+	<h2>Use</h2>
+
+	<h3>HTML</h3>
+
+	<pre><code class="html">&lt;rg-iframify> . . . &lt;/rg-iframify></code></pre>
+
+	<p>
+		Place your responsive HTML inside the tag.
+	</p>
+
+	<h3>CSS</h3>
+
+  <pre><code class="css">.iframify { width: 399px } /* Set the width of the responsive test */</code></pre>
+
+  <h3>JavaScript</h3>
+
+<pre><code class="javascript">var tags = riot.mount('rg-iframify', {
+  iframify: { /* iframify options */}
+});</code></pre>
+
+	<p>
+		This component relies on a third party library called iframify. For more information
+		go to their <a href="https://github.com/edenspiekermann/iframify">GitHub project</a>.
+	</p>
+</div>
+
+<script src="iframify.js"></script>
+<script>
+  riot.mount('rg-iframify')
+</script>
