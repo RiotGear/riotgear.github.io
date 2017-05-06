@@ -22,9 +22,11 @@ The CSS we've written contains just enough style for the components to be useful
 
 If you have an idea for a new component or would like to make a suggestion about anything let us know in the forum or raise an issue in GitHub.
 
+**Please Note!** This version of RiotGear uses Blaze CSS v1. There is a beta version under development using Blaze 2.x, for details on that branch please head over to <a href="http://riotgear2.github.io">riotgear2.github.io</a>. Once that version is final release, it will be put up here.
+
 ### Find out more on the RiotGear website
 
-<a href="https://riotgear.js.org">https://riotgear.js.org</a>
+<a href="https://riotgear.github.io">https://riotgear.github.io</a>
 
 ### Suggestions
 
